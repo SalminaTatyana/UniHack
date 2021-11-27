@@ -1,37 +1,13 @@
-﻿$color-dark-blue: #233D9A;
-$color-light-blue: #47A9FF;
-$color-white-blue: #CBE7FF;
-$color-orange: #F86512;
+﻿$color-dark-blue: #024a92;
+$color-light-blue: #83b4ff;
+$color-white-blue: #b8d4ff;
+$color-orange: #d92419;
 $color-white: #ffffff;
-$color-green: #4EAA54;
-$color-red: #de2323;
+$color-green: #04ff00;
+$color-red: #ff0000;
 $color-warning: #E74C3C;
 $color-white-orange: #FF7223;
 $color-dark-orange: #F86512;
-$color-black: #000;
-$color-grey: #242424;
-$primary-visually-impared-color: $color-black;
-$secondary-visually-impared-color: $color-grey;
-$third-visually-impared-color: $color-white;
-$grey-visually-impared-color: #808080;
-$primary-black-visually-impared-color: $color-white;
-$secondary-black-visually-impared-color: #f0f0f0;
-$third-black-visually-impared-color: $color-black;
-$primary-blue-visually-impared-color: #063462;
-$secondary-blue-visually-impared-color: #063462;
-$blue-visually-impared-color: #9dd1ff;
-$third-blue-visually-impared-color: $color-white;
-$primary-brown-visually-impared-color: #59422e;
-$secondary-brown-visually-impared-color: #a17b5a;
-$third-brown-visually-impared-color: #cac7b0;
-$brown-visually-impared-color: #f7f3d6;
-$primary-green-visually-impared-color: #a9dd38;
-$secondary-green-visually-impared-color: #749925;
-$third-green-visually-impared-color: #354610;
-$green-visually-impared-color: #3b2716;
-
-
-
 // цвет текста
 $primary-text-color: $color-dark-blue; // темно-синий
 $secondary-text-color: $color-orange; // оранжевый
@@ -74,10 +50,6 @@ $secondary-buttons-background: #3FA2F8;
 $active-card-background: #F1F8FF;
 $active-secondary-button-background: #0389FF;
 
-// поля формы
-$readonly-bg-border: $color-white-blue;
-$disabled-input-background: #c9c9c9;
-
 // шрифт
 $primary-font-family: "Roboto";
 $primary-font-size: 16px;
@@ -87,9 +59,7 @@ $primary-font-weight: 400;
 $big-desktop-width: 1919px;
 $mid-desktop-width: 1549px;
 $small-desktop-width: 1219px;
-
 $tablet-width: 1023px;
-
 $big-phone-width: 767px;
 $phone-width: 479px;
 
