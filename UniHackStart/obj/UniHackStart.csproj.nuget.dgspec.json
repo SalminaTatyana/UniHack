@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Институт\\UniHackStart\\UniHackStart\\UniHackStart.csproj": {}
+    "C:\\Институт\\Uni\\UniHackStart\\UniHackStart.csproj": {}
   },
   "projects": {
-    "C:\\Институт\\UniHackStart\\UniHackStart\\UniHackStart.csproj": {
+    "C:\\Институт\\Uni\\UniHackStart\\UniHackStart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Институт\\UniHackStart\\UniHackStart\\UniHackStart.csproj",
+        "projectUniqueName": "C:\\Институт\\Uni\\UniHackStart\\UniHackStart.csproj",
         "projectName": "UniHackStart",
-        "projectPath": "C:\\Институт\\UniHackStart\\UniHackStart\\UniHackStart.csproj",
+        "projectPath": "C:\\Институт\\Uni\\UniHackStart\\UniHackStart.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Институт\\UniHackStart\\UniHackStart\\obj\\",
+        "outputPath": "C:\\Институт\\Uni\\UniHackStart\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,6 +47,10 @@
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [
