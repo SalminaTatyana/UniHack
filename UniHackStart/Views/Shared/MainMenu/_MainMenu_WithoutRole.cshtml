@@ -1,0 +1,21 @@
+﻿<div class="menu-item">
+    <a class="menu-link @SetMenuClassAndActive(" menu-link-main-page")" asp-area="" asp-controller="Home" asp-action="Index">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect class="a" width="24" height="24" /><path class="b" d="M45.826,10.178,36.4.341a1.07,1.07,0,0,0-1.566,0l-9.421,9.837a1.185,1.185,0,0,0-.318.807v11.88A1.114,1.114,0,0,0,26.2,24H45.043a1.114,1.114,0,0,0,1.1-1.135V10.985a1.122,1.122,0,0,0-.318-.807Zm-10.2,4.439a2.6,2.6,0,1,1,2.52-2.6A2.556,2.556,0,0,1,35.622,14.617Z" transform="translate(-23.622 0)" /></svg>
+        Главная
+    </a>
+</div>
+<div class="menu-item">
+    <a class="menu-link @SetMenuClassAndActive(" menu-link-payment")" asp-area="" asp-controller="Payment" asp-action="PayPage">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect class="a" width="24" height="24" /><path class="b" d="M21.344,1.31H2.459A2.353,2.353,0,0,0,.09,3.679V17.45a2.353,2.353,0,0,0,2.369,2.369H21.344a2.353,2.353,0,0,0,2.369-2.369V3.679A2.353,2.353,0,0,0,21.344,1.31ZM17.466,12.943a2.379,2.379,0,1,1,2.369-2.369A2.38,2.38,0,0,1,17.466,12.943Z" transform="translate(0.099 1.436)" /></svg>
+        Расписание
+    </a>
+</div>
+@{
+    string SetMenuClassAndActive(string menuLinkClassName)
+    {
+        if ((string)ViewData["ActiveMenuLink"] == menuLinkClassName)
+            return $"{menuLinkClassName} active";
+        else
+            return menuLinkClassName;
+    }
+}

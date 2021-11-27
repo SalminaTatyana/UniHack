@@ -1,71 +1,1126 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
+﻿@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
+  margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
+  margin-top: 25px; }
+  .pagination li {
+    margin: 0 5px; }
+
+.pagination .page-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #233D9A;
+  text-align: center;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s;
+  overflow: hidden; }
+  .pagination .page-link:hover .pagination .page-link:focus {
+    color: #F86512;
+    border: 4px solid #47A9FF; }
+  .pagination .page-link.active {
+    color: #F86512;
+    border: 4px solid #CBE7FF;
+    -webkit-box-shadow: 0 15px 20px rgba(47, 131, 222, 0.2);
+    box-shadow: 0 15px 20px rgba(47, 131, 222, 0.2); }
+
+.pagination .secondary-btn {
+  min-width: 100px;
+  line-height: 14px; }
+
+/* Левый блок меню */
+.sidebar {
+  position: fixed;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  width: 340px;
+  padding: 35px 0 20px 0;
+  background: #fff url("../img/sidebar/bg/sidebar-blue-figure.svg") no-repeat left -13% bottom 5%;
+  /*    background: url("../img/sidebar/bg/background-figure.svg") no-repeat left -5% bottom 5%;*/
+  -webkit-box-shadow: 6px 0px 30px -4px rgba(71, 169, 255, 0.5);
+  box-shadow: 6px 0px 30px -4px rgba(71, 169, 255, 0.5); }
+
+/* Для адаптивного меню */
+/* меню-бургер */
+.sidebar-menu-toggle {
+  position: relative;
+  display: none;
+  width: 40px;
+  height: 29px;
+  margin-right: 30px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer; }
+  .sidebar-menu-toggle span {
+    content: "";
+    top: 0;
+    left: 0; }
+  .sidebar-menu-toggle span,
+  .sidebar-menu-toggle span::before,
+  .sidebar-menu-toggle span::after {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 7px;
+    border-radius: 2px;
+    background-color: #F86512; }
+  .sidebar-menu-toggle span::before {
+    content: "";
+    top: 11px;
+    left: 0; }
+  .sidebar-menu-toggle span::after {
+    content: "";
+    top: 22px;
+    left: 0; }
+
+/* кнопка закрыть */
+.sidebar-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent; }
+  .sidebar-close::before, .sidebar-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -1.5px;
+    background-color: #47A9FF; }
+  .sidebar-close::before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .sidebar-close::after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+/* ***************** */
+.sidebar-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 48px; }
+
+/* Меню в сайдбаре */
+.main-nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 20px 25px 20px;
+  height: 100%;
+  overflow: hidden; }
+
+.sidebar-old-site-link-mobile {
+  display: none; }
+  @media (max-width: 1219px) {
+    .sidebar-old-site-link-mobile {
+      display: block !important; } }
+
+.sidebar-old-site-link {
+  font-size: 16px;
+  line-height: 20px;
+  color: #233D9A;
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 11px 8px 13px 44px; }
+  .sidebar-old-site-link:hover, .sidebar-old-site-link:focus {
+    color: #F86512;
+    text-decoration: none; }
+  .sidebar-old-site-link:active {
+    opacity: 0.7; }
+  @media (max-width: 1219px) {
+    .sidebar-old-site-link {
+      display: none; } }
+
+.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(71, 169, 255, 0.75); }
+
+.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: rgba(71, 169, 255, 0.85); }
+
+.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background-color: rgba(71, 169, 255, 0.9) !important; }
+
+.main-nav .mCSB_inside > .mCSB_container {
+  margin-right: 20px; }
+
+.main-nav .menu-list {
+  height: 100%;
+  overflow: hidden; }
+
+.main-nav .menu-item:last-child {
+  margin-bottom: 0; }
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.menu-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 26px;
+  padding-right: 26px;
+  padding-left: 35px; }
+  .menu-item:last-child {
+    margin-bottom: 0; }
+
+/* Счетчик для отображения количества чего-нибудь, например сообщений */
+.menu-item-counter-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -12px; }
+
+.menu-item-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  vertical-align: middle;
+  background-color: #F86512;
+  border-radius: 10px; }
+
+.menu-link {
+  position: relative;
+  min-height: 24px;
+  padding-left: 40px;
+  max-width: 215px;
+  font-size: 17px;
+  color: #233D9A;
+  line-height: 24px;
+  font-weight: 500;
+  vertical-align: middle;
+  word-break: break-word;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .menu-link.disabled {
+    color: #999999;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6; }
+  .menu-link:hover {
+    font-weight: 700; }
+  .menu-link.active {
+    color: #F86512; }
+
+.menu-link svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -12px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+/* Иконка главная */
+.menu-link-main-page svg .a {
+  fill: none; }
+
+.menu-link-main-page svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-main-page:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-main-page svg .b {
+  fill: #F86512; }
+
+/* Иконка оплата */
+.menu-link-payment svg .a {
+  fill: none; }
+
+.menu-link-payment svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-payment:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-payment svg .b {
+  fill: #F86512; }
+
+/* Иконка ввод показаний */
+.menu-link-meter svg .a {
+  fill: none; }
+
+.menu-link-meter svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-meter:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-meter svg .b {
+  fill: #F86512; }
+
+/* Иконка история операций */
+.menu-link-history svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-history svg .b {
+  fill: none; }
+
+.menu-link-history:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-history svg .a {
+  fill: #F86512; }
+
+/* Иконка услуги */
+.menu-link-services svg .a {
+  fill: none; }
+
+.menu-link-services svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-services:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-services svg .b {
+  fill: #F86512; }
+
+.menu-link-marketplace-settings svg .a {
+  fill: none; }
+
+.menu-link-marketplace-settings svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-marketplace-settings:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-marketplace-settings svg .b {
+  fill: #F86512; }
+
+/* Иконка товары */
+.menu-link-goods svg .a {
+  fill: none; }
+
+.menu-link-goods svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-goods:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-goods svg .b {
+  fill: #F86512; }
+
+/* Иконка мои заказы */
+.menu-link-orders svg .a {
+  fill: none; }
+
+.menu-link-orders svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-orders:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-orders svg .b {
+  fill: #F86512; }
+
+/* Иконка лицевые счета */
+.menu-link-accounts svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-accounts svg .b {
+  fill: none; }
+
+.menu-link-accounts:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-accounts svg .a {
+  fill: #F86512; }
+
+.menu-link-moderator svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-moderator svg .b {
+  fill: none; }
+
+.menu-link-moderator:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-moderator svg .a {
+  fill: #F86512; }
+
+.menu-link-executor svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-executor svg .b {
+  fill: none; }
+
+.menu-link-executor:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-executor svg .a {
+  fill: #F86512; }
+
+/* Иконка обращения */
+.menu-link-treatment svg .a {
+  fill: none; }
+
+.menu-link-treatment svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-treatment:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-treatment svg .b {
+  fill: #F86512; }
+
+/* Иконка исполнитель */
+.menu-link-executor svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-executor svg .b {
+  fill: none; }
+
+.menu-link-executor:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-executor svg .a {
+  fill: #F86512; }
+
+/* Иконка собрания */
+.menu-link-meetings svg .a {
+  fill: none; }
+
+.menu-link-meetings svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-meetings:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-meetings svg .b {
+  fill: #F86512; }
+
+/* Иконка мой дом */
+.menu-link-my-home svg .a {
+  fill: none; }
+
+.menu-link-my-home svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-my-home:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-my-home svg .b {
+  fill: #F86512; }
+
+/* Иконка модерация исполнителей */
+.menu-link-moderation-emoloyee svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-moderation-emoloyee svg .b {
+  fill: none; }
+
+.menu-link-moderation-emoloyee:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-moderation-emoloyee svg .a {
+  fill: #F86512; }
+
+/* Иконка модерации заказов */
+.menu-link-moderation-request svg .a {
+  fill: none; }
+
+.menu-link-moderation-request svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-moderation-request:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-moderation-request svg .b {
+  fill: #F86512; }
+
+/* иконка невостребованных заказов */
+.menu-link-moderation-unfavorite-request svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-moderation-unfavorite-request svg .b {
+  fill: none; }
+
+.menu-link-moderation-unfavorite-request:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-moderation-unfavorite-request svg .a {
+  fill: #F86512; }
+
+/* иконка платежные документы */
+.menu-link-moderation-pay-documents svg .a {
+  fill: none; }
+
+.menu-link-moderation-pay-documents svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-moderation-pay-documents:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-moderation-pay-documents svg .b {
+  fill: #F86512; }
+
+/* иконка баннеры */
+.menu-link-banners svg {
+  fill: #47A9FF; }
+
+.menu-link-banners:hover svg {
+  fill: #0389FF; }
+
+.active.menu-link-banners svg {
+  fill: #F86512; }
+
+/* иконка категории услуг */
+.menu-link-job-category svg .a {
+  fill: none; }
+
+.menu-link-job-category svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-job-category:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-job-category svg .b {
+  fill: #F86512; }
+
+/* иконка категории услуг */
+.menu-link-ads svg, .menu-link-ads-user svg, .menu-link-add-ads svg, .menu-link-archived-ads svg {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-ads:hover svg, .menu-link-ads-user:hover svg, .menu-link-add-ads:hover svg, .menu-link-archived-ads:hover svg {
+  fill: #0389FF; }
+
+.active.menu-link-ads svg, .active.menu-link-ads-user svg, .active.menu-link-add-ads svg, .active.menu-link-archived-ads svg {
+  fill: #F86512; }
+
+/* Меню в нижней части сайдбара */
+.bottom-menu-list {
+  position: relative;
+  padding: 20px 20px 50px 20px;
+  margin-top: auto; }
+
+/* Иконка для ЛК */
+.menu-link-share {
+  background: url("../img/sidebar/icon-sidebar-share.svg") no-repeat left center; }
+
+.menu-link-share:hover,
+.active.menu-link-share {
+  background: url("../img/sidebar/icon-sidebar-share-hover.svg") no-repeat left center; }
+
+/* Иконка контакты */
+.menu-link-contacts svg .a {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-contacts svg .b {
+  fill: none; }
+
+.menu-link-contacts:hover svg .a {
+  fill: #0389FF; }
+
+.active.menu-link-contacts svg .a {
+  fill: #F86512; }
+
+/* Иконка контакты */
+.menu-link-role svg .a {
+  fill: none; }
+
+.menu-link-role svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-role:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-role svg .b {
+  fill: #F86512; }
+
+/* Иконка помощь */
+.menu-link-help svg .a {
+  fill: none; }
+
+.menu-link-help svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-help:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-help svg .b {
+  fill: #F86512; }
+
+/* Иконка выставленные счета */
+.menu-link-exposed-bills svg .a {
+  fill: none; }
+
+.menu-link-exposed-bills svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-exposed-bills:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-exposed-bills svg .b {
+  fill: #F86512; }
+
+.menu-link-monitoring .a {
+  fill: none; }
+
+.menu-link-monitoring .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-monitoring:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-monitoring svg .b {
+  fill: #F86512; }
+
+.menu-link-marketplace-users .a {
+  fill: none; }
+
+.menu-link-marketplace-users .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+/* Иконка Пункты меню */
+.menu-link-main-menu-edit .a {
+  fill: none; }
+
+.menu-link-main-menu-edit .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-main-menu-edit:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-main-menu-edit svg .b {
+  fill: #F86512; }
+
+.menu-link-marketplace-users:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-marketplace-users svg .b {
+  fill: #F86512; }
+
+.menu-link-role svg .a {
+  fill: none; }
+
+.menu-link-role svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-role:hover svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-role svg .b {
+  fill: #F86512; }
+
+.menu-link-special svg {
+  fill: #47A9FF;
+  width: 30px;
+  height: 30px; }
+
+.menu-link-special:hover svg, .menu-link-special:focus svg {
+  fill: #0389FF; }
+
+.menu-link-meter-devices svg .a {
+  fill: none; }
+
+.menu-link-meter-devices svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-meter-devices:hover svg .b, .menu-link-meter-devices:focus svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-meter-devices svg .b {
+  fill: #F86512; }
+
+/*быстрая оплата*/
+.menu-link-fast-payments svg .a {
+  fill: none; }
+
+.menu-link-fast-payments svg .b {
+  fill: #47A9FF;
+  fill-rule: evenodd; }
+
+.menu-link-fast-payments:hover svg .b, .menu-link-fast-payments:focus svg .b {
+  fill: #0389FF; }
+
+.active.menu-link-fast-payments svg .b {
+  fill: #F86512; }
+
+/*кнопки-подсказки*/
+.menu-tooltip {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: -35px;
+  z-index: 1000;
+  color: #47A9FF;
+  border: 4px solid #CBE7FF;
+  padding: 0;
+  text-align: center; }
+  .menu-tooltip:hover, .menu-tooltip:focus {
+    background-color: #47A9FF;
+    color: #ffffff;
+    border: 4px solid #47A9FF;
+    padding: 0; }
+
+/* min-width: 1220px */
+@media screen and (max-width: 1550px) {
+  .sidebar {
+    width: 300px;
+    padding-right: 25px;
+    padding-left: 25px;
+    background-position: left -11% bottom -4%, left -20% bottom -12%; }
+  .main-nav {
+    padding: 0 0 30px; }
+  .bottom-menu-list {
+    padding: 20px 0 0 0; }
+    .bottom-menu-list::before {
+      left: 0;
+      width: 100%;
+      margin-left: 0; } }
+
+/* min-width: 1024px */
+@media screen and (max-width: 1219px) {
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    z-index: 103;
+    padding-top: 50px;
+    visibility: hidden;
+    -webkit-transition: all ease;
+    -o-transition: all ease;
+    transition: all ease;
+    -webkit-transition-duration: .8s;
+    -o-transition-duration: .8s;
+    transition-duration: .8s; }
+  /* Для адаптивного меню показать/скрыть сайдбар */
+  .sidebar-show {
+    left: 0;
+    visibility: visible; }
+  /* Кнопка для открытия сайдбара */
+  .sidebar-menu-toggle {
+    display: block; }
+  /* Кнопка для закрытия сайдбара */
+  .sidebar-close {
+    display: block; }
+  /* Основное меню */
+  .main-nav {
+    height: 89%; } }
+
+@media (max-width: 1023px) {
+  .sidebar-menu-toggle {
+    margin-right: 0; } }
+
+@media (max-width: 479px) {
+  .sidebar-menu-toggle {
+    width: 33px;
+    height: 25px; }
+    .sidebar-menu-toggle span,
+    .sidebar-menu-toggle span::before,
+    .sidebar-menu-toggle span::after {
+      height: 5px; }
+    .sidebar-menu-toggle span::before {
+      top: 10px; }
+    .sidebar-menu-toggle span::after {
+      top: 20px; } }
