@@ -1,2 +1,47 @@
 ﻿body {
+    min-width: 320px;
+    height: 100%;
+    font-family: $primary-font-family;
+    font-size: $primary-font-size;
+    font-weight: $primary-font-weight;
+    color: $color-dark-blue;
+    background-color: $primary-background;
+}
+
+a {
+    text-decoration: none;
+    color: $color-dark-blue;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-impaired-img {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
 }

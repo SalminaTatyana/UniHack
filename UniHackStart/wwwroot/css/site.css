@@ -304,6 +304,173 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap; }
+
+body {
+  min-width: 320px;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #233D9A;
+  background-color: #ffffff; }
+
+a {
+  text-decoration: none;
+  color: #233D9A; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.visually-impaired-img {
+  display: none; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
 .pagination {
   margin: 0;
   padding: 0;
@@ -355,6 +522,137 @@ template {
 .pagination .secondary-btn {
   min-width: 100px;
   line-height: 14px; }
+
+.loader-wrapper {
+  position: fixed;
+  z-index: 1000;
+  bottom: 50%;
+  left: 0;
+  right: 0; }
+
+.loader {
+  margin: auto;
+  --background: linear-gradient(135deg, #23C4F8, #275EFE);
+  --shadow: rgba(39, 94, 254, 0.28);
+  --text: #6C7486;
+  --page: rgba(255, 255, 255, 0.36);
+  --page-fold: rgba(255, 255, 255, 0.52);
+  --duration: 3s;
+  width: 200px;
+  height: 140px;
+  position: relative; }
+  .loader:before, .loader:after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 120px;
+    top: 80%;
+    box-shadow: 0 16px 12px var(--shadow);
+    transform: rotate(var(--r)); }
+  .loader:before {
+    left: 4px; }
+  .loader:after {
+    --r: 6deg;
+    right: 4px; }
+  .loader div {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: relative;
+    z-index: 1;
+    perspective: 600px;
+    box-shadow: 0 4px 6px var(--shadow);
+    background-image: var(--background); }
+    .loader div ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative; }
+      .loader div ul li {
+        --r: 180deg;
+        --o: 0;
+        --c: var(--page);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transform-origin: 100% 50%;
+        color: var(--c);
+        opacity: var(--o);
+        transform: rotateY(var(--r));
+        animation: var(--duration) ease infinite; }
+        .loader div ul li:nth-child(2) {
+          --c: var(--page-fold);
+          animation: page-2 1s infinite; }
+        .loader div ul li:nth-child(3) {
+          --c: var(--page-fold);
+          animation: page-3 1s infinite; }
+        .loader div ul li:nth-child(4) {
+          --c: var(--page-fold);
+          animation: page-4 1s infinite; }
+        .loader div ul li:nth-child(5) {
+          --c: var(--page-fold);
+          animation: page-5 1s infinite; }
+        .loader div ul li svg {
+          width: 90px;
+          height: 120px;
+          display: block; }
+        .loader div ul li:first-child {
+          --r: 0deg;
+          --o: 1; }
+        .loader div ul li:last-child {
+          --o: 1; }
+  .loader span {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text); }
+
+@keyframes page-2 {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  35%, 100% {
+    opacity: 0; }
+  50%, 100% {
+    transform: rotateY(0deg); } }
+
+@keyframes page-3 {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  35%, 100% {
+    opacity: 0; }
+  50%, 100% {
+    transform: rotateY(0deg); } }
+
+@keyframes page-4 {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  35%, 100% {
+    opacity: 0; }
+  50%, 100% {
+    transform: rotateY(0deg); } }
+
+@keyframes page-5 {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  35%, 100% {
+    opacity: 0; }
+  50%, 100% {
+    transform: rotateY(0deg); } }
 
 /* Левый блок меню */
 .sidebar {
@@ -448,7 +746,7 @@ template {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 48px; }
+  margin-bottom: 25px; }
 
 /* Меню в сайдбаре */
 .main-nav {
@@ -587,459 +885,14 @@ template {
   transition: all 0.2s ease; }
 
 /* Иконка главная */
-.menu-link-main-page svg .a {
-  fill: none; }
-
-.menu-link-main-page svg .b {
+.menu-link svg {
   fill: #47A9FF;
   fill-rule: evenodd; }
 
-.menu-link-main-page:hover svg .b {
+.menu-link:hover svg {
   fill: #0389FF; }
 
-.active.menu-link-main-page svg .b {
-  fill: #F86512; }
-
-/* Иконка оплата */
-.menu-link-payment svg .a {
-  fill: none; }
-
-.menu-link-payment svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-payment:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-payment svg .b {
-  fill: #F86512; }
-
-/* Иконка ввод показаний */
-.menu-link-meter svg .a {
-  fill: none; }
-
-.menu-link-meter svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-meter:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-meter svg .b {
-  fill: #F86512; }
-
-/* Иконка история операций */
-.menu-link-history svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-history svg .b {
-  fill: none; }
-
-.menu-link-history:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-history svg .a {
-  fill: #F86512; }
-
-/* Иконка услуги */
-.menu-link-services svg .a {
-  fill: none; }
-
-.menu-link-services svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-services:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-services svg .b {
-  fill: #F86512; }
-
-.menu-link-marketplace-settings svg .a {
-  fill: none; }
-
-.menu-link-marketplace-settings svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-marketplace-settings:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-marketplace-settings svg .b {
-  fill: #F86512; }
-
-/* Иконка товары */
-.menu-link-goods svg .a {
-  fill: none; }
-
-.menu-link-goods svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-goods:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-goods svg .b {
-  fill: #F86512; }
-
-/* Иконка мои заказы */
-.menu-link-orders svg .a {
-  fill: none; }
-
-.menu-link-orders svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-orders:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-orders svg .b {
-  fill: #F86512; }
-
-/* Иконка лицевые счета */
-.menu-link-accounts svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-accounts svg .b {
-  fill: none; }
-
-.menu-link-accounts:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-accounts svg .a {
-  fill: #F86512; }
-
-.menu-link-moderator svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-moderator svg .b {
-  fill: none; }
-
-.menu-link-moderator:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-moderator svg .a {
-  fill: #F86512; }
-
-.menu-link-executor svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-executor svg .b {
-  fill: none; }
-
-.menu-link-executor:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-executor svg .a {
-  fill: #F86512; }
-
-/* Иконка обращения */
-.menu-link-treatment svg .a {
-  fill: none; }
-
-.menu-link-treatment svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-treatment:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-treatment svg .b {
-  fill: #F86512; }
-
-/* Иконка исполнитель */
-.menu-link-executor svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-executor svg .b {
-  fill: none; }
-
-.menu-link-executor:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-executor svg .a {
-  fill: #F86512; }
-
-/* Иконка собрания */
-.menu-link-meetings svg .a {
-  fill: none; }
-
-.menu-link-meetings svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-meetings:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-meetings svg .b {
-  fill: #F86512; }
-
-/* Иконка мой дом */
-.menu-link-my-home svg .a {
-  fill: none; }
-
-.menu-link-my-home svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-my-home:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-my-home svg .b {
-  fill: #F86512; }
-
-/* Иконка модерация исполнителей */
-.menu-link-moderation-emoloyee svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-moderation-emoloyee svg .b {
-  fill: none; }
-
-.menu-link-moderation-emoloyee:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-moderation-emoloyee svg .a {
-  fill: #F86512; }
-
-/* Иконка модерации заказов */
-.menu-link-moderation-request svg .a {
-  fill: none; }
-
-.menu-link-moderation-request svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-moderation-request:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-moderation-request svg .b {
-  fill: #F86512; }
-
-/* иконка невостребованных заказов */
-.menu-link-moderation-unfavorite-request svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-moderation-unfavorite-request svg .b {
-  fill: none; }
-
-.menu-link-moderation-unfavorite-request:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-moderation-unfavorite-request svg .a {
-  fill: #F86512; }
-
-/* иконка платежные документы */
-.menu-link-moderation-pay-documents svg .a {
-  fill: none; }
-
-.menu-link-moderation-pay-documents svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-moderation-pay-documents:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-moderation-pay-documents svg .b {
-  fill: #F86512; }
-
-/* иконка баннеры */
-.menu-link-banners svg {
-  fill: #47A9FF; }
-
-.menu-link-banners:hover svg {
-  fill: #0389FF; }
-
-.active.menu-link-banners svg {
-  fill: #F86512; }
-
-/* иконка категории услуг */
-.menu-link-job-category svg .a {
-  fill: none; }
-
-.menu-link-job-category svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-job-category:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-job-category svg .b {
-  fill: #F86512; }
-
-/* иконка категории услуг */
-.menu-link-ads svg, .menu-link-ads-user svg, .menu-link-add-ads svg, .menu-link-archived-ads svg {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-ads:hover svg, .menu-link-ads-user:hover svg, .menu-link-add-ads:hover svg, .menu-link-archived-ads:hover svg {
-  fill: #0389FF; }
-
-.active.menu-link-ads svg, .active.menu-link-ads-user svg, .active.menu-link-add-ads svg, .active.menu-link-archived-ads svg {
-  fill: #F86512; }
-
-/* Меню в нижней части сайдбара */
-.bottom-menu-list {
-  position: relative;
-  padding: 20px 20px 50px 20px;
-  margin-top: auto; }
-
-/* Иконка для ЛК */
-.menu-link-share {
-  background: url("../img/sidebar/icon-sidebar-share.svg") no-repeat left center; }
-
-.menu-link-share:hover,
-.active.menu-link-share {
-  background: url("../img/sidebar/icon-sidebar-share-hover.svg") no-repeat left center; }
-
-/* Иконка контакты */
-.menu-link-contacts svg .a {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-contacts svg .b {
-  fill: none; }
-
-.menu-link-contacts:hover svg .a {
-  fill: #0389FF; }
-
-.active.menu-link-contacts svg .a {
-  fill: #F86512; }
-
-/* Иконка контакты */
-.menu-link-role svg .a {
-  fill: none; }
-
-.menu-link-role svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-role:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-role svg .b {
-  fill: #F86512; }
-
-/* Иконка помощь */
-.menu-link-help svg .a {
-  fill: none; }
-
-.menu-link-help svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-help:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-help svg .b {
-  fill: #F86512; }
-
-/* Иконка выставленные счета */
-.menu-link-exposed-bills svg .a {
-  fill: none; }
-
-.menu-link-exposed-bills svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-exposed-bills:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-exposed-bills svg .b {
-  fill: #F86512; }
-
-.menu-link-monitoring .a {
-  fill: none; }
-
-.menu-link-monitoring .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-monitoring:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-monitoring svg .b {
-  fill: #F86512; }
-
-.menu-link-marketplace-users .a {
-  fill: none; }
-
-.menu-link-marketplace-users .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-/* Иконка Пункты меню */
-.menu-link-main-menu-edit .a {
-  fill: none; }
-
-.menu-link-main-menu-edit .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-main-menu-edit:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-main-menu-edit svg .b {
-  fill: #F86512; }
-
-.menu-link-marketplace-users:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-marketplace-users svg .b {
-  fill: #F86512; }
-
-.menu-link-role svg .a {
-  fill: none; }
-
-.menu-link-role svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-role:hover svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-role svg .b {
-  fill: #F86512; }
-
-.menu-link-special svg {
-  fill: #47A9FF;
-  width: 30px;
-  height: 30px; }
-
-.menu-link-special:hover svg, .menu-link-special:focus svg {
-  fill: #0389FF; }
-
-.menu-link-meter-devices svg .a {
-  fill: none; }
-
-.menu-link-meter-devices svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-meter-devices:hover svg .b, .menu-link-meter-devices:focus svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-meter-devices svg .b {
-  fill: #F86512; }
-
-/*быстрая оплата*/
-.menu-link-fast-payments svg .a {
-  fill: none; }
-
-.menu-link-fast-payments svg .b {
-  fill: #47A9FF;
-  fill-rule: evenodd; }
-
-.menu-link-fast-payments:hover svg .b, .menu-link-fast-payments:focus svg .b {
-  fill: #0389FF; }
-
-.active.menu-link-fast-payments svg .b {
+.active.menu-link svg {
   fill: #F86512; }
 
 /*кнопки-подсказки*/
