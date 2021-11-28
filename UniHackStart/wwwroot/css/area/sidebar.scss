@@ -14,8 +14,8 @@
     padding: 35px 0 20px 0;
     background: #fff url("../img/sidebar/bg/sidebar-blue-figure.svg") no-repeat left -13% bottom 5%;
     /*    background: url("../img/sidebar/bg/background-figure.svg") no-repeat left -5% bottom 5%;*/
-    -webkit-box-shadow: 6px 0px 30px -4px rgba(71,169,255,0.5);
-    box-shadow: 6px 0px 30px -4px rgba(71,169,255,0.5);
+    -webkit-box-shadow: 3px 0px 10px -4px rgba(71,169,255,0.2);
+    box-shadow: 3px 0px 10px -4px rgba(71,169,255,0.2);
 }
 
 /* Для адаптивного меню */
@@ -163,28 +163,10 @@
     }
 }
 
-// кастомный скрол
-.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: rgba($third-background, 0.75);
-}
-
-.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: rgba($third-background, 0.85);
-}
-
-.main-nav .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
-    background-color: rgba($third-background, 0.9) !important;
-}
-
-.main-nav .mCSB_inside > .mCSB_container {
-    margin-right: 20px;
-}
-// конец стилей кастомного скрола
 .main-nav .menu-list {
     height: 100%;
     overflow: hidden;
 }
-
 .main-nav .menu-item:last-child {
     margin-bottom: 0;
 }
@@ -205,37 +187,6 @@
     &:last-child {
         margin-bottom: 0;
     }
-}
-
-/* Счетчик для отображения количества чего-нибудь, например сообщений */
-.menu-item-counter-wrapper {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -12px;
-}
-
-.menu-item-counter {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    width: 24px;
-    height: 24px;
-    margin-left: auto;
-    font-size: 14px;
-    text-align: center;
-    line-height: 24px;
-    font-weight: 500;
-    color: $fourth-text-color;
-    vertical-align: middle;
-    background-color: $secondary-background;
-    border-radius: $primary-border-radius;
 }
 
 .menu-link {
@@ -261,7 +212,8 @@
     }
 
     &:hover {
-        font-weight: 700;
+        font-weight: 500;
+        color: $active-secondary-button-background;
     }
 
     &.active {
@@ -279,7 +231,6 @@
     transition: all 0.2s ease;
 }
 
-/* Иконка главная */
 .menu-link svg {
 
         fill: $third-background;

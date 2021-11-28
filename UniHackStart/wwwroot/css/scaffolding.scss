@@ -37,6 +37,7 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 100%;
+    word-break: break-word;
 }
 
 *,
@@ -44,4 +45,240 @@ html {
 *::after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
+}
+.main-wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        /*            position: fixed;*/
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: url("../img/bg/all-figures.svg") no-repeat right 0 bottom 0;
+        /*        background: url(../img/bg/orange-figure.svg) no-repeat 0 10vh,url(../img/bg/white-figure.svg) no-repeat -3vw 20vh,url(../img/bg/blue-figure.svg) no-repeat -5vw -10vh;*/
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &::after {
+            position: fixed;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 2% 0 399px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+/* Затемнение основного фона */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255, 0.2);
+
+    @-moz-document url-prefix() {
+        background-color: $info-background;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: $info-background;
+    }
+
+    z-index: 102;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+/* кнопка наверх */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    display: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background-color: $third-background;
+    cursor: pointer;
+    border-radius: $third-border-radius;
+    opacity: 0.35;
+    transition: all 0.2s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    svg {
+        fill: $primary-background;
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+.scroll-to-top.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+/* Заголовки секций */
+.title {
+    margin: 0 0 0 34px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.breadcrumbs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 43px 0 0 34px;
+
+    li {
+        margin-bottom: 5px;
+
+        &::after {
+            content: "/";
+            margin: 0 3px;
+        }
+
+        &:last-child::after {
+            content: "";
+        }
+
+        a {
+            font-size: $primary-font-size;
+            line-height: 16px;
+            font-weight: 500;
+            color: $third-text-color;
+            border-bottom: 1px solid $primary-border-color;
+            -webkit-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $primary-text-color;
+                border-bottom: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: $big-desktop-width) {
+    .container {
+        padding-right: 2%
+    }
+}
+@media screen and (max-width: $mid-desktop-width) {
+    
+    .container {
+        padding-left: 340px;
+    }
+
+    
+    .block-title {
+        margin-left: 14px;
+        font-size: 28px;
+    }
+
+    .breadcrumbs {
+        margin-left: 14px;
+    }
+}
+
+@media screen and (max-width: $small-desktop-width) {
+    .container {
+        width: 100%;
+        max-width: 1124px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    main {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    .container {
+        max-width: 868px;
+    }
+    
+    .main-wrapper::after {
+        display: none;
+    }
+}
+@media screen and (max-width: $big-phone-width) {
+    .container {
+        max-width: 580px;
+    }
+
+    .block-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-left: 0;
+    }
+
+    .breadcrumbs {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: $phone-width) {
+    .container {
+        max-width: 375px;
+    }
+    
+    .block-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .breadcrumbs {
+        line-height: 24px;
+        margin: 15px 0 0 0;
+    }
 }

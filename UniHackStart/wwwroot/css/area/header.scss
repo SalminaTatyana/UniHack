@@ -1,0 +1,123 @@
+﻿.main-header {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px 15px; 
+    background-color:white;
+    border-radius: 10px;
+}
+.main-header-menu {
+    position: absolute;
+    right: 30px;
+    transition: ease;
+
+    &.active {
+        .header-menu-item {
+            display: flex;
+            transition: ease;
+        }
+
+        .main-header-button {
+            &:hover, &:focus {
+                svg {
+                    .a {
+                        fill: none
+                    }
+
+                    .b {
+                        fill: $active-secondary-button-background;
+                    }
+                }
+            }
+
+            svg {
+                transform: rotate(180deg);
+
+                .a {
+                    fill: none
+                }
+
+                .b {
+                    fill: $third-text-color;
+                }
+            }
+        }
+    }
+}
+.header-menu-item {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    transition: ease;
+
+    &:first-of-type {
+        display: flex;
+    }
+
+    &:hover, &:focus {
+        .header-menu-img {
+            svg {
+                fill: $active-secondary-button-background;
+            }
+        }
+
+        .header-menu-link {
+            color: $active-secondary-button-background;
+            font-weight:700;
+        }
+    }
+}
+.header-menu-img {
+    width: 40px;
+    margin-right: 10px;
+
+    svg {
+        fill: $third-text-color
+    }
+}
+.header-menu-link {
+    font-size: 18px;
+    margin-bottom:15px;
+    display: block;
+}
+.main-header-button {
+    position: absolute;
+    right: -25px;
+    top: 6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        svg {
+            .a {
+                fill: none
+            }
+
+            .b {
+                fill: $active-secondary-button-background;
+            }
+        }
+    }
+
+    svg {
+        .a {
+            fill: none
+        }
+
+        .b {
+            fill: $primary-text-color;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .header-menu-item {
+        width: 168px;
+        justify-content: flex-end;
+        padding-right: 10px;
+    }
+    .header-menu-img {display:none}
+}
