@@ -13,8 +13,8 @@
     <div class="overlay"></div>
     @await Html.PartialAsync("MainMenu/_MainMenu")
 <div class="container">
-    <header class="header">
-        <button class="sidebar-menu-toggle" type="button"><span></span><span class="visually-hidden"></span></button>
+    <header class="header main-header">
+        <button class="sidebar-menu-toggle" type="button" onclick="openMenu()"><span></span><span class="visually-hidden"></span></button>
         @await Html.PartialAsync("Headers/_MainHeaders")
     </header>
     <main role="main" id="mainRender">
@@ -84,13 +84,21 @@
                 if (b == true) $('.loader-wrapper').fadeIn(10);
                 else $('.loader-wrapper').fadeOut(10);
             } else $('.loader-wrapper').fadeToggle(10);
+            
         }
         window.onbeforeunload = function () {
+            $('.overlay').addClass('active');
             $('.loader').fadeIn(10);
             setTimeout(function () {
                 Loader(false);
             }, 105000); //hide loader
         };
+        function openMenu() {
+            var overlay = $('.overlay');
+            var sidebarMenu = $('.sidebar');
+            overlay.toggleClass('active');
+            sidebarMenu.toggleClass('sidebar-show');
+        }
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 

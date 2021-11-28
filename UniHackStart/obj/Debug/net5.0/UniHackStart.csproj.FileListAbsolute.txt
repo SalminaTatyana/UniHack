@@ -406,3 +406,6 @@ C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMen
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\_Preloader.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMenu\_MainMenu_Student.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_MainHeaders.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderStudent.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderWithoutRole.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderTeacher.cshtml.g.cs

@@ -463,7 +463,8 @@ img {
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100%; }
+  height: 100%;
+  word-break: break-word; }
 
 *,
 *::before,
@@ -521,7 +522,7 @@ main {
   bottom: 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(3, 137, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: 102;
   cursor: pointer;
   visibility: hidden;
@@ -1205,3 +1206,80 @@ main {
       top: 10px; }
     .sidebar-menu-toggle span::after {
       top: 20px; } }
+
+.main-header {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-start;
+  padding: 25px 15px;
+  background-color: white;
+  border-radius: 10px; }
+
+.main-header-menu {
+  position: absolute;
+  right: 30px;
+  transition: ease; }
+  .main-header-menu.active .header-menu-item {
+    display: flex;
+    transition: ease; }
+  .main-header-menu.active .main-header-button:hover svg .a, .main-header-menu.active .main-header-button:focus svg .a {
+    fill: none; }
+  .main-header-menu.active .main-header-button:hover svg .b, .main-header-menu.active .main-header-button:focus svg .b {
+    fill: #0389FF; }
+  .main-header-menu.active .main-header-button svg {
+    transform: rotate(180deg); }
+    .main-header-menu.active .main-header-button svg .a {
+      fill: none; }
+    .main-header-menu.active .main-header-button svg .b {
+      fill: #83b4ff; }
+
+.header-menu-item {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+  transition: ease; }
+  .header-menu-item:first-of-type {
+    display: flex; }
+  .header-menu-item:hover .header-menu-img svg, .header-menu-item:focus .header-menu-img svg {
+    fill: #0389FF; }
+  .header-menu-item:hover .header-menu-link, .header-menu-item:focus .header-menu-link {
+    color: #0389FF;
+    font-weight: 700; }
+
+.header-menu-img {
+  width: 40px;
+  margin-right: 10px; }
+  .header-menu-img svg {
+    fill: #83b4ff; }
+
+.header-menu-link {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: block; }
+
+.main-header-button {
+  position: absolute;
+  right: -25px;
+  top: 6px;
+  border: none;
+  background: none;
+  cursor: pointer; }
+  .main-header-button:hover svg .a, .main-header-button:focus svg .a {
+    fill: none; }
+  .main-header-button:hover svg .b, .main-header-button:focus svg .b {
+    fill: #0389FF; }
+  .main-header-button svg .a {
+    fill: none; }
+  .main-header-button svg .b {
+    fill: #024a92; }
+
+@media (max-width: 767px) {
+  .header-menu-item {
+    width: 168px;
+    justify-content: flex-end;
+    padding-right: 10px; }
+  .header-menu-img {
+    display: none; } }
