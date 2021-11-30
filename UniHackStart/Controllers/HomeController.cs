@@ -17,7 +17,69 @@ namespace UniHackStart.Controllers
         {
             _logger = logger;
         }
-
+        //TimetableDayModel Monday1 =new TimetableDayModel { dateOfWeek = "",
+        //    weekNumber = 1, 
+        //    lesson1={ name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" }, 
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" }, 
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" }, 
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" }, 
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" } };
+        //TimetableDayModel Tuesday1 =  new TimetableDayModel
+        //{
+        //    dateOfWeek = "",
+        //    weekNumber = 1,
+        //    lesson1 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" }
+        //};
+        //TimetableDayModel Wednesday1 =  new TimetableDayModel
+        //{
+        //    dateOfWeek = "",
+        //    weekNumber = 1,
+        //    lesson1 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" }
+        //};
+        //TimetableDayModel Thursday1 =  new TimetableDayModel
+        //{
+        //    dateOfWeek = "",
+        //    weekNumber = 1,
+        //    lesson1 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" }
+        //};
+        //TimetableDayModel Friday1 =  new TimetableDayModel
+        //{
+        //    dateOfWeek = "",
+        //    weekNumber = 1,
+        //    lesson1 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" }
+        //};
+        //TimetableDayModel Saturday1 =  new TimetableDayModel
+        //{
+        //    dateOfWeek = "",
+        //    weekNumber = 1,
+        //    lesson1 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson2 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson3 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson4 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson5 = { name = "", teachername = "", time = "", place = "" },
+        //    lesson6 = { name = "", teachername = "", time = "", place = "" }
+        //};
         public IActionResult Index()
         {
             return View();

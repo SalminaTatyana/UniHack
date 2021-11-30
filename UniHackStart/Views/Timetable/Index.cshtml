@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Расписание";
+    ViewData["ActiveMenuLink"] = " menu-link-timetable";
+}
+<ul class="breadcrumbs">
+    <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
+    <li>
+        <a class="active"> @ViewData["Title"]</a>
+    </li>
+</ul>
+<section class="timetable-section">
+    <h1 class="block-title">Расписание</h1>
+    <partial name="_partialTimetableStudent" />
+</section>
