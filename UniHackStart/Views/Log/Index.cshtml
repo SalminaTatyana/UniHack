@@ -8,3 +8,25 @@
         <a class="active"> @ViewData["Title"]</a>
     </li>
 </ul>
+<section class="timetable-section">
+    <h1 class="block-title">Журнал</h1>
+    <partial name="_partialStudentLog" />
+</section>
+<script>
+    function dropMenu(btn) {
+        var panel = $(btn).parents('.all-payments-drop-item').find('.accordion-panel'); //находим открываемую часть в карточке
+        var img = $(btn).find('img'); //находим картинку стрелки на кнопке
+        if (panel.attr('style')) { //проверяем на наличие атрибута
+            panel.removeAttr('style');//если он есть убираем
+            img.attr('src', '/img/arrow-down.svg')//меняем картику стрелки на синюю, смотрящую вниз
+        }
+        else {
+            var x = panel[0].scrollHeight + 20;//переменная для определения размера открываемой части
+            var p = String('padding-bottom: 20px; max-height:' + x + 'px');//задаем минимальныую высоту открываемой части
+            panel.attr('style', p); //передаем в атрибут переменную с высотой открываемой части
+            img.attr('src', '/img/arrow-up-orange.svg');//меняем изображение стрелки на оранжевую
+
+        }
+
+    };
+</script>
