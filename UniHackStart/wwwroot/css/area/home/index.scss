@@ -32,20 +32,24 @@
     .timetable-card {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .timetable-date {
         margin-bottom: 15px;
+        min-width: 55px;
     }
 
     .timetable-lesson-item {
         display: flex;
         justify-content: flex-start;
         margin-bottom: 15px;
+        flex-wrap: wrap;
     }
 
     .timetable-lesson-time {
         width: 50px;
+        min-width: 55px;
         margin-right: 15px;
     }
 
@@ -57,9 +61,22 @@
     .timetable-lesson-teacher {
         width: 25%;
         flex-grow: 1;
+        min-width: 200px;
     }
 
     .timetable-lesson-place {
-         width: 25%;
+        width: 25%;
+        min-width: 100px;
+    }
+}
+@media (max-width: 1023px) {
+    .timetable-wrapper, .deadline-wrapper {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+@media (max-width: 468px) {
+    .timetable .timetable-lesson-item {
+        flex-direction: column;
     }
 }

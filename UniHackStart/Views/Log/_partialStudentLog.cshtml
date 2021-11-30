@@ -1,4 +1,69 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿<div  class="serviceForm all-payments-drop-form">
+    <div class="all-payments-drop-wrapper">
+        <div class="all-payments-item">
+            <div class="all-payments-drop-list">
+                <div class="all-payments-drop-item">
+                    <div class="all-payments-drop-accordion-btn">
+                        <div class="all-payments-body">
+                            <div class="all-payments-address">
+                                <p class="appress-name">
+                                   Предмет
+                                </p>
+                                <p class="address-number">Преподаватель</p>
+                            </div>
+                            <div class="to-pay-paid">
+                                Сейчас баллов: 
+                            </div>
+                            <div class="to-pay-fee">
+                               
+                                Всего возможно баллов:
+                            </div>
+                            <div class="to-pay-total">
+                                Активность
+                            </div>
+                            <button class="all-payments-dropdown-btn" type="button" onclick="dropMenu(this)">
+                                <img src="~/img/arrow-down.svg" alt="Открыть">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="all-payments-panel accordion-panel">
+                       <div class="log-table">
+                           <div class="log-table-header">
+                               <div class="log-data">
+                                   Дата: 
+                               </div>
+                               <div class="log-mark">
+                                   Балл: 
+                               </div>
+                               <div class="log-max-mark">
+                                   Максимальный балл:
+                               </div>
+                               <div class="log-homework">
+                                   Домашнее задание: 
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+<script>
+    function dropMenu(btn) {
+        var panel = $(btn).parents('.all-payments-drop-item').find('.accordion-panel'); //находим открываемую часть в карточке
+        var img = $(btn).find('img'); //находим картинку стрелки на кнопке
+        if (panel.attr('style')) { //проверяем на наличие атрибута
+            panel.removeAttr('style');//если он есть убираем
+            img.attr('src', '/img/arrow-down.svg')//меняем картику стрелки на синюю, смотрящую вниз
+        }
+        else {
+            var x = panel[0].scrollHeight + 20;//переменная для определения размера открываемой части
+            var p = String('padding-bottom: 20px; max-height:' + x + 'px');//задаем минимальныую высоту открываемой части
+            panel.attr('style', p); //передаем в атрибут переменную с высотой открываемой части
+            img.attr('src', '/img/arrow-up-orange.svg');//меняем изображение стрелки на оранжевую
+
+        }
+
+    };
+</script>

@@ -76,33 +76,37 @@
 
         <footer class="border-top footer text-muted">
         </footer>
-        </div>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        <script>
-            function Loader(b) {
-                if (typeof b === "boolean") {
-                    if (b == true) $('.loader-wrapper').fadeIn(10);
-                    else $('.loader-wrapper').fadeOut(10);
-                } else $('.loader-wrapper').fadeToggle(10);
+    </div>
 
-            }
-            window.onbeforeunload = function () {
-                $('.overlay').addClass('active');
-                Loader(true);
-                setTimeout(function () {
-                    Loader(false);
-                }, 105000); //hide loader
-            };
-            function openMenu() {
-                var overlay = $('.overlay');
-                var sidebarMenu = $('.sidebar');
-                overlay.toggleClass('active');
-                sidebarMenu.toggleClass('sidebar-show');
-            }
-        </script>
-        @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" asp-append-version="true">
+    <script src="~/lib/select2/js/select2.min.js" asp-append-version="true"></script>
+    <script src="~/lib/select2/js/i18n/ru.js" asp-append-version="true"></script>
+    <script>
+        function Loader(b) {
+            if (typeof b === "boolean") {
+                if (b == true) $('.loader-wrapper').fadeIn(10);
+                else $('.loader-wrapper').fadeOut(10);
+            } else $('.loader-wrapper').fadeToggle(10);
+
+        }
+        window.onbeforeunload = function () {
+            $('.overlay').addClass('active');
+            Loader(true);
+            setTimeout(function () {
+                Loader(false);
+            }, 105000); //hide loader
+        };
+        function openMenu() {
+            var overlay = $('.overlay');
+            var sidebarMenu = $('.sidebar');
+            overlay.toggleClass('active');
+            sidebarMenu.toggleClass('sidebar-show');
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>

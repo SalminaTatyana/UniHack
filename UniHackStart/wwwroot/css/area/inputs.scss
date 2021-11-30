@@ -1,0 +1,414 @@
+﻿// Заголовок для блоков внутри формы
+.form-block-title {
+    @include reset;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $primary-text-color;
+}
+
+.main-label {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #47a9ff;
+}
+
+.form-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+    /*padding: 10px 13px 8px;*/ /* вернуть если шрифт поменяется на другой, не багнутый */
+    padding: 4px 13px 8px; /* убрать если шрифт поменяется на другой, не багнутый */
+    font-size: 16px;
+    line-height: 24px; /* убрать если шрифт поменяется на другой, не багнутый */
+    font-weight: 500;
+    color: $primary-text-color;
+    font-family: "Gramatika", "Arial", "sans-serif";
+    border: 2px solid $primary-border-color;
+    border-radius: $primary-border-radius;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    &::-webkit-input-placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+
+    &::-moz-placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+
+    &:-ms-input-placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+
+    &::-ms-input-placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+
+    &::placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: $third-border-color;
+        outline: none;
+    }
+}
+
+.form-textarea {
+    resize: none;
+}
+
+// Чекбоксы
+
+.main-checkbox-text {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: $primary-text-color;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &.check-disabled {
+        cursor: default;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgb(128, 128, 128);
+            border-radius: 4px;
+            background-color: #ffffff;
+            cursor: default;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border: 2px solid $primary-border-color;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+
+    &.left {
+        padding: 0 0 0 37px;
+
+        &::before {
+            top: 2px;
+            left: 4px;
+            z-index: 2;
+        }
+
+        &::after {
+            top: 0px;
+            left: 2px;
+        }
+    }
+
+    &.right {
+        padding: 0 37px 0 0;
+
+        &::before {
+            top: 2px;
+            right: 4px;
+            z-index: 2;
+        }
+
+        &::after {
+            top: 0px;
+            right: 2px;
+        }
+    }
+}
+
+.check-disabled::after {
+    background: #d8d8d8 url("../../img/flag-disable.svg") no-repeat center !important;
+}
+
+.main-checkbox input:checked + .main-checkbox-text::after {
+    background: #ffffff url("../img/flag.svg") no-repeat center;
+}
+
+.main-checkbox input:hover + .main-checkbox-text::after,
+.main-checkbox input:focus + .main-checkbox-text::after {
+    border-color: $third-border-color;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.main-checkbox input:hover + .main-checkbox-text.check-disabled::after,
+.main-checkbox input:focus + .main-checkbox-text.check-disabled::after {
+    border-color: grey;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+/* 
+ * радиокнопка
+ * делается как чекбокс,
+ * только нужно накинуть класс .main-radio-input
+ * на input
+ */
+.main-radio-input + .main-checkbox-text {
+    &::before,
+    &::after {
+        border-radius: 50%;
+    }
+}
+
+/************************************************/
+
+/* Форма поиска */
+.form-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.form-search .form-input {
+    width: 470px;
+    margin-right: 10px;
+}
+
+.select {
+    padding: 5px 13px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 10px;
+    color: $primary-text-color;
+    border: 2px solid $primary-border-color;
+    border-radius: $primary-border-radius;
+}
+
+// Инпут с загрузкой файлов
+.form-file-field {
+    width: 100%;
+}
+
+.form-file-field .btn-tertiary {
+    position: relative;
+    display: block;
+    padding: 20px 30px 20px 80px;
+    color: $primary-text-color;
+    font-weight: 700;
+    border: 3px solid $primary-border-color;
+    border-radius: $primary-border-radius;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.form-file-field .input-file:hover + .btn-tertiary,
+.form-file-field .input-file:focus + .btn-tertiary {
+    border-color: $third-border-color;
+}
+
+.form-file-field .input-file + .js-labelFile {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: -12px 0 0 -12px;
+        background: url("../img/services/icon-add-blue.svg") no-repeat center;
+        background-size: 100%;
+    }
+
+    &.has-file::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url("../img/flag.svg") no-repeat center;
+    }
+}
+
+/*******************************/
+
+/* Чекбокс / радиокнопки с текстом внутри */
+.secondary-checkbox-list {
+    @include reset-list;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.secondary-checkbox-list li {
+    &:first-child span {
+        border-top-left-radius: $primary-border-radius;
+        border-bottom-left-radius: $primary-border-radius;
+    }
+
+    &:last-child span {
+        border-top-right-radius: $primary-border-radius;
+        border-bottom-right-radius: $primary-border-radius;
+    }
+}
+
+.secondary-checkbox .secondary-checkbox-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 6px 10px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: $fourth-text-color;
+    background-color: $third-background;
+    border: 3px solid $primary-border-color;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.secondary-checkbox input:checked + .secondary-checkbox-text {
+    background-color: $primary-background;
+    border-color: $fourth-border-color;
+    color: $secondary-text-color;
+}
+
+.secondary-checkbox-text:hover,
+.secondary-checkbox-text:focus {
+    background-color: $primary-background;
+    border-color: $fourth-border-color;
+    color: $secondary-text-color;
+}
+
+// datepicker
+.form-field .datepicker {
+    /*padding: 10px 13px 8px;*/ /* вернуть если шрифт поменяется на другой, не багнутый */
+    padding: 4px 13px 6px !important; /* убрать если шрифт поменяется на другой, не багнутый */
+    border-radius: $primary-border-radius !important;
+}
+
+// чекбокс с флагом без обводки
+.third-checkbox-text {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: $third-text-color;
+    text-decoration: underline;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+        color: $secondary-text-color;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+    }
+
+    &.left {
+        padding: 0 0 0 37px;
+
+        &::before {
+            top: 2px;
+            left: 4px;
+            z-index: 2;
+        }
+
+        &::after {
+            top: 0;
+            left: 2px;
+        }
+    }
+
+    &.right {
+        padding: 0 37px 0 0;
+
+        &::before {
+            top: 2px;
+            right: 4px;
+            z-index: 2;
+        }
+
+        &::after {
+            top: 0;
+            right: 2px;
+        }
+    }
+}
+
+.third-checkbox input:checked + .third-checkbox-text {
+    color: $primary-text-color;
+    text-decoration: none;
+}
+
+.third-checkbox input:checked + .third-checkbox-text::after {
+    background: url("../img/flag.svg") no-repeat center;
+}
+
+.third-checkbox input:hover + .third-checkbox-text::after,
+.third-checkbox input:focus + .third-checkbox-text::after {
+    border-color: $third-border-color;
+}
