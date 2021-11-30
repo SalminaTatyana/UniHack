@@ -1,0 +1,17 @@
+﻿.contacts-content a {
+    font-weight: 400;
+    color: $third-text-color;
+    white-space: nowrap;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+        color: $secondary-text-color;
+        text-decoration: none;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}

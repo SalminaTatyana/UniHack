@@ -409,3 +409,17 @@ C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderStudent.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderWithoutRole.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderTeacher.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexStudent.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexWithoutRole.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialTimetable.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialStudentDeadline.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\_partialStudentLog.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\_partialTeacherLog.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Statments\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Teachers\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialTimetableStudent.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialTimetableAll.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialTimetableTeacher.cshtml.g.cs

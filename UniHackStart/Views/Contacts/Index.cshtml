@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Главная";
+    ViewData["ActiveMenuLink"] = "menu-link-contacts";
+}
+<ul class="breadcrumbs">
+    <li><a asp-controller="Home" asp-action="Index">Контакты</a></li>
+    <li>
+        <a class="active"> @ViewData["Title"]</a>
+    </li>
+</ul>
+<section class="appeal">
+    <h1 class="block-title">Контакты</h1>
+    <div class="contacts-container">
+        <div class="contacts-content">
+            <div class="contacts-content-info">
+                <p>
+                    Для получения дополнительной информации Вы можете поситить группу <a target="_blank" href="https://vk.com/diti_mephi">«ВКонтакте»</a> и официальный сайт <a target="_blank" href="https://diti-mephi.ru/">ДИТИ НИЯУ МИФИ</a>
+                </p>
+            </div>
+            <div class="contacts-content-info">
+                <h2>Режимы работы технической поддержки сайта:</h2>
+                <p>С понедельника по пятницу с 8:00 до 18:00</p>
+                <p>Суббота, Воскресенье выходной</p>
+                <h3>Телефон:</h3>
+                <p>ул. Куйбышева, 294, Димитровград, Ульяновская обл., 433511(3 корпус) <a href="tel:+7(84235)46309">+7 (84235) 4-63-09</a></p>
+                <p>пр. Димитрова, 4, Димитровград, Ульяновская обл., 433507(1 корпус) <a href="tel:+7(84235)46337">+7 (84235) 4-63-37</a></p>
+                <h3>Электронная почта:</h3>
+                <p>
+                    <a href="mailto:diti@mephi.ru">diti@mephi.ru</a>
+                </p>
+            </div>
+        </div>
+       
+    </div>
+</section>

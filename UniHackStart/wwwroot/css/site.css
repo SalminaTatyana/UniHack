@@ -586,7 +586,8 @@ main {
   flex-wrap: wrap;
   margin: 43px 0 0 34px; }
   .breadcrumbs li {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    list-style-type: none; }
     .breadcrumbs li::after {
       content: "/";
       margin: 0 3px; }
@@ -1283,3 +1284,200 @@ main {
     padding-right: 10px; }
   .header-menu-img {
     display: none; } }
+
+.index-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.timetable-wrapper, .deadline-wrapper {
+  overflow: hidden;
+  width: calc(50% - 20px);
+  margin-right: 20px; }
+
+.timetable {
+  width: 100%; }
+  .timetable .slick-prev {
+    left: 0;
+    z-index: 5; }
+  .timetable .slick-next {
+    right: 0; }
+  .timetable .slick-arrow::before {
+    color: #024a92; }
+  .timetable .slick-dots {
+    display: none !important; }
+  .timetable .timetable-card {
+    display: flex;
+    flex-direction: column; }
+  .timetable .timetable-date {
+    margin-bottom: 15px; }
+  .timetable .timetable-lesson-item {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px; }
+  .timetable .timetable-lesson-time {
+    width: 50px;
+    margin-right: 15px; }
+  .timetable .timetable-lesson-text {
+    width: 25%;
+    min-width: 200px; }
+  .timetable .timetable-lesson-teacher {
+    width: 25%;
+    flex-grow: 1; }
+  .timetable .timetable-lesson-place {
+    width: 25%; }
+
+.card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -15px 0; }
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(33.3% - 30px);
+  padding: 15px 4px 15px 26px;
+  margin: 25px 15px 25px;
+  background-color: white;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 10px 20px rgba(47, 131, 222, 0.2);
+  box-shadow: 0px 10px 20px rgba(47, 131, 222, 0.2);
+  border: 4px solid transparent;
+  border-radius: 20px; }
+  .card .icon {
+    margin: 10px auto; }
+  .card:hover, .card:focus {
+    -webkit-box-shadow: 0 10px 20px rgba(71, 169, 255, 0.5);
+    box-shadow: 0 10px 20px rgba(71, 169, 255, 0.5); }
+  .card:active {
+    box-shadow: none;
+    background: #F1F8FF; }
+
+.card-name {
+  font-size: 24px;
+  font-weight: 500;
+  word-break: break-word;
+  color: #024a92;
+  width: 100%;
+  text-align: center; }
+
+.card-description {
+  font-size: 16px;
+  line-height: 19px;
+  color: #d92419;
+  word-break: break-word;
+  font-weight: 500; }
+
+@media screen and (max-width: 1023px) {
+  /* Карточки на главной */
+  .card {
+    width: calc(50% - 30px); } }
+
+@media screen and (max-width: 767px) {
+  /* Карточки на главной */
+  .card-list {
+    margin: 21px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .card {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 0 25px;
+    min-height: 95px; } }
+
+.timetable-section .timetable-card {
+  display: flex;
+  flex-direction: column; }
+
+.timetable-section .timetable-date {
+  margin-bottom: 15px; }
+
+.timetable-section .timetable-lesson-item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px; }
+
+.timetable-section .timetable-lesson-time {
+  width: 50px;
+  margin-right: 15px; }
+
+.timetable-section .timetable-lesson-text {
+  width: 100%;
+  min-width: 200px; }
+
+.timetable-section .timetable-lesson-teacher {
+  width: 100%; }
+
+.timetable-section .timetable-lesson-place {
+  width: 100%; }
+
+.timetable-section .timetable-lesson-teacher-place-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 32px -10px 0 22px; }
+  .tabs > li {
+    width: calc(16.6% - 20px);
+    margin: 0 10px 20px; }
+    .tabs > li:last-child {
+      margin-right: 0; }
+
+.tab-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px 9px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #83b4ff;
+  -webkit-box-shadow: 0px 15px 20px rgba(47, 131, 222, 0.2);
+  box-shadow: 0px 15px 20px rgba(47, 131, 222, 0.2);
+  border-radius: 10px;
+  border: 4px solid #83b4ff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .tab-item:hover, .tab-item:focus, .tab-item.active {
+    background-color: #0389FF;
+    border-color: #0389FF;
+    color: white; }
+  .tab-item .dropdown-btn:hover, .tab-item .dropdown-btn:focus, .tab-item .dropdown-btn.active {
+    background-color: #0389FF !important;
+    border-color: #0389FF;
+    color: white; }
+
+.contacts-content a {
+  font-weight: 400;
+  color: #83b4ff;
+  white-space: nowrap;
+  text-decoration: underline;
+  transition: all 0.2s ease; }
+  .contacts-content a:hover, .contacts-content a:focus {
+    color: #d92419;
+    text-decoration: none; }
+  .contacts-content a:active {
+    opacity: 0.5; }

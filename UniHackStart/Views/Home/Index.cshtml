@@ -1,4 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная";
+    ViewData["ActiveMenuLink"] = "menu-link-main-page";
 }
 
+<partial name="_partialIndexStudent" />
+@*<partial name="_partialIndexRole" />*@
+<link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
+<link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
+<script src="~/lib/slick/slick.min.js" asp-append-version="true"></script>
+<script>
+    $('.slider').slick({ dots: true});
+</script>

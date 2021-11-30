@@ -1,0 +1,38 @@
+﻿
+<div class="index-wrapper">
+    <div class="timetable-wrapper">
+        <partial name="_partialTimetable" />
+    </div>
+    <div class="deadline-wrapper">
+        <partial name="_partialStudentDeadline" />
+    </div>
+</div>
+<section class="index-interesting">
+    <h2 class="block-title">Интересные страницы</h2>
+    <div class="card-list">
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/index/notebook-with-check-marks-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Успеваемость</b>
+        </a>
+        <a class="card" asp-controller="Teachers" asp-action="Index">
+            <img class="icon" src="~/img/index/teacher-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Преподаватели</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/index/homework-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Домашнее задание</b>
+        </a>
+        <a class="card" asp-controller="Timetable" asp-action="Index">
+            <img class="icon" src="~/img/sidebar/timetable.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Расписание</b>
+        </a>
+        <a class="card" asp-controller="Statments" asp-action="Index">
+            <img class="icon" src="~/img/index/document-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Заявления</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/index/news-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Новости</b>
+        </a>
+    </div>
+</section>

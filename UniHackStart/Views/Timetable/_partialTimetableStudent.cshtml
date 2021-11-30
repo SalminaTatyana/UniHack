@@ -1,0 +1,83 @@
+﻿
+
+<ul class="tabs payment-tabs">
+    <li><a class="tab-item payments active" onclick="setActiveTab('payments')" href="#tab-payments">Неделя 1</a></li>
+    <li><a class="tab-item recurring-payments" href="#tab-recurring-payments">Неделя 2</a></li>
+    <li><a class="tab-item recurring-payments" href="#tab-recurring-payments">Общее расписание</a></li>
+</ul>
+
+<div class="card-list">
+    @for (int i = 0; i < 6; i++)
+    {
+        <div class="card timetable-card">
+            <div class="timetable-date">День @(i+1) Неделя </div>
+            <div class="timetable-lesson-wrapper">
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+
+                </div>
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+                </div>
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+                </div>
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+                </div>
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+                </div>
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-time">Время</div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">Предмет</div>
+
+                        <div class="timetable-lesson-place">Кабинет</div>
+                        <div class="timetable-lesson-teacher">Преподаватель</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script>
+    function setActiveTab(tabActiveClass) {
+        tabActiveClass = tabActiveClass || 'payments';
+        if ($('#pay-page-tabstrip').find('.active').length) {
+            $('#pay-page-tabstrip').find('.active').removeClass('active');
+        }
+
+        $('.' + tabActiveClass).addClass('active');
+    }
+</script>

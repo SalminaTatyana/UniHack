@@ -1,0 +1,99 @@
+﻿.timetable-section {
+    .timetable-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .timetable-date {
+        margin-bottom: 15px;
+    }
+
+    .timetable-lesson-item {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .timetable-lesson-time {
+        width: 50px;
+        margin-right: 15px;
+    }
+
+    .timetable-lesson-text {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    .timetable-lesson-teacher {
+        width: 100%;
+    }
+
+    .timetable-lesson-place {
+        width: 100%;
+    }
+
+    .timetable-lesson-teacher-place-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+.tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    @include reset-list();
+    margin: 32px -10px 0 22px;
+
+    > li {
+        width: calc(16.6% - 20px);
+        margin: 0 10px 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.tab-item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px 9px;
+    font-size: $primary-font-size;
+    font-weight: 700;
+    text-align: center;
+    color: $fourth-text-color;
+    background-color: $third-background;
+    -webkit-box-shadow: 0px 15px 20px $primary-shadow-color;
+    box-shadow: 0px 15px 20px $primary-shadow-color;
+    border-radius: $primary-border-radius;
+    border: 4px solid $primary-border-color;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &.active {
+        background-color: #0389FF;
+        border-color: #0389FF;
+        color: white;
+    }
+
+    &[aria-selected] {
+    }
+
+    .dropdown-btn {
+        &:hover,
+        &:focus,
+        &.active {
+            background-color: #0389FF !important;
+            border-color: #0389FF;
+            color: white;
+        }
+    }
+}

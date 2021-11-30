@@ -11,96 +11,98 @@
 <body>
     <partial name="_Preloader" />
     <div class="overlay"></div>
-    @await Html.PartialAsync("MainMenu/_MainMenu")
-<div class="container">
-    <header class="header main-header">
-        <button class="sidebar-menu-toggle" type="button" onclick="openMenu()"><span></span><span class="visually-hidden"></span></button>
-        @await Html.PartialAsync("Headers/_MainHeaders")
-    </header>
-    <main role="main" id="mainRender">
-        @RenderBody()
-    </main>
-    <footer class="footer-with-table">
-        <table class="footer-table">
-            <tbody>
-                <tr class="footer-table-str-first">
-                    <td class="footer-contacts-support">
-                        <span>Служба техподдержки:</span>
-                    </td>
-                    <td class="footer-site">
-                        <span>© 2021</span>
-                        <a href="#">
-                            Ogooglebar
-                        </a>
-                    </td>
-                    <td class="footer-email">
-                        <p>
-                            <span>Электронная почта:</span>
-                            <a class="footer-mail-link" href="mailto:Ogooglebar@mail.ru">
-                                Ogooglebar@mail.ru
-                            </a>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="footer-table-mobile">
-            <tbody>
-                
-                <tr>
-                    <td class="footer-site">
-                        <span>© 2021</span>
-                        <a href="#">
-                            Ogooglebar
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="footer-email">
-                        <p>
-                            <span>Электронная почта:</span>
-                            <a class="footer-mail-link" href="mailto:Ogooglebar@mail.ru">
-                                Ogooglebar@mail.ru
-                            </a>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </footer>
-    <a class="scroll-to-top js-scroll" title="Наверх">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><path fill="none" d="M0 0h15v15H0z" /><path d="M.804 5.878a1.626 1.626 0 012.3-2.3l4.4 4.4 4.4-4.4a1.624 1.624 0 012.294 2.3l-5.551 5.543a1.616 1.616 0 01-2.294 0L.804 5.878z" /></svg>
-    </a>
-</div>
+    <div class="main-wrapper">
+        @await Html.PartialAsync("MainMenu/_MainMenu")
+        <div class="container">
+            <header class="header main-header">
+                <button class="sidebar-menu-toggle" type="button" onclick="openMenu()"><span></span><span class="visually-hidden"></span></button>
+                @await Html.PartialAsync("Headers/_MainHeaders")
+            </header>
+            <main role="main" id="mainRender">
+                @RenderBody()
+            </main>
+            <footer class="footer-with-table">
+                <table class="footer-table">
+                    <tbody>
+                        <tr class="footer-table-str-first">
+                            <td class="footer-contacts-support">
+                                <span>Служба техподдержки:</span>
+                            </td>
+                            <td class="footer-site">
+                                <span>© 2021</span>
+                                <a href="#">
+                                    Ogooglebar
+                                </a>
+                            </td>
+                            <td class="footer-email">
+                                <p>
+                                    <span>Электронная почта:</span>
+                                    <a class="footer-mail-link" href="mailto:Ogooglebar@mail.ru">
+                                        Ogooglebar@mail.ru
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="footer-table-mobile">
+                    <tbody>
 
-    <footer class="border-top footer text-muted">
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
-        function Loader(b) {
-            if (typeof b === "boolean") {
-                if (b == true) $('.loader-wrapper').fadeIn(10);
-                else $('.loader-wrapper').fadeOut(10);
-            } else $('.loader-wrapper').fadeToggle(10);
-            
-        }
-        window.onbeforeunload = function () {
-            $('.overlay').addClass('active');
-            $('.loader').fadeIn(10);
-            setTimeout(function () {
-                Loader(false);
-            }, 105000); //hide loader
-        };
-        function openMenu() {
-            var overlay = $('.overlay');
-            var sidebarMenu = $('.sidebar');
-            overlay.toggleClass('active');
-            sidebarMenu.toggleClass('sidebar-show');
-        }
-    </script>
-    @await RenderSectionAsync("Scripts", required: false)
+                        <tr>
+                            <td class="footer-site">
+                                <span>© 2021</span>
+                                <a href="#">
+                                    Ogooglebar
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="footer-email">
+                                <p>
+                                    <span>Электронная почта:</span>
+                                    <a class="footer-mail-link" href="mailto:Ogooglebar@mail.ru">
+                                        Ogooglebar@mail.ru
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </footer>
+            <a class="scroll-to-top js-scroll" title="Наверх">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><path fill="none" d="M0 0h15v15H0z" /><path d="M.804 5.878a1.626 1.626 0 012.3-2.3l4.4 4.4 4.4-4.4a1.624 1.624 0 012.294 2.3l-5.551 5.543a1.616 1.616 0 01-2.294 0L.804 5.878z" /></svg>
+            </a>
+        </div>
+
+        <footer class="border-top footer text-muted">
+        </footer>
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script>
+            function Loader(b) {
+                if (typeof b === "boolean") {
+                    if (b == true) $('.loader-wrapper').fadeIn(10);
+                    else $('.loader-wrapper').fadeOut(10);
+                } else $('.loader-wrapper').fadeToggle(10);
+
+            }
+            window.onbeforeunload = function () {
+                $('.overlay').addClass('active');
+                Loader(true);
+                setTimeout(function () {
+                    Loader(false);
+                }, 105000); //hide loader
+            };
+            function openMenu() {
+                var overlay = $('.overlay');
+                var sidebarMenu = $('.sidebar');
+                overlay.toggleClass('active');
+                sidebarMenu.toggleClass('sidebar-show');
+            }
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
