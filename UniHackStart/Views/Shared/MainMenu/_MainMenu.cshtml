@@ -5,8 +5,11 @@
     </a>
     <nav class="main-nav">
         <div class="menu-list main-menu-list">
-            <partial name="MainMenu/_MainMenu_Student" />
-            @*<partial name="MainMenu/_MainMenu_WithoutRole" />*@
+            @if (ViewBag.Role == "1")
+            {<partial name="MainMenu/_MainMenu_Student" />}
+            else { 
+        <partial name="MainMenu/_MainMenu_WithoutRole" />}
+
         </div>
         
     </nav>

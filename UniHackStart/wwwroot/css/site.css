@@ -1449,6 +1449,9 @@ main {
     width: calc(25% - 20px);
     margin-right: 20px; }
 
+.all-payments-body {
+  padding: 15px 20px; }
+
 .accordion-btn {
   position: relative;
   margin: 0;
@@ -2754,3 +2757,134 @@ main {
 .third-checkbox input:hover + .third-checkbox-text::after,
 .third-checkbox input:focus + .third-checkbox-text::after {
   border-color: #d92419; }
+
+.login-as-org-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 40px;
+  /*    max-width: 700px;*/
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  .login-as-org-list #choose-role {
+    width: 320px;
+    margin: 15px; }
+    @media (max-width: 767px) {
+      .login-as-org-list #choose-role {
+        width: 100%;
+        margin: 0; }
+        .login-as-org-list #choose-role svg {
+          height: 24px;
+          width: 24px; } }
+  .login-as-org-list .card {
+    padding: 20px 30px !important;
+    flex-direction: column;
+    text-align: left;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    min-height: 110px !important;
+    margin: 0; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .login-as-org-list .card {
+        padding: 40px 30px !important; } }
+    .login-as-org-list .card .icon {
+      margin: 0 auto; }
+    @media (max-width: 767px) {
+      .login-as-org-list .card {
+        flex-direction: column !important; } }
+    @media (max-width: 1549px) {
+      .login-as-org-list .card {
+        margin-left: 14px; } }
+    @media (max-width: 767px) {
+      .login-as-org-list .card {
+        margin: 10px 0 0;
+        min-height: 50px !important; } }
+
+.login-as-org-list .login-as-org {
+  display: -webkit-box;
+  display: -ms-flexbox !important;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #024a92;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  /*  &:hover,
+    &:focus {
+        background-color: $gray-background;
+    }*/ }
+  @media (max-width: 767px) {
+    .login-as-org-list .login-as-org {
+      font-size: 16px; } }
+  .login-as-org-list .login-as-org img {
+    margin-right: 18px; }
+  .login-as-org-list .login-as-org .choose-role-link svg {
+    top: 15%; }
+    @media (max-width: 767px) {
+      .login-as-org-list .login-as-org .choose-role-link svg {
+        top: 40%; } }
+  .login-as-org-list .login-as-org .choose-role-wrapper {
+    margin-left: 20px; }
+    @media (max-width: 767px) {
+      .login-as-org-list .login-as-org .choose-role-wrapper {
+        margin-left: 10px; } }
+  .login-as-org-list .login-as-org.active {
+    box-shadow: none;
+    background: #F1F8FF;
+    color: #d92419; }
+  @media (max-width: 767px) {
+    .login-as-org-list .login-as-org {
+      padding: 15px 25px; } }
+
+@media (max-width: 1023px) {
+  .profile-login {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify; }
+  .profile-login-header {
+    text-align: center; }
+  .profile-login-header-text {
+    text-align: center; }
+  .profile-login-header-mobile {
+    display: block;
+    margin-top: 15px; }
+  .profile-login .profile-login-btn {
+    max-width: 250px; }
+  .profile-login-note {
+    display: none; } }
+
+@media (max-width: 580px) {
+  .profile-login {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .profile-login .profile-login-btn {
+    max-width: 205px;
+    height: auto; }
+    .profile-login .profile-login-btn img {
+      width: 75px; }
+  .profile-login-header-mobile {
+    display: none; }
+  .profile-login-note {
+    display: block; } }
+
+@media (max-width: 479px) {
+  .profile-login .profile-login-btn {
+    max-width: 200px;
+    height: 80px; }
+    .profile-login .profile-login-btn img {
+      width: 120px; }
+  .profile-login-note {
+    font-size: 12px;
+    font-weight: 500; } }
