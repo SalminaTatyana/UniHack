@@ -1,0 +1,18 @@
+﻿@model UniHackStart.Models.WeekTimetableModel
+<div class="card timetable-card">
+    <div class="timetable-date">День @Model.dateOfWeek Неделя @Model.weekNumber</div>
+    <div class="timetable-lesson-wrapper">
+        @for (int i = 0; i < 6; i++)
+        {
+            <div class="timetable-lesson-item">
+                <div class="timetable-lesson-time">@Model.time</div>
+                <div class="timetable-lesson-teacher-place-wrapper">
+                    <div class="timetable-lesson-text">@Model.name</div>
+                    <div class="timetable-lesson-place">@Model.place</div>
+                    <div class="timetable-lesson-teacher">@Model.teachername</div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,83 +1,49 @@
-﻿
-
+﻿@using UniHackStart.Models;
+@{int n = 1;}
 <ul class="tabs payment-tabs">
-    <li><a class="tab-item payments active" onclick="setActiveTab('payments')" href="#tab-payments">Неделя 1</a></li>
-    <li><a class="tab-item recurring-payments" href="#tab-recurring-payments">Неделя 2</a></li>
-    <li><a class="tab-item recurring-payments" href="#tab-recurring-payments">Общее расписание</a></li>
+    <li><button class="tab-item payments active" id ="abc" onclick="setActiveTab(this,1)" >Неделя 1</button></li>
+    <li><button class="tab-item recurring-payments"onclick="setActiveTab(this,2)" >Неделя 2</button></li>
+    <li><button class="tab-item all-payments" onclick="setActiveTab(this,3)">Общее расписание</button></li>
 </ul>
 
 <div class="card-list">
     @for (int i = 0; i < 6; i++)
     {
-        <div class="card timetable-card">
-            <div class="timetable-date">День @(i+1) Неделя </div>
-            <div class="timetable-lesson-wrapper">
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
+            @await Html.PartialAsync("_partialWeekTimetable", new WeekTimetableModel
+       {
+           dateOfWeek="1", 
+           weekNumber=1,
+           name ="Электротехника",
+           teachername="Шмигирилов Ю.Г.",
+           time="" ,
+           place="3-104"
+        })}
 
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-
-                </div>
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
-
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-                </div>
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
-
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-                </div>
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
-
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-                </div>
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
-
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-                </div>
-                <div class="timetable-lesson-item">
-                    <div class="timetable-lesson-time">Время</div>
-                    <div class="timetable-lesson-teacher-place-wrapper">
-                        <div class="timetable-lesson-text">Предмет</div>
-
-                        <div class="timetable-lesson-place">Кабинет</div>
-                        <div class="timetable-lesson-teacher">Преподаватель</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
 </div>
 <script>
-    function setActiveTab(tabActiveClass) {
-        tabActiveClass = tabActiveClass || 'payments';
-        if ($('#pay-page-tabstrip').find('.active').length) {
-            $('#pay-page-tabstrip').find('.active').removeClass('active');
+    function setActiveTab(btn,n) {
+        var tab = $(".tab-item");
+        for (var i = 0; i < tab.length; i++) {
+            tab.removeClass('active');
         }
+        $(btn).addClass('active');
+        getTimetable(n);
+    }
+    function getTimetable(na) {
+        $('.card-list').html("");
+        $.ajax({
+            url: "@Url.Action("GetTimetable", "Timetable")",
+            type: 'POST',
+            data: { "n" : String(na) },
+            success: function (data) {
+                for (var i = 0; i < 6; i++) {
+                    $('.card-list').append(data);
+                }
 
-        $('.' + tabActiveClass).addClass('active');
+                },
+            error: function (data) {
+                $('.card-list').append(data);
+                }
+        });
     }
 </script>

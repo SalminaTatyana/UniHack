@@ -1,0 +1,181 @@
+﻿.login-as-org-list {
+    @include reset-list;
+    margin-top: 40px;
+    /*    max-width: 700px;*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    #choose-role {
+        width: 320px;
+        margin: 15px;
+
+        @media (max-width: 767px) {
+            width: 100%;
+            margin: 0;
+
+            svg {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+
+    .card {
+        
+        padding: 20px 30px !important;
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            padding: 40px 30px !important;
+        }
+        .icon {margin:0 auto;}
+        flex-direction: column;
+        text-align: left;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        min-height: 110px !important;
+        margin: 0;
+
+        @media (max-width: 767px) {
+            flex-direction: column !important;
+        }
+
+
+        @media (max-width: 1549px) {
+            margin-left: 14px;
+        }
+
+        @media (max-width: 767px) {
+            margin: 10px 0 0;
+            min-height: 50px !important;
+        }
+    }
+}
+
+.login-as-org-list .login-as-org {
+    display: -webkit-box;
+    display: -ms-flexbox !important;
+    flex-direction: row;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $primary-text-color;
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    @media (max-width: 767px) {
+        font-size: 16px;
+    }
+
+    img {
+        margin-right: 18px;
+    }
+
+    .choose-role-link svg {
+        top: 15%;
+
+        @media (max-width: 767px) {
+            top: 40%;
+        }
+    }
+
+    .choose-role-wrapper {
+        margin-left: 20px;
+
+        @media (max-width: 767px) {
+            margin-left: 10px;
+        }
+    }
+
+    &.active {
+        box-shadow: none;
+        background: $active-card-background;
+        color: $secondary-text-color;
+    }
+    /*  &:hover,
+    &:focus {
+        background-color: $gray-background;
+    }*/
+    @media (max-width: 767px) {
+        padding: 15px 25px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .profile-login {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    }
+
+    .profile-login-header {
+        text-align: center;
+    }
+
+    .profile-login-header-text {
+        text-align: center;
+    }
+
+    .profile-login-header-mobile {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .profile-login .profile-login-btn {
+        max-width: 250px;
+    }
+
+    .profile-login-note {
+        display: none;
+    }
+}
+
+@media (max-width: 580px) {
+    .profile-login {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .profile-login .profile-login-btn {
+        max-width: 205px;
+        height: auto;
+
+        img {
+            width: 75px;
+        }
+    }
+
+    .profile-login-header-mobile {
+        display: none;
+    }
+
+    .profile-login-note {
+        display: block;
+    }
+}
+
+@media (max-width: 479px) {
+    .profile-login .profile-login-btn {
+        max-width: 200px;
+        height: 80px;
+
+        img {
+            width: 120px;
+        }
+    }
+
+    .profile-login-note {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

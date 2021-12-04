@@ -424,3 +424,5 @@ C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_par
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialTimetableAll.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialTimetableTeacher.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Teachers\_partialTeachers.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Timetable\_partialWeekTimetable.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialChooseRole.cshtml.g.cs
