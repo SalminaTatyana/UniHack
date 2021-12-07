@@ -10,35 +10,8 @@ namespace UniHackStart.Controllers
 {
     public class ContactsController : Controller
     {
-        public string UserRole()
-        {
-            string userRole;
-            string path = @"C:\Институт\Uni\UniHackStart\wwwroot\role\Role.txt";
-            using (StreamReader fstream = new StreamReader(path))
-            {
-                byte[] output = new byte[1];
-                userRole = fstream.ReadLine();
-
-                fstream.Close();
-            }
-            if (userRole == "1")
-            {
-                StreamWriter writer = new StreamWriter(path);
-                writer.Close();
-                return "1";
-            }
-            if (userRole == "2")
-            {
-                StreamWriter writer = new StreamWriter(path);
-                writer.Close();
-                return "2";
-            }
-            return "0";
-        }
         public IActionResult Index()
         {
-            var role = UserRole();
-            ViewBag.Role = role;
             return View();
         }
     }
