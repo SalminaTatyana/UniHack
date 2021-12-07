@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniHackStart", "UniHackStart\UniHackStart.csproj", "{226A750B-FE23-4B45-9BDC-07FADCC878E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniHackStart.Util", "ExcelParser\UniHackStart.Util.csproj", "{CE339E60-8240-416E-9977-1DBBB768DAF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniHackStart.Util", "UniHackStart.Util\UniHackStart.Util.csproj", "{CE339E60-8240-416E-9977-1DBBB768DAF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniHackStart.Model", "UniHackStart.Model\UniHackStart.Model.csproj", "{9D492752-5ED7-4451-A612-18C8E3674BE5}"
 EndProject

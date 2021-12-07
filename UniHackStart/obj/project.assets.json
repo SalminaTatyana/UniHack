@@ -7301,8 +7301,8 @@
     },
     "UniHackStart.Util/1.0.0": {
       "type": "project",
-      "path": "../ExcelParser/UniHackStart.Util.csproj",
-      "msbuildProject": "../ExcelParser/UniHackStart.Util.csproj"
+      "path": "../UniHackStart.Util/UniHackStart.Util.csproj",
+      "msbuildProject": "../UniHackStart.Util/UniHackStart.Util.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7346,11 +7346,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\ExcelParser\\UniHackStart.Util.csproj": {
-              "projectPath": "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\ExcelParser\\UniHackStart.Util.csproj"
-            },
             "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Model\\UniHackStart.Model.csproj": {
               "projectPath": "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Model\\UniHackStart.Model.csproj"
+            },
+            "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Util\\UniHackStart.Util.csproj": {
+              "projectPath": "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Util\\UniHackStart.Util.csproj"
             }
           }
         }
