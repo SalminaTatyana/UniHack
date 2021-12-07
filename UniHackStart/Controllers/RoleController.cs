@@ -11,6 +11,7 @@ namespace UniHackStart.Controllers
 {
     public class RoleController : Controller
     {
+        string ancd = "Hello world!";
         public IActionResult ChooseUserRole()
         {
             string  fileName;
