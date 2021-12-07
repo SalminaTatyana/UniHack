@@ -2,11 +2,11 @@
     ViewData["Title"] = "Главная";
     ViewData["ActiveMenuLink"] = "menu-link-main-page";
 }
-@if (ViewBag.Role=="1") { 
+@*@if () {*@ 
 <partial name="_partialIndexStudent" />
-}
+@*}
 else {
-<partial name="_partialIndexWithoutRole" />}
+<partial name="_partialIndexWithoutRole" />}*@
 
 <link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
 <link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
