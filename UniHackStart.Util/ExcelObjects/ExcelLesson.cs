@@ -20,7 +20,7 @@ namespace UniHackStart.Util.ExcelObjects
             string[] s1 = rowFirst.Split('-');
 
             if (s1.Length > 2)
-                l.name = s1[0] + " " + s1[1];
+                l.name = s1[0] + "-" + s1[1];
 
             if (s1.Length == 2)
                 l.name = s1[0] ?? "";

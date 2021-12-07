@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using ExcelDataReader;
 using UniHackStart.Util.ExcelObjects;
+using UniHackStart.Model.Database;
 
 namespace UniHackStart.Util
 {
     public class ExcelParser
     {
-        public static List<ExcelGroup> Start()
+        public static void Start(string path)
         {
-            string path = "raspisanie.xls";
+            //string path = "raspisanie.xls";
             List<ExcelGroup> groupList = new List<ExcelGroup>();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -36,7 +37,7 @@ namespace UniHackStart.Util
 
                     foreach (DataTable dt in result.Tables)
                     {
-                        var indexs = GetValueIndex(dt.TableName);
+                        var indexs = GetValueIndexs(dt.TableName);
                         int fWeekIndexStart = indexs.f1;
                         int fWeekIndexEnd = indexs.f2;
                         int sWeekIndexStart = indexs.f3;
@@ -47,7 +48,7 @@ namespace UniHackStart.Util
                         {
                             ExcelGroup group = new ExcelGroup();
                             group.paraList = new List<ExcelPara>();
-                            group.weekNumber = int.Parse(dt.Rows[0][0].ToString());
+                            group.weekNumber = 1;
                             group.groupName = dt.Rows[0][i].ToString();
 
                             int indexDay = 1;
@@ -107,7 +108,7 @@ namespace UniHackStart.Util
                         {
                             ExcelGroup group = new ExcelGroup();
                             group.paraList = new List<ExcelPara>();
-                            group.weekNumber = int.Parse(dt.Rows[0][0].ToString());
+                            group.weekNumber = 2;
                             group.groupName = dt.Rows[0][i].ToString();
 
                             int indexDay = 1;
@@ -164,11 +165,59 @@ namespace UniHackStart.Util
                     groupList = listGroups;
                 }
             }
-            
-            return groupList;
+
+            SaveParsing(groupList);
         }
 
-        private static (int f1, int f2, int f3, int f4) GetValueIndex(string tableName)
+        private static void SaveParsing(List<ExcelGroup> groupList)
+        {
+            /*
+             * 1 - день недели;
+             * 2 - группа;
+             * 3 - день недели;
+             * 4 - номер пары;
+             * 5 - время первой половины пары;
+             * 6 - время второй половины пары;
+             * 7 - наименование урока;
+             * 8 - тип урока;
+             * 9 - фио преподавателя;
+             * 10 - корпус;
+             * 11 - кабинет;
+             */
+
+            using (var db = new UniHackStartDbContext())
+            {
+                List<TimeTableReesterRecord> listRecords = new List<TimeTableReesterRecord>();
+
+                foreach (ExcelGroup g in groupList)
+                {
+                    var headerApx = $"{g.weekNumber};{g.groupName};";
+
+
+                    foreach (ExcelPara p in g.paraList)
+                    {
+                        string apx = headerApx;
+
+                        string paraStart = $"{p.timeList[0].timeStart}+{p.timeList[0].timeEnd}";
+                        string paraEnd = $"{p.timeList[1].timeStart}+{p.timeList[1].timeEnd}";
+
+                        apx += $"{p.dayOfWeek};{p.Number};{paraStart};{paraEnd};";
+                        apx +=
+                            $"{p.lesson.name}+{p.lesson.type}+{p.lesson.teacher}+{p.lesson.corpus}+{p.lesson.classRoom};";
+
+                        TimeTableReesterRecord rr = new TimeTableReesterRecord();
+                        rr.Apx = apx;
+                        listRecords.Add(rr);
+                    }
+                }
+
+                //Инсертим список записей
+                db.TimeTableReesterRecords.AddRange(listRecords);
+                db.SaveChanges();
+            }
+        }
+
+        private static (int f1, int f2, int f3, int f4) GetValueIndexs(string tableName)
         {
             switch (tableName)
             {

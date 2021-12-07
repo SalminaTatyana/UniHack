@@ -9,4 +9,8 @@
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0-develop00310" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UniHackStart.Model\UniHackStart.Model.csproj" />
+  </ItemGroup>
+
 </Project>

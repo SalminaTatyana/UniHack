@@ -17,13 +17,18 @@ namespace UniHackStart.Model.Database
         {
         }
 
+        public virtual DbSet<ClassRoom> ClassRooms { get; set; }
+        public virtual DbSet<Corps> Corps { get; set; }
+        public virtual DbSet<CorpusContent> CorpusContents { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<DaysOfWeek> DaysOfWeeks { get; set; }
         public virtual DbSet<Faculty> Faculties { get; set; }
         public virtual DbSet<FacultyLesson> FacultyLessons { get; set; }
         public virtual DbSet<FacultyLessonsView> FacultyLessonsViews { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<GroupsView> GroupsViews { get; set; }
         public virtual DbSet<Lesson> Lessons { get; set; }
+        public virtual DbSet<LessonsType> LessonsTypes { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<PortfolioView> PortfolioViews { get; set; }
         public virtual DbSet<Right> Rights { get; set; }
@@ -37,6 +42,8 @@ namespace UniHackStart.Model.Database
         public virtual DbSet<TeacherLesson> TeacherLessons { get; set; }
         public virtual DbSet<TeacherLessonsView> TeacherLessonsViews { get; set; }
         public virtual DbSet<TeachersView> TeachersViews { get; set; }
+        public virtual DbSet<TimeTableReester> TimeTableReesters { get; set; }
+        public virtual DbSet<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRight> UserRights { get; set; }
         public virtual DbSet<UserRightsView> UserRightsViews { get; set; }
@@ -53,6 +60,36 @@ namespace UniHackStart.Model.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+
+            modelBuilder.Entity<ClassRoom>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Corps>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<CorpusContent>(entity =>
+            {
+                entity.HasOne(d => d.Corpus)
+                    .WithMany(p => p.CorpusContents)
+                    .HasForeignKey(d => d.CorpusId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CorpsContent_ClassRooms");
+
+                entity.HasOne(d => d.CorpusNavigation)
+                    .WithMany(p => p.CorpusContents)
+                    .HasForeignKey(d => d.CorpusId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CorpsContent_Corps");
+            });
+
+            modelBuilder.Entity<DaysOfWeek>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
+            });
 
             modelBuilder.Entity<Faculty>(entity =>
             {
@@ -85,20 +122,16 @@ namespace UniHackStart.Model.Database
 
             modelBuilder.Entity<Group>(entity =>
             {
-                entity.Property(e => e.Name).IsUnicode(false);
-
                 entity.Property(e => e.ShortName).IsUnicode(false);
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Groups)
                     .HasForeignKey(d => d.CourseId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Groups_Courses");
 
                 entity.HasOne(d => d.Speciality)
                     .WithMany(p => p.Groups)
                     .HasForeignKey(d => d.SpecialityId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Groups_Specialties");
             });
 
@@ -118,6 +151,13 @@ namespace UniHackStart.Model.Database
             modelBuilder.Entity<Lesson>(entity =>
             {
                 entity.Property(e => e.Name).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<LessonsType>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
+
+                entity.Property(e => e.ShortName).IsUnicode(false);
             });
 
             modelBuilder.Entity<Portfolio>(entity =>
@@ -315,6 +355,79 @@ namespace UniHackStart.Model.Database
                 entity.Property(e => e.Login).IsUnicode(false);
 
                 entity.Property(e => e.MiddleName).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TimeTableReester>(entity =>
+            {
+                entity.Property(e => e.Created).HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.FileName).IsUnicode(false);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.TimeTableReesters)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TimeTableReesters_Users");
+            });
+
+            modelBuilder.Entity<TimeTableReesterRecord>(entity =>
+            {
+                entity.Property(e => e.Apx).IsUnicode(false);
+
+                entity.Property(e => e.Created).HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.ParaNumber).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd1).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd2).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart1).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart2).IsUnicode(false);
+
+                entity.Property(e => e.WeekNumber).IsUnicode(false);
+
+                entity.HasOne(d => d.ClassRoom)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.ClassRoomId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_ClassRooms");
+
+                entity.HasOne(d => d.Corps)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.CorpsId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_Corps");
+
+                entity.HasOne(d => d.DayOfWeek)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.DayOfWeekId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_DaysOfWeeks");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.GroupId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_Groups");
+
+                entity.HasOne(d => d.Lesson)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.LessonId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_Lessons");
+
+                entity.HasOne(d => d.LessonType)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.LessonTypeId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_LessonsTypes");
+
+                entity.HasOne(d => d.Reester)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.ReesterId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TimeTableReesterRecords_TimeTableReesters");
+
+                entity.HasOne(d => d.Teacher)
+                    .WithMany(p => p.TimeTableReesterRecords)
+                    .HasForeignKey(d => d.TeacherId)
+                    .HasConstraintName("FK_TimeTableReesterRecords_Teachers");
             });
 
             modelBuilder.Entity<User>(entity =>

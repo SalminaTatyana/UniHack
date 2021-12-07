@@ -111,7 +111,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Model\\UniHackStart.Model.csproj": {
+                "projectPath": "D:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\MIFI\\UniHackStart.Model\\UniHackStart.Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

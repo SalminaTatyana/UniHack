@@ -2081,7 +2081,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "ExcelDataReader": "3.7.0-develop00310",
-          "ExcelDataReader.DataSet": "3.7.0-develop00310"
+          "ExcelDataReader.DataSet": "3.7.0-develop00310",
+          "UniHackStart.Model": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UniHackStart.Util.dll": {}
