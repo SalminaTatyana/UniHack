@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,24 @@ namespace UniHackStart.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
-        
-        
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+        }
+        public IActionResult ChooseUser() {
+            return View("_partialChooseRole");
+        }   
+        public IActionResult ChooseStudent() {
+            HttpContext.Session.Clear();
+            HttpContext.Session.SetString("role", "Student");
+            return View("Index");
+        }
+        public IActionResult ChooseTeacher()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Session.SetString("role", "Teacher");
+            return View("Index");
         }
         public IActionResult Index()
         {
