@@ -1,16 +1,20 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Главная";
     ViewData["ActiveMenuLink"] = "menu-link-main-page";
 }
-@*@if () {*@ 
-<partial name="_partialIndexStudent" />
+@*@if (=="Guest")
+{*@
+    <partial name="_partialIndexStudent" />
 @*}
-else {
-<partial name="_partialIndexWithoutRole" />}*@
+else
+{
+    <partial name="_partialIndexWithoutRole" />
+}*@
 
 <link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
 <link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
 <script src="~/lib/slick/slick.min.js" asp-append-version="true"></script>
 <script>
-    $('.slider').slick({ dots: true});
+    $('.slider').slick({ dots: true });
 </script>

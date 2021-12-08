@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,13 @@ namespace UniHackStart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +53,19 @@ namespace UniHackStart
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSession();
+            app.Use(async (context,next) =>
+            {
+                if (context.Session.Keys.Contains("role"))
+                {
+                    context.Session.GetString("role");
+                }
+                else
+                {
+                    context.Session.SetString("role", "Guest");
+                }
+                await next.Invoke();
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
