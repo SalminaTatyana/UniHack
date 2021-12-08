@@ -11,11 +11,11 @@ namespace UniHackStart.Controllers
 {
     public class LogController : Controller
     {
-       public ActionResult Index()
+       public IActionResult Index()
         {
             return View();
         }
-        public ActionResult AdminLog() {
+        public IActionResult AdminLog() {
             return View();
         }
     }

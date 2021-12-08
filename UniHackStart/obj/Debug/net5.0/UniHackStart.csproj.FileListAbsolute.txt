@@ -400,9 +400,7 @@ C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnal
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMenu\_MainMenu.cshtml.g.cs
-C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMenu\_MainMenu_WithoutRole.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\_Preloader.cshtml.g.cs
-C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMenu\_MainMenu_Student.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_MainHeaders.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderStudent.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderWithoutRole.cshtml.g.cs
@@ -922,3 +920,7 @@ C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Model.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.pdb
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Model.pdb
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\AdminLog.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexAdmin.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenu_Student.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenu_WithoutRole.cshtml.g.cs
