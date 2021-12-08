@@ -312,7 +312,6 @@ namespace UniHackStart.Model.Database
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Teachers)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Teachers_Users");
             });
 
@@ -362,6 +361,8 @@ namespace UniHackStart.Model.Database
                 entity.Property(e => e.Created).HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.FileName).IsUnicode(false);
+
+                entity.Property(e => e.FilePath).IsUnicode(false);
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.TimeTableReesters)

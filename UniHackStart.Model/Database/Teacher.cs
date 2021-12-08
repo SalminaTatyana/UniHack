@@ -34,13 +34,12 @@ namespace UniHackStart.Model.Database
         [StringLength(255)]
         public string MiddleName { get; set; }
         [Column("dateOfBirth", TypeName = "datetime")]
-        public DateTime DateOfBirth { get; set; }
-        [Required]
+        public DateTime? DateOfBirth { get; set; }
         [Column("email")]
         [StringLength(255)]
         public string Email { get; set; }
         [Column("userId")]
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
         [InverseProperty("Teachers")]

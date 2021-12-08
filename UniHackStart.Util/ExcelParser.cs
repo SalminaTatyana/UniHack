@@ -11,13 +11,13 @@ namespace UniHackStart.Util
 {
     public class ExcelParser
     {
-        public static void Start(string path)
+        public static void Start(TimeTableReester reester)
         {
             //string path = "raspisanie.xls";
             List<ExcelGroup> groupList = new List<ExcelGroup>();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            using (var stream = File.Open(path, FileMode.Open, FileAccess.Read))
+            using (var stream = File.Open(reester.FilePath, FileMode.Open, FileAccess.Read))
             {
                 using (var reader = ExcelReaderFactory.CreateReader(stream))
                 {
@@ -166,10 +166,10 @@ namespace UniHackStart.Util
                 }
             }
 
-            SaveParsing(groupList);
+            SaveParsing(groupList,reester.Id);
         }
 
-        private static void SaveParsing(List<ExcelGroup> groupList)
+        private static void SaveParsing(List<ExcelGroup> groupList,long reesterId)
         {
             /*
              * 1 - день недели;
@@ -206,6 +206,7 @@ namespace UniHackStart.Util
                             $"{p.lesson.name}+{p.lesson.type}+{p.lesson.teacher}+{p.lesson.corpus}+{p.lesson.classRoom};";
 
                         TimeTableReesterRecord rr = new TimeTableReesterRecord();
+                        rr.ReesterId = reesterId;
                         rr.Apx = apx;
                         listRecords.Add(rr);
                     }

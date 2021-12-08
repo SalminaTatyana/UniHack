@@ -27,6 +27,9 @@ namespace UniHackStart.Model.Database
         public string FileName { get; set; }
         [Column("userId")]
         public long UserId { get; set; }
+        [Column("filePath")]
+        [StringLength(255)]
+        public string FilePath { get; set; }
 
         [ForeignKey(nameof(UserId))]
         [InverseProperty("TimeTableReesters")]

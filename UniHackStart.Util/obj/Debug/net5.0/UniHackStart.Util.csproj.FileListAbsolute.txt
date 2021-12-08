@@ -22,3 +22,6 @@ D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.0\ref\UniHackStart.Util.dll
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.pdb
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.AssemblyReference.cache
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.dll
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.pdb
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CopyComplete
