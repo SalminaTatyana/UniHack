@@ -1,0 +1,15 @@
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.deps.json
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.runtimeconfig.json
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.runtimeconfig.dev.json
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.dll
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\ref\UniHackStart.Model.dll
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.pdb
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfoInputs.cache
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfo.cs
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.csproj.CoreCompileInputs.cache
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.dll
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\ref\UniHackStart.Model.dll
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.pdb
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.genruntimeconfig.cache
+D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.csproj.AssemblyReference.cache

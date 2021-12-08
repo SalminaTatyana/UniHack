@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.7.0-develop00310" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0-develop00310" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UniHackStart.Model\UniHackStart.Model.csproj" />
+  </ItemGroup>
+
+</Project>
