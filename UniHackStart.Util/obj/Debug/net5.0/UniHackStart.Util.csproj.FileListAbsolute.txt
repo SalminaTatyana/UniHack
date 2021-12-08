@@ -25,3 +25,18 @@ D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.dll
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.pdb
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CopyComplete
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.deps.json
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.dll
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\ref\UniHackStart.Util.dll
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.pdb
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.dll
+D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.pdb
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.AssemblyReference.cache
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.AssemblyInfoInputs.cache
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.AssemblyInfo.cs
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CoreCompileInputs.cache
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CopyComplete
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.dll
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\ref\UniHackStart.Util.dll
+D:\Hackaton\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.pdb
