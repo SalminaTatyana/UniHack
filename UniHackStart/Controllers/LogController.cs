@@ -15,5 +15,8 @@ namespace UniHackStart.Controllers
         {
             return View();
         }
+        public ActionResult AdminLog() {
+            return View();
+        }
     }
 }
