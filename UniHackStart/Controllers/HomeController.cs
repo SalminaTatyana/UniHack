@@ -39,6 +39,9 @@ namespace UniHackStart.Controllers
             return View();
         }
 
+        public IActionResult IndexPartil() {
+            return View("_partialIndexStudent");
+        }
         public IActionResult Privacy()
         {
             return View();

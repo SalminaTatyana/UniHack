@@ -99,7 +99,6 @@ C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -157,7 +156,6 @@ C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Data.DataSetEx
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Data.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
-C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.DiagnosticSource.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
 C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
@@ -888,3 +886,39 @@ D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart\obj\Debug\net5.0\Uni
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart\obj\Debug\net5.0\UniHackStart.genruntimeconfig.cache
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.dll
 D:\Moi dokuments\ИНСТИТУТ\XAKATON\MIFI\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Model.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.dll
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Util.pdb
+C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\UniHackStart.Model.pdb
