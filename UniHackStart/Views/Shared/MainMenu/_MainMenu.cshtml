@@ -5,24 +5,33 @@
     </a>
     <nav class="main-nav">
         <div class="menu-list main-menu-list">
-            @*@if ()
-            {*@<partial name="MainMenu/_MainMenu_Student" />@*}*@
-            @*else { 
-        <partial name="MainMenu/_MainMenu_WithoutRole" />}*@
+            </div>
 
-        </div>
-        
-    </nav>
-    
-</div>
-@{
-    string SetMenuClassAndActive(string menuLinkClassName)
-    {
-        if ((string)ViewData["ActiveMenuLink"] == menuLinkClassName)
-            return $"{menuLinkClassName} active";
-        else
-            return menuLinkClassName;
+        </nav>
+
+    </div>
+    @{
+        string SetMenuClassAndActive(string menuLinkClassName)
+        {
+            if ((string)ViewData["ActiveMenuLink"] == menuLinkClassName)
+                return $"{menuLinkClassName} active";
+            else
+                return menuLinkClassName;
+        }
     }
-}
+<script>
+        $(document).ready(function () {
+    $.ajax({
+    type: "POST",
+    url: "@Url.Action("MenuPartial", "Role")",
+    beforeSend: Loader,
+    complete: Loader
+    }).done(function (data) {
+        $('.menu-list main-menu-list').html(data);
+    }).fail(function () {
+        $('.menu-list main-menu-list').html("1");
+    })
+    ;})
+</script>
 
 

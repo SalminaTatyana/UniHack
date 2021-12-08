@@ -39,8 +39,18 @@ namespace UniHackStart.Controllers
             return View();
         }
 
-        public IActionResult IndexPartil() {
-            return View("_partialIndexStudent");
+        public IActionResult IndexPartial() {
+            if (HttpContext.Session.GetString("role") == "Student") {
+                return PartialView("_partialIndexStudent");
+            }
+            if (HttpContext.Session.GetString("role") == "Teacher")
+            {
+                return PartialView("_partialIndexStudent");
+            }
+            else {
+                return PartialView("_partialIndexWithoutRole");
+            }
+
         }
         public IActionResult Privacy()
         {

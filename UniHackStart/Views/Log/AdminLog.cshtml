@@ -1,1 +1,21 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Журнал";
+    ViewData["ActiveMenuLink"] = "menu-link-log";
+}
+<ul class="breadcrumbs">
+    <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
+    <li>
+        <a class="active"> @ViewData["Title"]</a>
+    </li>
+</ul>
+<style>
+    
+</style>
+<section class="timetable-section">
+    <h1 class="block-title">Журнал</h1>
+    <h3>Выберите файл для загрузки</h3>
+    <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <input  type="file" name="uploadedFile" /><br>
+        <input class="secondary-btn" type="submit" value="Загрузить" />
+    </form> 
+</section>
