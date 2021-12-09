@@ -6,7 +6,7 @@
 </ul>
 <h1 class="block-title login-as-title">Сменить роль</h1>
 <div class="login-as-org-list">
-    <a  class="login-as-org menu-link-accounts card" asp-controller="Home" asp-action="ChooseStudent">
+    <a class="login-as-org menu-link-accounts card" asp-controller="Home" asp-action="ChooseStudent">
         <span class="menu-link choose-role-link">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="40" height="40" viewBox="0 0 222.000000 229.000000"
@@ -51,10 +51,16 @@ l-3 -178 -35 -16 c-167 -79 -499 -79 -660 -1 l-35 17 -3 178 c-1 97 1 177 6
         </span>
         <span class="choose-role-wrapper">Студент</span>
     </a>
-    <a class="login-as-org menu-link-accounts card "asp-controller="Home" asp-action="ChooseTeacher">
+    <a class="login-as-org menu-link-accounts card " asp-controller="Home" asp-action="ChooseTeacher">
         <span class="menu-link choose-role-link">
             <img class="icon" src="~/img/index/teacher-svgrepo-com.svg" alt="" width="30" height="30" aria-hidden="true">
         </span>
         <span class="choose-role-wrapper">Преподаватель</span>
     </a>
-    </div>
+    <a class="login-as-org menu-link-accounts card " asp-controller="Home" asp-action="ChooseAdmin">
+        <span class="menu-link choose-role-link">
+            <img class="icon" src="~/img/index/administrator-counter-svgrepo-com.svg" alt="" width="30" height="30" aria-hidden="true">
+        </span>
+        <span class="choose-role-wrapper">Администратор</span>
+    </a>
+</div>

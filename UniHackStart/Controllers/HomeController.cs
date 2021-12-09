@@ -34,6 +34,18 @@ namespace UniHackStart.Controllers
             HttpContext.Session.SetString("role", "Teacher");
             return View("Index");
         }
+        public IActionResult ChooseAdmin()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Session.SetString("role", "Admin");
+            return View("Index");
+        }
+        public IActionResult ChooseGuest()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Session.SetString("role", "Guest3");
+            return View("Index");
+        }
         public IActionResult Index()
         {
             return View();
@@ -45,7 +57,11 @@ namespace UniHackStart.Controllers
             }
             if (HttpContext.Session.GetString("role") == "Teacher")
             {
-                return PartialView("_partialIndexStudent");
+                return PartialView("_partialIndexTeacher");
+            }
+            if (HttpContext.Session.GetString("role") == "Admin")
+            {
+                return PartialView("_partialIndexAdmin");
             }
             else {
                 return PartialView("_partialIndexWithoutRole");
