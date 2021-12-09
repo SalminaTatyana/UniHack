@@ -27,7 +27,7 @@ namespace UniHackStart.Controllers
                     weekNumber = 1,
                     name = "Электротехника",
                     teachername = "Шмигирилов Ю.Г.",
-                    time = "",
+                    time = "8.00-8.45; 18.50-19.35",
                     place = "3-104"
                 };
                 return PartialView("_partialWeekTimetable", response);
@@ -40,7 +40,7 @@ namespace UniHackStart.Controllers
                     weekNumber = 2,
                     name = "Электротехника",
                     teachername = "Шмигирилов Ю.Г.",
-                    time = "",
+                    time = "8.00-8.45; 18.50-19.35",
                     place = "3-204"
                 };
                 return PartialView("_partialWeekTimetable", response);

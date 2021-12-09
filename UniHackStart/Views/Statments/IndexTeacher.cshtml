@@ -1,0 +1,53 @@
+﻿<section class="appeal">
+    <div class="appeal-header">
+        <h1 class="block-title">Заявления</h1>
+    </div>
+    <div class="appeal-wrapper">
+
+
+        <form action="" class="appeal-form" enctype="multipart/form-data">
+            <b class="appeal-form-name">Новое обращение</b>
+
+
+            <div class="form-field">
+                <label for="appeal-form-email" class="main-label">Электронная почта</label>
+                <input type="email" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                       placeholder="Введите email"
+                       value="">
+            </div>
+            <div class="form-field">
+                <label for="appeal-form-message" class="main-label">Сообщение</label>
+                <textarea class="appeal-form-textarea form-input form-textarea required" name="appeal-form-message" id="appeal-form-message" placeholder="Текст заявки"></textarea>
+            </div>
+            <div class="form-file-field appeal-form-file">
+                <input type="file" name="passportSelfie[]" id="passportSelfie" class="input-file visually-hidden" multiple="multiple">
+                <label for="passportSelfie" class="btn btn-tertiary js-labelFile">
+                    <span class="js-fileName">Прикрепить файлы</span>
+                </label>
+                <label for="passportSelfie" class="main-label">Форматы файлов для отправки: pdf, docx, doc, jpg, jpeg, png</label>
+            </div>
+            <div class="form-field">
+                <label id="sogl-error" class="error" for="sogl" style="display: none;"></label>
+                <label class="main-checkbox">
+                    <input class="visually-hidden" name="sogl" id="sogl" type="checkbox">
+                    <span class="main-checkbox-text left contacts-content" style="margin-left:0;">
+                        Согласен(-на) на
+                        <a href="~/policy/PrivacyPolicy.pdf" target="_blank" class="Policy">обработку персональных данных</a>
+                    </span>
+                </label>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey=""></div>
+                <label id="g-recaptcha-response-error" class="error" for="g-recaptcha-response" style="display: none;"></label>
+            </div>
+            <button class="primary-btn" type="submit">Отправить</button>
+        </form>
+
+        @*else
+            {
+                <h3 class="no-data-msg">@Html.Raw(Model?.result?.message ?? "Неизвестная ошибка! Повторите запрос позже или обратитесь в службу поддержки")</h3>
+            }*@
+    </div>
+</section>

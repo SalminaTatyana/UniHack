@@ -15,7 +15,7 @@
            weekNumber=1,
            name ="Электротехника",
            teachername="Шмигирилов Ю.Г.",
-           time="" ,
+           time="8.00" ,
            place="3-104"
         })}
 
@@ -36,10 +36,7 @@
             type: 'POST',
             data: { "n" : String(na) },
             success: function (data) {
-                for (var i = 0; i < 6; i++) {
                     $('.card-list').append(data);
-                }
-
                 },
             error: function (data) {
                 $('.card-list').append(data);

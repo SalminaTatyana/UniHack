@@ -929,3 +929,5 @@ C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialI
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_HeaderAdmin.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenuAdmin.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenuTeacher.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Statments\IndexTeacher.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\_partialErrorAcces.cshtml.g.cs
