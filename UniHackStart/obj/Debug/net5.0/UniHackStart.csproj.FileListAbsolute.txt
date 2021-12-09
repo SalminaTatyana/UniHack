@@ -402,9 +402,6 @@ C:\Институт\Uni\UniHackStart\bin\Debug\net5.0\runtimes\win-arm64\lib\net
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\MainMenu\_MainMenu.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\_Preloader.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_MainHeaders.cshtml.g.cs
-C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderStudent.cshtml.g.cs
-C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderWithoutRole.cshtml.g.cs
-C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Shared\Headers\_HeaderTeacher.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexStudent.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexWithoutRole.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialTimetable.cshtml.g.cs
@@ -924,3 +921,11 @@ C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\AdminLog.c
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexAdmin.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenu_Student.cshtml.g.cs
 C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenu_WithoutRole.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\Index.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_HeaderStudent.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_HeaderTeacher.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_HeaderWithoutRole.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Home\_partialIndexTeacher.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_HeaderAdmin.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenuAdmin.cshtml.g.cs
+C:\Институт\Uni\UniHackStart\obj\Debug\net5.0\Razor\Views\Role\_MainMenuTeacher.cshtml.g.cs

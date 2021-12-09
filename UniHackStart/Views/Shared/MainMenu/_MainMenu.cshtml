@@ -20,18 +20,15 @@
         }
     }
 <script>
-        $(document).ready(function () {
+        
     $.ajax({
-    type: "POST",
-    url: "@Url.Action("MenuPartial", "Role")",
-    beforeSend: Loader,
-    complete: Loader
+        type: "POST",
+        url: "@Url.Action("MenuPartial", "Role")",
     }).done(function (data) {
-        $('.menu-list main-menu-list').html(data);
+        $('.menu-list.main-menu-list').html(data);
     }).fail(function () {
-        $('.menu-list main-menu-list').html("1");
-    })
-    ;})
+        $('.menu-list.main-menu-list').html("1");
+    });
 </script>
 
 
