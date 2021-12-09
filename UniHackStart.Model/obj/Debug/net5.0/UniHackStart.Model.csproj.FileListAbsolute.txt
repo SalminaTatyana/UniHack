@@ -28,3 +28,17 @@ C:\Институт\Uni\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.d
 C:\Институт\Uni\UniHackStart.Model\obj\Debug\net5.0\ref\UniHackStart.Model.dll
 C:\Институт\Uni\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.pdb
 C:\Институт\Uni\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.genruntimeconfig.cache
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.deps.json
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.runtimeconfig.json
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.runtimeconfig.dev.json
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.dll
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\ref\UniHackStart.Model.dll
+D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.pdb
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfoInputs.cache
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfo.cs
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.csproj.CoreCompileInputs.cache
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.dll
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\ref\UniHackStart.Model.dll
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.pdb
+D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.genruntimeconfig.cache
