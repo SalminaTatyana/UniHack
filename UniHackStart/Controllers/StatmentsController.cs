@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,17 @@ namespace UniHackStart.Controllers
         public IActionResult Index()
         {
            return View();
+        }
+        public IActionResult TeacherStatments()
+        {
+            if (HttpContext.Session.GetString("role") == "Teacher")
+            {
+                return View();
+            }
+            else
+            {
+                return View("_partialErrorAcces");
+            }
         }
     }
 }

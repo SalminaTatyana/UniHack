@@ -368,3 +368,16 @@
     max-width: 200px;
     margin-top: 35px;
 }
+.anket-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-field {
+        width: calc(33.3% - 30px);
+        margin: 15px;
+    }
+
+    .block-title {
+        width: 100%;
+    }
+}
