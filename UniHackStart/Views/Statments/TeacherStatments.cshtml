@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Анкета преподавателя";
+    ViewData["ActiveMenuLink"] = "menu-link-statment";
+}
+<ul class="breadcrumbs">
+    <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
+    <li>
+        <a class="active"> @ViewData["Title"]</a>
+    </li>
+</ul>
+<section class="appeal">
+    <div class="appeal-header">
+        <h1 class="block-title">Анкета преподавателя</h1>
+    </div>
+    <div class="anket-wrapper">
+
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Имя</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-name"
+                   placeholder="Введите Имя"
+                   value="Иван" readonly>
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Фамилия</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-surname"
+                   placeholder="Введите Фамилию"
+                   value="Иванов" readonly>
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Отчество</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-patronymic"
+                   placeholder="Введите отчество"
+                   value="Иванич" readonly>
+        </div>
+
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label"> Дата рождения</label>
+            <input type="date" class="form-input required" id="appeal-form-email" name="appeal-form-born" value="1978-07-22" readonly>
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Пол</label>
+            <input type="radio" class="form-input required" id="appeal-form-email" name="appeal-form-gender"
+                   placeholder="Мужской"
+                   value="М">
+            <input type="radio" class="form-input required" id="appeal-form-email" name="appeal-form-gender"
+                   placeholder="Женский"
+                   value="Ж">
+        </div>
+        <h2 class="block-title">Контакты</h2>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Электронная почта</label>
+            <input type="email" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите email"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Телефон</label>
+            <input type="tel" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите телефон"
+                   value="">
+        </div>
+        <h2 class="block-title">В социальных сетях</h2>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Вконтакте</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите ссылку на VK"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Телеграмм</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите ссылку на аккаунт"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Link</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите ссылку на аккаунт"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Skype</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите ссылку на аккаунт"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label for="appeal-form-email" class="main-label">Discord</label>
+            <input type="text" class="form-input required" id="appeal-form-email" name="appeal-form-email"
+                   placeholder="Введите ссылку на аккаунт"
+                   value="">
+        </div>
+        <div class="form-field">
+            <label id="sogl-error" class="error" for="sogl" style="display: none;"></label>
+            <label class="main-checkbox">
+                <input class="visually-hidden" name="sogl" id="sogl" type="checkbox">
+                <span class="main-checkbox-text left contacts-content" style="margin-left:0;">
+                    Согласен(-на) на
+                    <a href="~/policy/PrivacyPolicy.pdf" target="_blank" class="Policy">обработку персональных данных</a>
+                </span>
+            </label>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey=""></div>
+            <label id="g-recaptcha-response-error" class="error" for="g-recaptcha-response" style="display: none;"></label>
+        </div>
+        <button class="primary-btn" type="submit">Отправить</button>
+    </div>
+</section>

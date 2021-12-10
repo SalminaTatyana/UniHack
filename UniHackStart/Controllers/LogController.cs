@@ -15,7 +15,7 @@ namespace UniHackStart.Controllers
 {
     public class LogController : Controller
     {
-        
+
         //ApplicationContext _context;
         IWebHostEnvironment _appEnvironment;
         public LogController(/*ApplicationContext context,*/ IWebHostEnvironment appEnvironment)
@@ -62,7 +62,11 @@ namespace UniHackStart.Controllers
         {
             if (HttpContext.Session.GetString("role") == "Admin")
             {
-                return View(/*_context.Files.ToList()*/);
+                using (var db = new UniHackStartDbContext())
+                {
+                    var ttr = db.TimeTableReesters.ToList();
+                    return View();
+                }
             }
             else { return View("_partialErrorAcces"); }
 
