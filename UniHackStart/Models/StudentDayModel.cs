@@ -13,7 +13,8 @@ namespace UniHackStart.Models
         public DateTime timeEnd1 { get; set; }
         public DateTime timeStart2 { get; set; }
         public DateTime timeEnd2 { get; set; }
-
-
+        public string ParaName { get; set; }
+        public string ClassRoom { get; set; }
+        public string TeacherName { get; set; }
     }
 }
