@@ -542,6 +542,8 @@ namespace UniHackStart.Model.Database
 
                 entity.Property(e => e.CorpusName).IsUnicode(false);
 
+                entity.Property(e => e.CourseName).IsUnicode(false);
+
                 entity.Property(e => e.DaysOfWeeks).IsUnicode(false);
 
                 entity.Property(e => e.Fio).IsUnicode(false);

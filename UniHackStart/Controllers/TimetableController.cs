@@ -90,83 +90,106 @@ namespace UniHackStart.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetTimetable(string n)
+        public async Task<IActionResult> GetTimetable(string weekNumber /*, long groupId,*/ )
         {
-            Student student = new Student();
-            student.GroupId = 10;
-            List<List<StudentTimeTableModel>> timetableWeekList = new List<List<StudentTimeTableModel>>();
+            var groupId = 10;
+            weekNumber = "1";
+            
+            if (weekNumber.Contains("1"))
+            {
+                foreach (var c in GetTimeTableWeek(groupId,weekNumber))
+                {
+                    return PartialView("_partialWeekTimetable", c);
+                }
+            }
 
+            if (weekNumber.Contains("2"))
+            {
+                foreach (var c in GetTimeTableWeek(groupId,weekNumber))
+                {
+                    return PartialView("_partialWeekTimetable", c);
+                }
+            }
+
+            foreach (var c in GetTimeTableAll(groupId,weekNumber))
+            {
+
+                return PartialView("_partialWeekTimetable",c);
+            }
+
+            return null;
+        }
+
+        private List<StudentTimeTableModel> GetTimeTableWeek(long groupId,string weekNumber)
+        {
+            using (var db = new UniHackStartDbContext())
+            {
+                List<TimeTableView> timeTableList = db.TimeTableViews.Where(w => w.GroupId == groupId).ToList();
+                IOrderedEnumerable<IGrouping<long?, TimeTableView>> ttWeek = timeTableList
+                    .Where(w => w.WeekNumber == weekNumber.ToString()).GroupBy(g => g.DayOfWeekId).OrderBy(o => o.Key);
+
+                return CreateTimeTable(ttWeek);
+            }
+        }
+
+        private List<StudentTimeTableModel> GetTimeTableAll(long groupId, string weekNumber)
+        {
+            using (var db = new UniHackStartDbContext())
+            {
+                long? courseId = db.Groups.FirstOrDefault(g => g.Id == groupId)?.CourseId;
+                List<TimeTableView> ttv = db.TimeTableViews.Where(w =>
+                    w.CourseId == courseId && w.GroupId == groupId && w.WeekNumber == weekNumber).ToList();
+                IOrderedEnumerable<IGrouping<long?, TimeTableView>> ttWeek = ttv
+                    .Where(w => w.WeekNumber == weekNumber.ToString()).GroupBy(g => g.DayOfWeekId).OrderBy(o => o.Key);
+
+                return CreateTimeTable(ttWeek);
+            }
+        }
+
+        private List<StudentTimeTableModel> CreateTimeTable(
+            IOrderedEnumerable<IGrouping<long?, TimeTableView>> timeTable)
+        {
+            List<StudentTimeTableModel> resultList = new List<StudentTimeTableModel>();
 
             using (var db = new UniHackStartDbContext())
             {
-                List<TimeTableView> timeTableList = db.TimeTableViews.Where(w => w.GroupId == student.GroupId).ToList();
 
-
-                for (int i = 1; i < 3; i++)
+                foreach (var t in timeTable)
                 {
-                    List<StudentTimeTableModel> stundetList = new List<StudentTimeTableModel>();
-                    IOrderedEnumerable<IGrouping<long?, TimeTableView>> ttWeek = timeTableList
-                        .Where(w => w.WeekNumber == i.ToString()).GroupBy(g => g.DayOfWeekId).OrderBy(o => o.Key);
+                    var stud = new StudentTimeTableModel();
+                    stud.DayOfWeek = db.DaysOfWeeks.Where(w => w.Id == t.Key).FirstOrDefault().Name;
+                    stud.ParaList = new List<Para>();
 
-                    foreach (var t in ttWeek)
+                    foreach (TimeTableView item in t)
                     {
-                        var stud = new StudentTimeTableModel();
-                        stud.DayOfWeek = db.DaysOfWeeks.Where(w => w.Id == t.Key).FirstOrDefault().Name;
-                        stud.ParaList = new List<Para>();
+                        Para p = new Para();
+                        p.TimeStart_1 = item.TimeStart1;
+                        p.TimeEnd_1 = item.TimeEnd1;
+                        p.TimeStart_2 = item.TimeStart2;
+                        p.TimeEnd_2 = item.TimeEnd2;
+                        p.paraNumber = item.ParaNumber;
+                        p.TeacherName = item.Fio;
+                        p.LessonName = item.LessonName;
+                        p.LessonShortType = item.LessonTypeShortName;
 
+                        if (string.IsNullOrEmpty(item.CorpusName))
+                            p.CorpClassRoom = item.ClassRoomName;
 
-                        foreach (TimeTableView item in t)
-                        {
-                            Para p = new Para();
-                            p.TimeStart_1 = item.TimeStart1;
-                            p.TimeEnd_1 = item.TimeEnd1;
-                            p.TimeStart_2 = item.TimeStart2;
-                            p.TimeEnd_2 = item.TimeEnd2;
-                            p.paraNumber = item.ParaNumber;
-                            p.TeacherName = item.Fio;
-                            p.LessonName = item.LessonName;
-                            p.LessonShortType = item.LessonTypeShortName;
+                        if (string.IsNullOrEmpty(item.ClassRoomName))
+                            p.CorpClassRoom = item.LessonTypeShortName;
 
-                            if (string.IsNullOrEmpty(item.CorpusName))
-                                p.CorpClassRoom = item.ClassRoomName;
+                        if (!string.IsNullOrEmpty(item.CorpusName) && !string.IsNullOrEmpty(item.ClassRoomName))
+                            p.CorpClassRoom = $"{item.CorpusName}-{item.ClassRoomName}";
 
-                            if (string.IsNullOrEmpty(item.ClassRoomName))
-                                p.CorpClassRoom = item.LessonTypeShortName;
-
-                            if (!string.IsNullOrEmpty(item.CorpusName) && !string.IsNullOrEmpty(item.ClassRoomName))
-                                p.CorpClassRoom = $"{item.CorpusName}-{item.ClassRoomName}";
-
-                            stud.ParaList.Add(p);
-                        }
-
-                        stud.ParaList = stud.ParaList.OrderBy(o => o.paraNumber).ToList();
-                        stundetList.Add(stud);
+                        stud.ParaList.Add(p);
                     }
 
-                    timetableWeekList.Add(stundetList);
+                    stud.ParaList = stud.ParaList.OrderBy(o => o.paraNumber).ToList();
+                    resultList.Add(stud);
                 }
             }
 
-            if (n == "1")
-            {
-                List<StudentTimeTableModel> WeekOne = timetableWeekList[0];
-                foreach (var c in WeekOne)
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
-            }
-
-            if (n == "2")
-            {
-                List<StudentTimeTableModel> WeekOne = timetableWeekList[1];
-                foreach (var c in WeekOne)
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
-            }
-
-            return PartialView("_partialWeekTimetable");
-
+            return resultList;
         }
     }
 }
