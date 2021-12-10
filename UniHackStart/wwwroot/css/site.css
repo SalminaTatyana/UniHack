@@ -522,7 +522,7 @@ main {
   bottom: 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(190, 190, 190, 0.4);
   z-index: 102;
   cursor: pointer;
   visibility: hidden;
@@ -1339,7 +1339,10 @@ main {
     flex-wrap: wrap; }
   .timetable .timetable-date {
     margin-bottom: 15px;
-    min-width: 55px; }
+    min-width: 55px;
+    font-size: 18px;
+    color: #d92419;
+    font-weight: 700; }
   .timetable .timetable-lesson-item {
     display: flex;
     justify-content: flex-start;
@@ -1348,17 +1351,23 @@ main {
   .timetable .timetable-lesson-time {
     width: 50px;
     min-width: 55px;
-    margin-right: 15px; }
+    margin-right: 15px;
+    font-weight: 500; }
   .timetable .timetable-lesson-text {
-    width: 25%;
-    min-width: 200px; }
+    width: 30%;
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #d92419; }
   .timetable .timetable-lesson-teacher {
-    width: 25%;
+    width: 30%;
     flex-grow: 1;
-    min-width: 200px; }
+    min-width: 150px;
+    font-weight: 500; }
   .timetable .timetable-lesson-place {
-    width: 25%;
-    min-width: 100px; }
+    width: 15%;
+    min-width: 50px;
+    color: #0389FF; }
 
 @media (max-width: 1023px) {
   .timetable-wrapper, .deadline-wrapper {
@@ -1368,6 +1377,39 @@ main {
 @media (max-width: 468px) {
   .timetable .timetable-lesson-item {
     flex-direction: column; } }
+
+.slider-guest {
+  width: 100%;
+  margin: 50px 20px;
+  min-height: 200px;
+  align-items: center;
+  background: #020024;
+  background: linear-gradient(162deg, #020024 0%, #090979 70%, #007dff 100%);
+  padding: 25px;
+  border-radius: 20px; }
+
+.guest-text {
+  display: flex;
+  align-items: center;
+  margin: auto 10px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  width: 70%;
+  margin-top: 25px; }
+
+.guest-link-slider {
+  color: #83b4ff;
+  cursor: pointer; }
+  .guest-link-slider img {
+    display: inline !important;
+    margin-right: 10px; }
+
+.teacher-text {
+  display: block; }
+
+.teacher-text-list {
+  font-size: 20px; }
 
 .card-list {
   display: -webkit-box;
@@ -2345,10 +2387,14 @@ main {
 
 .timetable-section .timetable-card {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100%; }
 
 .timetable-section .timetable-date {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #d92419;
+  font-weight: 700; }
 
 .timetable-section .timetable-lesson-item {
   display: flex;
@@ -2356,23 +2402,28 @@ main {
   margin-bottom: 15px; }
 
 .timetable-section .timetable-lesson-time {
-  width: 50px;
-  margin-right: 15px; }
+  width: 200px;
+  margin-right: 15px;
+  font-weight: 500; }
 
 .timetable-section .timetable-lesson-text {
-  width: 100%;
-  min-width: 200px; }
+  width: 40%;
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 600; }
 
 .timetable-section .timetable-lesson-teacher {
-  width: 100%; }
+  width: 40%;
+  color: #0389FF;
+  font-weight: 500; }
 
 .timetable-section .timetable-lesson-place {
-  width: 100%; }
+  width: 20%; }
 
 .timetable-section .timetable-lesson-teacher-place-wrapper {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: calc(100%-220px); }
 
 .tabs {
   display: -webkit-box;
@@ -2803,11 +2854,11 @@ main {
         min-height: 50px !important; } }
 
 .login-as-org-list .login-as-org {
-  display: -webkit-box;
-  display: -ms-flexbox !important;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 22px;
+  justify-content: flex-start;
+  font-size: 18px;
   font-weight: 500;
   line-height: 18px;
   color: #024a92;
@@ -2816,13 +2867,15 @@ main {
   background-color: transparent;
   cursor: pointer;
   outline: none;
+  margin-bottom: 15px;
   /*  &:hover,
     &:focus {
         background-color: $gray-background;
     }*/ }
   @media (max-width: 767px) {
     .login-as-org-list .login-as-org {
-      font-size: 16px; } }
+      font-size: 16px;
+      flex-direction: row !important; } }
   .login-as-org-list .login-as-org img {
     margin-right: 18px; }
   .login-as-org-list .login-as-org .choose-role-link svg {
@@ -3020,3 +3073,86 @@ main {
     -webkit-box-shadow: none;
     box-shadow: none;
     background-color: #0389FF; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 103;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  overflow: auto; }
+  .modal.active {
+    visibility: visible;
+    opacity: 1; }
+  .modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 58, 158, 0.7);
+    z-index: 102;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0; }
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1; }
+
+.modal-content {
+  position: relative;
+  z-index: 104;
+  margin: auto;
+  padding: 40px 44px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 15px 18px rgba(47, 131, 222, 0.2);
+  box-shadow: 0px 15px 18px rgba(47, 131, 222, 0.2);
+  border-radius: 20px; }
+
+.modal-name {
+  margin: 0 0 30px; }
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  width: 21px;
+  height: 21px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer; }
+  .modal-close svg .a {
+    fill: none; }
+  .modal-close svg .b {
+    fill: #d92419; }
+  .modal-close:hover svg .b,
+  .modal-close:focus svg .b {
+    fill: #83b4ff; }
+
+.modal-btn-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.modal-btn-OK {
+  min-width: 120px; }

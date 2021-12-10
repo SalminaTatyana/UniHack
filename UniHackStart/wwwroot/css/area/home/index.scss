@@ -38,6 +38,9 @@
     .timetable-date {
         margin-bottom: 15px;
         min-width: 55px;
+        font-size: 18px;
+        color: $secondary-text-color;
+        font-weight: 700;
     }
 
     .timetable-lesson-item {
@@ -51,22 +54,28 @@
         width: 50px;
         min-width: 55px;
         margin-right: 15px;
+        font-weight: 500;
     }
 
     .timetable-lesson-text {
-        width: 25%;
-        min-width: 200px;
+        width: 30%;
+        min-width: 150px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $secondary-text-color;
     }
 
     .timetable-lesson-teacher {
-        width: 25%;
+        width: 30%;
         flex-grow: 1;
-        min-width: 200px;
+        min-width: 150px;
+        font-weight: 500;
     }
 
     .timetable-lesson-place {
-        width: 25%;
-        min-width: 100px;
+        width: 15%;
+        min-width: 50px;
+        color: $active-secondary-button-background;
     }
 }
 @media (max-width: 1023px) {
@@ -79,4 +88,40 @@
     .timetable .timetable-lesson-item {
         flex-direction: column;
     }
+}
+.slider-guest {
+    width: 100%;
+    margin: 50px 20px;
+    min-height: 200px;
+    align-items: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(162deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 70%, rgba(0,125,255,1) 100%);
+    padding: 25px;
+    border-radius: 20px;
+}
+.guest-text {
+    display: flex;
+    align-items: center;
+    margin: auto 10px;
+    color: $fourth-text-color;
+    font-size: 32px;
+    font-weight:700;
+    width: 70%;
+    margin-top:25px;
+   
+}
+.guest-link-slider {
+    color: $third-text-color;
+    cursor: pointer;
+
+     img {
+        display: inline !important;
+        margin-right: 10px;
+    }
+}
+.teacher-text {
+    display: block;
+}
+.teacher-text-list {
+    font-size: 20px;
 }

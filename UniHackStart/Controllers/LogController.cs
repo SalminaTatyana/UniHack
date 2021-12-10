@@ -62,7 +62,12 @@ namespace UniHackStart.Controllers
             return RedirectToAction("AdminLog");
         }
         public IActionResult AdminLog() {
-            return View(/*_context.Files.ToList()*/);
+            if (HttpContext.Session.GetString("role") == "Admin")
+            {
+                return View(/*_context.Files.ToList()*/);
+            }
+            else { return View("_partialErrorAcces"); }
+            
         }
     }
 }

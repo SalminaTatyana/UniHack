@@ -2,10 +2,14 @@
     .timetable-card {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .timetable-date {
         margin-bottom: 15px;
+        font-size: 20px;
+        color: $secondary-text-color;
+        font-weight: 700;
     }
 
     .timetable-lesson-item {
@@ -15,27 +19,32 @@
     }
 
     .timetable-lesson-time {
-        width: 50px;
+        width: 200px;
         margin-right: 15px;
+        font-weight: 500;
     }
 
     .timetable-lesson-text {
-        width: 100%;
+        width: 40%;
         min-width: 200px;
+        font-size: 16px;
+        font-weight: 600;
     }
 
     .timetable-lesson-teacher {
-        width: 100%;
+        width: 40%;
+        color: $active-secondary-button-background;
+        font-weight: 500;
     }
 
     .timetable-lesson-place {
-        width: 100%;
+        width: 20%;
     }
 
     .timetable-lesson-teacher-place-wrapper {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
+        width: calc(100%-220px)
     }
 }
 .tabs {

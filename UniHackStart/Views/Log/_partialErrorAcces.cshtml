@@ -1,0 +1,21 @@
+﻿
+<section class="modal active" data-modal="1" id="AccessDeniedModal">
+    <div class="modal-content" style="width: auto;">
+        <a class="modal-close" type="button" asp-controller="Home" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.213" height="21.213" viewBox="0 0 21.213 21.213">
+                <g transform="translate(10.607) rotate(45)"><rect class="a" width="15" height="15"></rect><path class="b" d="M5.909,1.733a1.626,1.626,0,0,1,3.252,0V5.909h4.176a1.626,1.626,0,1,1,0,3.252H9.161v4.176a1.626,1.626,0,1,1-3.252,0V9.161H1.733a1.626,1.626,0,0,1,0-3.252H5.909Z" transform="translate(-0.035 -0.035)"></path></g>
+            </svg>
+        </a>
+        <div>
+            Для доступа к данной странице необходимо авторизоваться
+        </div>
+        <br>
+        <br>
+        <div class="modal-btn-block">
+            <a class="primary-btn modal-btn-OK" asp-controller="Home" asp-action="ChooseUser">ОК</a>
+        </div>
+    </div>
+</section>
+<script>
+    $('.overlay').addClass('active');
+</script>

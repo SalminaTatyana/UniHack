@@ -1,16 +1,14 @@
 ﻿
-<div class="slider-guest">
-    <div class="guest-text teacher-text">
-        Добрый день, Иван. Как администратор вы можете:
-        <ul class="teacher-text-list">
-            <li> Просмотр списка всех студентов или преподавателей, а также возможность регистрации пользователя;</li>
-            <li>Изменение вкладки контактных данных;</li>
-            <li>Изменение ленты новостей;</li>
-            <li>Загрузка нового расписания.</li>
-        </ul>
-    </div>
+<div class="slider-guest"><div class="guest-text teacher-text">
+    Добрый день, Иван. Как преподаватель вы можете:
+    <ul class="teacher-text-list">
+        <li >Выставлять оценки и посещаемость;</li>
+        <li>Выдавать домашнее задание;</li>
+        <li>Закреплять файл с экзаменационными билетами для подготовки студентов к экзамену;</li>
+        <li>Назначать занятия и консультации, определять форму их провкедения.</li>
+    </ul>
 </div>
-
+    </div>
 <section class="index-interesting">
     <h2 class="block-title">Интересные страницы</h2>
     <div class="card-list">
@@ -24,8 +22,9 @@
         </a>
         <a class="card" asp-controller="Log" asp-action="Index">
             <img class="icon" src="~/img/admin/setting-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
-            <b class="card-name">Настройки сайта</b>
+            <b class="card-name">Домашнее задание</b>
         </a>
+
         <a class="card" asp-controller="Timetable" asp-action="Index">
             <img class="icon" src="~/img/sidebar/timetable.svg" alt="" width="70" height="70" aria-hidden="true">
             <b class="card-name">Расписание</b>
@@ -35,12 +34,12 @@
             <b class="card-name">Помощь</b>
         </a>
         <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/admin/setting-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Сессия</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
             <img class="icon" src="~/img/index/news-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
             <b class="card-name">Добавить новости</b>
         </a>
     </div>
 </section>
-<link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
-<link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
-<script src="~/lib/slick/slick.min.js" asp-append-version="true"></script>
-<script>$('.slider').slick({ dots: true });</script>

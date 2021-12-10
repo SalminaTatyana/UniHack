@@ -1,4 +1,31 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿<div class="guest-text-wrapper slider-guest">
+    <div class="guest-text">Для получения информации о преподавательcком составе перейдите в раздел <a class="guest-link-slider" asp-controller="Teachers" asp-action="Index">"<img class="icon" src="~/img/index/teacher-svgrepo-com.svg" alt="" width="30" height="30" aria-hidden="true">Преподаватели"</a> в главном меню. </div>
+    <div class="guest-text">Для просмотра информации о текущем расписании перейдите в раздел <a class="guest-link-slider"  asp-controller="Timetable" asp-action="Index">"<img class="icon" src="~/img/sidebar/timetable.svg" alt="" width="30" height="30" aria-hidden="true">Расписание"</a> главном меню. </div>
+    <div class="guest-text">Для получения расширенных возможностей просмотра и управления данными <a class="guest-link-slider" asp-controller="Teachers" asp-action="Index"><img class="icon" src="~/img/exit-svgrepo-com.svg" alt="" width="30" height="30" aria-hidden="true">авторизируйтесь</a> в системе. </div>
+</div>
+<section class="index-interesting">
+    <h2 class="block-title">Интересные страницы</h2>
+    <div class="card-list">
+
+        <a class="card" asp-controller="Teachers" asp-action="Index">
+            <img class="icon" src="~/img/index/teacher-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Преподаватели</b>
+        </a>
+
+        <a class="card" asp-controller="Timetable" asp-action="Index">
+            <img class="icon" src="~/img/sidebar/timetable.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Расписание</b>
+        </a>
+
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/index/news-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Новости</b>
+        </a>
+    </div>
+</section>
+<link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
+<link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
+<script src="~/lib/slick/slick.min.js" asp-append-version="true"></script>
+<script>$('.slider-guest').slick({
+        dots: true,
+    });</script>
