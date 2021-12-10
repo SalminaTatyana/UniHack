@@ -20,8 +20,10 @@ namespace UniHackStart.Model.Database
         [Key]
         [Column("id")]
         public long Id { get; set; }
+        [Required]
         [Column("name")]
-        public int Name { get; set; }
+        [StringLength(20)]
+        public string Name { get; set; }
 
         [InverseProperty(nameof(Group.Course))]
         public virtual ICollection<Group> Groups { get; set; }

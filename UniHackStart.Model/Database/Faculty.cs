@@ -14,6 +14,7 @@ namespace UniHackStart.Model.Database
         public Faculty()
         {
             FacultyLessons = new HashSet<FacultyLesson>();
+            FacultyTeachers = new HashSet<FacultyTeacher>();
             Specialties = new HashSet<Specialty>();
         }
 
@@ -26,7 +27,9 @@ namespace UniHackStart.Model.Database
 
         [InverseProperty(nameof(FacultyLesson.Faculty))]
         public virtual ICollection<FacultyLesson> FacultyLessons { get; set; }
-        [InverseProperty(nameof(Specialty.Faculty))]
+        [InverseProperty(nameof(FacultyTeacher.Faculty))]
+        public virtual ICollection<FacultyTeacher> FacultyTeachers { get; set; }
+        [InverseProperty(nameof(Specialty.FacultyGroup))]
         public virtual ICollection<Specialty> Specialties { get; set; }
     }
 }

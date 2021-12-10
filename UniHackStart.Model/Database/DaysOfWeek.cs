@@ -14,6 +14,7 @@ namespace UniHackStart.Model.Database
         public DaysOfWeek()
         {
             TimeTableReesterRecords = new HashSet<TimeTableReesterRecord>();
+            TimeTables = new HashSet<TimeTable>();
         }
 
         [Key]
@@ -26,5 +27,7 @@ namespace UniHackStart.Model.Database
 
         [InverseProperty(nameof(TimeTableReesterRecord.DayOfWeek))]
         public virtual ICollection<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        [InverseProperty(nameof(TimeTable.DayOfWeek))]
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
     }
 }

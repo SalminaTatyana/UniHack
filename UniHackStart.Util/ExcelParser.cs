@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ExcelDataReader;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 using UniHackStart.Util.ExcelObjects;
 using UniHackStart.Model.Database;
 
@@ -13,7 +15,6 @@ namespace UniHackStart.Util
     {
         public static void Start(TimeTableReester reester)
         {
-            //string path = "raspisanie.xls";
             List<ExcelGroup> groupList = new List<ExcelGroup>();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -76,11 +77,14 @@ namespace UniHackStart.Util
                                         }
 
                                         //Получаем занятия и приписку с Преподавателем, корпусом и кабинетом; i - колонка группы
-                                        para.lesson = ExcelLesson.GetLesson(dt.Rows[k][i].ToString(), dt.Rows[k + 1][i].ToString());
+                                        para.lesson = ExcelLesson.GetLesson(dt.Rows[k][i].ToString(),
+                                            dt.Rows[k + 1][i].ToString());
 
                                         //Получаем номер пары
                                         //Где то в конце расписания нет номера пары, но есть время, значит она восьмая
-                                        para.Number = string.IsNullOrWhiteSpace(dt.Rows[k][2].ToString()) ? 8 : int.Parse(dt.Rows[k][2].ToString());
+                                        para.Number = string.IsNullOrWhiteSpace(dt.Rows[k][2].ToString())
+                                            ? 8
+                                            : int.Parse(dt.Rows[k][2].ToString());
 
                                         if (para.Number == 8 && !group.paraList
                                                 .Where(w => w.dayOfWeek == para.dayOfWeek).ToList()
@@ -89,7 +93,8 @@ namespace UniHackStart.Util
                                             para.Number = 7;
                                         }
 
-                                        if (group.paraList.Where(w => w.dayOfWeek == para.dayOfWeek).ToList().Exists(e => e.Number == para.Number))
+                                        if (group.paraList.Where(w => w.dayOfWeek == para.dayOfWeek).ToList()
+                                            .Exists(e => e.Number == para.Number))
                                             break;
 
                                         k++;
@@ -136,11 +141,14 @@ namespace UniHackStart.Util
                                         }
 
                                         //Получаем занятия и приписку с Преподавателем, корпусом и кабинетом; i - колонка группы
-                                        para.lesson = ExcelLesson.GetLesson(dt.Rows[k][i].ToString(), dt.Rows[k + 1][i].ToString());
+                                        para.lesson = ExcelLesson.GetLesson(dt.Rows[k][i].ToString(),
+                                            dt.Rows[k + 1][i].ToString());
 
                                         //Получаем номер пары
                                         //Где то в конце расписания нет номера пары, но есть время, значит она восьмая
-                                        para.Number = string.IsNullOrWhiteSpace(dt.Rows[k][2].ToString()) ? 8 : int.Parse(dt.Rows[k][2].ToString());
+                                        para.Number = string.IsNullOrWhiteSpace(dt.Rows[k][2].ToString())
+                                            ? 8
+                                            : int.Parse(dt.Rows[k][2].ToString());
 
                                         if (para.Number == 8 && !group.paraList
                                                 .Where(w => w.dayOfWeek == para.dayOfWeek).ToList()
@@ -149,7 +157,8 @@ namespace UniHackStart.Util
                                             para.Number = 7;
                                         }
 
-                                        if (group.paraList.Where(w => w.dayOfWeek == para.dayOfWeek).ToList().Exists(e => e.Number == para.Number))
+                                        if (group.paraList.Where(w => w.dayOfWeek == para.dayOfWeek).ToList()
+                                            .Exists(e => e.Number == para.Number))
                                             break;
 
                                         k++;
@@ -159,17 +168,19 @@ namespace UniHackStart.Util
                                     indexDay++;
                                 }
                             }
+
                             listGroups.Add(group);
                         }
                     }
+
                     groupList = listGroups;
                 }
             }
 
-            SaveParsing(groupList,reester.Id);
+            SaveParsing(groupList, reester.Id);
         }
 
-        private static void SaveParsing(List<ExcelGroup> groupList,long reesterId)
+        private static void SaveParsing(List<ExcelGroup> groupList, long reesterId)
         {
             /*
              * 1 - день недели;
@@ -215,6 +226,27 @@ namespace UniHackStart.Util
                 //Инсертим список записей
                 db.TimeTableReesterRecords.AddRange(listRecords);
                 db.SaveChanges();
+            }
+        }
+
+        public static string RegistryProcessingTimeTable(long reesterId)
+        {
+            string msg = string.Empty;
+
+            using (var db = new UniHackStartDbContext())
+            {
+                SqlParameter[] sp = new SqlParameter[2];
+                sp[0] = new SqlParameter("@reesterId", SqlDbType.BigInt);
+                sp[0].Value = reesterId;
+                sp[1] = new SqlParameter("@msg", SqlDbType.VarChar);
+                sp[1].Direction = ParameterDirection.Output;
+                sp[1].Value = msg;
+
+                db.Database.ExecuteSqlRaw("mifi.RegistryProcessingTimeTable @reesterId, @msg OUT", sp);
+
+                string errorMessage = sp[1].Value.ToString();
+
+                return errorMessage;
             }
         }
 

@@ -40,6 +40,21 @@ C:\Институт\Uni\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csp
 C:\Институт\Uni\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.dll
 C:\Институт\Uni\UniHackStart.Util\obj\Debug\net5.0\ref\UniHackStart.Util.dll
 C:\Институт\Uni\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.pdb
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.deps.json
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.dll
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\ref\UniHackStart.Util.dll
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.pdb
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.dll
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Model.pdb
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.AssemblyReference.cache
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.GeneratedMSBuildEditorConfig.editorconfig
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.AssemblyInfoInputs.cache
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.AssemblyInfo.cs
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CoreCompileInputs.cache
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.csproj.CopyComplete
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.dll
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\ref\UniHackStart.Util.dll
+d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Util\obj\Debug\net5.0\UniHackStart.Util.pdb
 D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.deps.json
 D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\UniHackStart.Util.dll
 D:\Hackaton\UniHackStart.Util\bin\Debug\net5.0\ref\UniHackStart.Util.dll

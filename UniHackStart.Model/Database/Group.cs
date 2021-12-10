@@ -15,16 +15,15 @@ namespace UniHackStart.Model.Database
         {
             Students = new HashSet<Student>();
             TimeTableReesterRecords = new HashSet<TimeTableReesterRecord>();
+            TimeTables = new HashSet<TimeTable>();
         }
 
         [Key]
         [Column("id")]
         public long Id { get; set; }
         [Column("name")]
-        public long? Name { get; set; }
-        [Column("shortName")]
-        [StringLength(255)]
-        public string ShortName { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; }
         [Column("specialityId")]
         public long? SpecialityId { get; set; }
         [Column("courseId")]
@@ -40,5 +39,7 @@ namespace UniHackStart.Model.Database
         public virtual ICollection<Student> Students { get; set; }
         [InverseProperty(nameof(TimeTableReesterRecord.Group))]
         public virtual ICollection<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        [InverseProperty(nameof(TimeTable.Group))]
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
     }
 }

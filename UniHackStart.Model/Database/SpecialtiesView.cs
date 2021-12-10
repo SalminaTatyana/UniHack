@@ -20,10 +20,10 @@ namespace UniHackStart.Model.Database
         [Column("number")]
         [StringLength(255)]
         public string Number { get; set; }
-        [Column("facultyId")]
-        public long FacultyId { get; set; }
-        [Column("facultyName")]
-        [StringLength(255)]
-        public string FacultyName { get; set; }
+        [Column("facultyGroupId")]
+        public long? FacultyGroupId { get; set; }
+        [Column("facultyGroupName")]
+        [StringLength(30)]
+        public string FacultyGroupName { get; set; }
     }
 }
