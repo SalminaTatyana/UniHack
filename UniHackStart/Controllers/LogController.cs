@@ -15,6 +15,7 @@ namespace UniHackStart.Controllers
 {
     public class LogController : Controller
     {
+        
         //ApplicationContext _context;
         IWebHostEnvironment _appEnvironment;
         public LogController(/*ApplicationContext context,*/ IWebHostEnvironment appEnvironment)
@@ -29,45 +30,42 @@ namespace UniHackStart.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFile(IFormFile uploadedFile)
         {
+            var time = DateTime.Now.ToString("dd.MM.yyyy HH-mm-ss");
             if (uploadedFile != null)
             {
-                string path = _appEnvironment.WebRootPath + "\\Files\\" + uploadedFile.FileName;
-                using (var fileStream = new FileStream(path, FileMode.Create))
-                {
-                    await uploadedFile.CopyToAsync(fileStream);
+                string path = _appEnvironment.WebRootPath + "\\Files\\" +time +"_"+uploadedFile.FileName;
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await uploadedFile.CopyToAsync(fileStream);
+                    }
+                    FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
+
+                    var reester = new TimeTableReester();
+                    using (var db = new UniHackStartDbContext())
+                    {
+                        reester.Created = DateTime.Now;
+                        reester.FileName = file.Name;
+                        reester.FilePath = file.Path;
+                        reester.UserId = 1;
+
+                        db.TimeTableReesters.Add(reester);
+                        db.SaveChanges();
+                    }
+
+                    ExcelParser.Start(reester);
+                    ExcelParser.RegistryProcessingTimeTable(reester.Id);
                 }
-                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
 
-                var reester = new TimeTableReester();
-                using (var db = new UniHackStartDbContext())
-                {
-                    reester.Created = DateTime.Now;
-                    reester.FileName = file.Name;
-                    reester.FilePath = file.Path;
-                    reester.UserId = 1;
-                    
-                    db.TimeTableReesters.Add(reester);
-                    db.SaveChanges();
-                }
-
-                ExcelParser.Start(reester);
-                ExcelParser.RegistryProcessingTimeTable(reester.Id);
-
-
-
-
-                //_context.Files.Add(file);
-                //_context.SaveChanges();
-            }
             return RedirectToAction("AdminLog");
         }
-        public IActionResult AdminLog() {
+        public IActionResult AdminLog()
+        {
             if (HttpContext.Session.GetString("role") == "Admin")
             {
                 return View(/*_context.Files.ToList()*/);
             }
             else { return View("_partialErrorAcces"); }
-            
+
         }
     }
 }
