@@ -27,37 +27,42 @@ namespace UniHackStart.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> AddFile(IFormFile uploadedFile)
         {
             var time = DateTime.Now.ToString("dd.MM.yyyy HH-mm-ss");
             if (uploadedFile != null)
             {
-                string path = _appEnvironment.WebRootPath + "\\Files\\" +time +"_"+uploadedFile.FileName;
-                    using (var fileStream = new FileStream(path, FileMode.Create))
-                    {
-                        await uploadedFile.CopyToAsync(fileStream);
-                    }
-                    FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
-
-                    var reester = new TimeTableReester();
-                    using (var db = new UniHackStartDbContext())
-                    {
-                        reester.Created = DateTime.Now;
-                        reester.FileName = file.Name;
-                        reester.FilePath = file.Path;
-                        reester.UserId = 1;
-
-                        db.TimeTableReesters.Add(reester);
-                        db.SaveChanges();
-                    }
-
-                    ExcelParser.Start(reester);
-                    ExcelParser.RegistryProcessingTimeTable(reester.Id);
+                string path = _appEnvironment.WebRootPath + "\\Files\\" + time + "_" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await uploadedFile.CopyToAsync(fileStream);
                 }
+
+                FileModel file = new FileModel {Name = uploadedFile.FileName, Path = path};
+
+                var reester = new TimeTableReester();
+                using (var db = new UniHackStartDbContext())
+                {
+                    reester.Created = DateTime.Now;
+                    reester.FileName = file.Name;
+                    reester.FilePath = file.Path;
+                    reester.UserId = 1;
+
+                    db.TimeTableReesters.Add(reester);
+                    db.SaveChanges();
+                }
+
+                ExcelParser.Start(reester);
+                ExcelParser.RegistryProcessingTimeTable(reester.Id);
+                ExcelParser.SetCurrentTimeTable(reester.Id);
+
+            }
 
             return RedirectToAction("AdminLog");
         }
+
         public IActionResult AdminLog()
         {
             if (HttpContext.Session.GetString("role") == "Admin")

@@ -250,6 +250,33 @@ namespace UniHackStart.Util
             }
         }
 
+        public static void SetCurrentTimeTable(long reesterId)
+        {
+            using (var db = new UniHackStartDbContext())
+            {
+
+                TimeTableReester ttr = db.TimeTableReesters.FirstOrDefault(w => w.IsCurrent);
+                if (ttr != null)
+                {
+                    ttr.IsCurrent = false;
+                    db.SaveChanges();
+                }
+
+                SqlParameter[] sp = new SqlParameter[2];
+                sp[0] = new SqlParameter("@reesterId", SqlDbType.BigInt);
+                sp[0].Value = reesterId;
+                db.Database.ExecuteSqlRaw("mifi.UpdateTimeTable @reesterId", sp);
+
+                ttr = db.TimeTableReesters.FirstOrDefault(w => w.Id == reesterId);
+
+                if (ttr != null)
+                {
+                    ttr.IsCurrent = true;
+                    db.SaveChanges();
+                }
+            }
+        }
+
         private static (int f1, int f2, int f3, int f4) GetValueIndexs(string tableName)
         {
             switch (tableName)
