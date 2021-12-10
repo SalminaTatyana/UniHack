@@ -2385,6 +2385,15 @@ main {
   max-width: 200px;
   margin-top: 35px; }
 
+.anket-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+  .anket-wrapper .form-field {
+    width: calc(33.3% - 30px);
+    margin: 15px; }
+  .anket-wrapper .block-title {
+    width: 100%; }
+
 .timetable-section .timetable-card {
   display: flex;
   flex-direction: column;
