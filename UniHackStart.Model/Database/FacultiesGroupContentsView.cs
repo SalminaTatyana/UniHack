@@ -9,19 +9,17 @@ using Microsoft.EntityFrameworkCore;
 namespace UniHackStart.Model.Database
 {
     [Keyless]
-    public partial class SpecialtiesView
+    public partial class FacultiesGroupContentsView
     {
         [Column("id")]
         public long Id { get; set; }
-        [Required]
-        [Column("name")]
+        [Column("facultyId")]
+        public long FacultyId { get; set; }
+        [Column("facultyName")]
         [StringLength(255)]
-        public string Name { get; set; }
-        [Column("number")]
-        [StringLength(255)]
-        public string Number { get; set; }
+        public string FacultyName { get; set; }
         [Column("facultyGroupId")]
-        public long? FacultyGroupId { get; set; }
+        public long FacultyGroupId { get; set; }
         [Column("facultyGroupName")]
         [StringLength(30)]
         public string FacultyGroupName { get; set; }

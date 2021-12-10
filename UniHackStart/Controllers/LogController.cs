@@ -7,7 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UniHackStart.Model.Database;
 using UniHackStart.Models;
+using UniHackStart.Util;
 
 namespace UniHackStart.Controllers
 {
@@ -29,12 +31,31 @@ namespace UniHackStart.Controllers
         {
             if (uploadedFile != null)
             {
-                string path = "/Files/" + uploadedFile.FileName;
-                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                string path = _appEnvironment.WebRootPath + "\\Files\\" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await uploadedFile.CopyToAsync(fileStream);
                 }
                 FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
+
+                var reester = new TimeTableReester();
+                using (var db = new UniHackStartDbContext())
+                {
+                    reester.Created = DateTime.Now;
+                    reester.FileName = file.Name;
+                    reester.FilePath = file.Path;
+                    reester.UserId = 1;
+                    
+                    db.TimeTableReesters.Add(reester);
+                    db.SaveChanges();
+                }
+
+                ExcelParser.Start(reester);
+                ExcelParser.RegistryProcessingTimeTable(reester.Id);
+
+
+
+
                 //_context.Files.Add(file);
                 //_context.SaveChanges();
             }

@@ -13,15 +13,11 @@ namespace UniHackStart.Model.Database
     {
         [Column("id")]
         public long Id { get; set; }
-        [Required]
         [Column("groupName")]
-        [StringLength(255)]
+        [StringLength(50)]
         public string GroupName { get; set; }
-        [Column("groupShortName")]
-        [StringLength(255)]
-        public string GroupShortName { get; set; }
         [Column("specialityId")]
-        public long SpecialityId { get; set; }
+        public long? SpecialityId { get; set; }
         [Required]
         [Column("specialityName")]
         [StringLength(255)]
@@ -30,8 +26,10 @@ namespace UniHackStart.Model.Database
         [StringLength(255)]
         public string SpecialityNumber { get; set; }
         [Column("courseId")]
-        public long CourseId { get; set; }
+        public long? CourseId { get; set; }
+        [Required]
         [Column("courseName")]
-        public int CourseName { get; set; }
+        [StringLength(20)]
+        public string CourseName { get; set; }
     }
 }
