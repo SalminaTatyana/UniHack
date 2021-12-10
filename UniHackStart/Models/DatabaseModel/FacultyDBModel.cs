@@ -7,5 +7,8 @@ namespace UniHackStart.Models.DatabaseModel
 {
     public class FacultyDBModel
     {
+        public long Id { get; set; }
+
+        public string Name { get; set; }
     }
 }

@@ -1,17 +1,20 @@
-﻿@model UniHackStart.Models.WeekTimetableModel
+﻿@model UniHackStart.Models.StudentTimeTableModel
 <div class="card timetable-card">
-    <div class="timetable-date">День @Model.dateOfWeek Неделя @Model.weekNumber</div>
+    <div class="timetable-date">День @Model.DayOfWeek</div>
     <div class="timetable-lesson-wrapper">
-        @for (int i = 0; i < 6; i++)
+
+        @foreach (var item in Model.ParaList)
         {
-            <div class="timetable-lesson-item">
-                <div class="timetable-lesson-time">@Model.time</div>
-                <div class="timetable-lesson-teacher-place-wrapper">
-                    <div class="timetable-lesson-text">@Model.name</div>
-                    <div class="timetable-lesson-place">@Model.place</div>
-                    <div class="timetable-lesson-teacher">@Model.teachername</div>
-                </div>
+        <div class="timetable-lesson-item">
+            <div class="timetable-lesson-text">@item.paraNumber</div>
+            <div class="timetable-lesson-time">@item.TimeStart_1 - @item.TimeEnd_1
+            @item.TimeStart_2 - @item.TimeEnd_2</div>
+            <div class="timetable-lesson-teacher-place-wrapper">
+                <div class="timetable-lesson-text">@item.LessonName @item.LessonShortType</div>
+                <div class="timetable-lesson-place">@item.CorpClassRoom</div>
+                <div class="timetable-lesson-teacher">@item.TeacherName</div>
             </div>
+        </div>
         }
 
     </div>

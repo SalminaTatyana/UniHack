@@ -360,6 +360,8 @@ namespace UniHackStart.Model.Database
 
                 entity.Property(e => e.MiddleName).IsUnicode(false);
 
+                entity.Property(e => e.Phone).IsUnicode(false);
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Teachers)
                     .HasForeignKey(d => d.UserId)

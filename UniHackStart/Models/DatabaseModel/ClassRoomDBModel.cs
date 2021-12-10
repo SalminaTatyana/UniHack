@@ -7,5 +7,8 @@ namespace UniHackStart.Models
 {
     public class ClassRoom
     {
+        public long Id { get; set; }
+
+        public string Name { get; set; }
     }
 }

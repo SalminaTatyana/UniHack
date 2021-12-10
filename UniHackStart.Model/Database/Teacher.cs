@@ -40,6 +40,9 @@ namespace UniHackStart.Model.Database
         [Column("email")]
         [StringLength(255)]
         public string Email { get; set; }
+        [Column("phone")]
+        [StringLength(20)]
+        public string Phone { get; set; }
         [Column("userId")]
         public long? UserId { get; set; }
 
