@@ -262,7 +262,7 @@ namespace UniHackStart.Util
                     db.SaveChanges();
                 }
 
-                SqlParameter[] sp = new SqlParameter[2];
+                SqlParameter[] sp = new SqlParameter[1];
                 sp[0] = new SqlParameter("@reesterId", SqlDbType.BigInt);
                 sp[0].Value = reesterId;
                 db.Database.ExecuteSqlRaw("mifi.UpdateTimeTable @reesterId", sp);
