@@ -11,8 +11,6 @@ namespace UniHackStart.Models
         public List<Para> ParaList { get; set; }
     }
 
-
-
     public class Para
     {
         public string paraNumber { get; set; }
