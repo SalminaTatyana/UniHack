@@ -34,7 +34,6 @@ d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\bin\Debug\n
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.dll
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\bin\Debug\net5.0\ref\UniHackStart.Model.dll
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.pdb
-d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.csproj.AssemblyReference.cache
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.GeneratedMSBuildEditorConfig.editorconfig
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfoInputs.cache
 d:\Moi dokuments\ИНСТИТУТ\XAKATON\UniHack\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfo.cs

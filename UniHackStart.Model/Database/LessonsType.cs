@@ -14,6 +14,7 @@ namespace UniHackStart.Model.Database
         public LessonsType()
         {
             TimeTableReesterRecords = new HashSet<TimeTableReesterRecord>();
+            TimeTables = new HashSet<TimeTable>();
         }
 
         [Key]
@@ -28,5 +29,7 @@ namespace UniHackStart.Model.Database
 
         [InverseProperty(nameof(TimeTableReesterRecord.LessonType))]
         public virtual ICollection<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        [InverseProperty(nameof(TimeTable.LessonType))]
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
     }
 }
