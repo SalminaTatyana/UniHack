@@ -47,8 +47,10 @@ namespace UniHackStart.Model.Database
         public virtual DbSet<TeacherLesson> TeacherLessons { get; set; }
         public virtual DbSet<TeacherLessonsView> TeacherLessonsViews { get; set; }
         public virtual DbSet<TeachersView> TeachersViews { get; set; }
+        public virtual DbSet<TimeTable> TimeTables { get; set; }
         public virtual DbSet<TimeTableReester> TimeTableReesters { get; set; }
         public virtual DbSet<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        public virtual DbSet<TimeTableView> TimeTableViews { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRight> UserRights { get; set; }
         public virtual DbSet<UserRightsView> UserRightsViews { get; set; }
@@ -405,6 +407,56 @@ namespace UniHackStart.Model.Database
                 entity.Property(e => e.MiddleName).IsUnicode(false);
             });
 
+            modelBuilder.Entity<TimeTable>(entity =>
+            {
+                entity.Property(e => e.ParaNumber).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd1).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd2).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart1).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart2).IsUnicode(false);
+
+                entity.Property(e => e.WeekNumber).IsUnicode(false);
+
+                entity.HasOne(d => d.ClassRoom)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.ClassRoomId)
+                    .HasConstraintName("FK_TimeTable_ClassRooms");
+
+                entity.HasOne(d => d.Corps)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.CorpsId)
+                    .HasConstraintName("FK_TimeTable_Corps");
+
+                entity.HasOne(d => d.DayOfWeek)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.DayOfWeekId)
+                    .HasConstraintName("FK_TimeTable_DaysOfWeeks");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.GroupId)
+                    .HasConstraintName("FK_TimeTable_Groups");
+
+                entity.HasOne(d => d.Lesson)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.LessonId)
+                    .HasConstraintName("FK_TimeTable_Lessons");
+
+                entity.HasOne(d => d.LessonType)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.LessonTypeId)
+                    .HasConstraintName("FK_TimeTable_LessonsTypes");
+
+                entity.HasOne(d => d.Teacher)
+                    .WithMany(p => p.TimeTables)
+                    .HasForeignKey(d => d.TeacherId)
+                    .HasConstraintName("FK_TimeTable_Teachers");
+            });
+
             modelBuilder.Entity<TimeTableReester>(entity =>
             {
                 entity.Property(e => e.Created).HasDefaultValueSql("(getdate())");
@@ -478,6 +530,37 @@ namespace UniHackStart.Model.Database
                     .WithMany(p => p.TimeTableReesterRecords)
                     .HasForeignKey(d => d.TeacherId)
                     .HasConstraintName("FK_TimeTableReesterRecords_Teachers");
+            });
+
+            modelBuilder.Entity<TimeTableView>(entity =>
+            {
+                entity.ToView("TimeTableView", "mifi");
+
+                entity.Property(e => e.ClassRoomName).IsUnicode(false);
+
+                entity.Property(e => e.CorpusName).IsUnicode(false);
+
+                entity.Property(e => e.DaysOfWeeks).IsUnicode(false);
+
+                entity.Property(e => e.Fio).IsUnicode(false);
+
+                entity.Property(e => e.GroupName).IsUnicode(false);
+
+                entity.Property(e => e.LessonName).IsUnicode(false);
+
+                entity.Property(e => e.LessonShortName).IsUnicode(false);
+
+                entity.Property(e => e.ParaNumber).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd1).IsUnicode(false);
+
+                entity.Property(e => e.TimeEnd2).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart1).IsUnicode(false);
+
+                entity.Property(e => e.TimeStart2).IsUnicode(false);
+
+                entity.Property(e => e.WeekNumber).IsUnicode(false);
             });
 
             modelBuilder.Entity<User>(entity =>

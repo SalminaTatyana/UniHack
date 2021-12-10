@@ -30,6 +30,8 @@ namespace UniHackStart.Model.Database
         [Column("filePath")]
         [StringLength(255)]
         public string FilePath { get; set; }
+        [Column("isCurrent")]
+        public bool IsCurrent { get; set; }
 
         [ForeignKey(nameof(UserId))]
         [InverseProperty("TimeTableReesters")]
