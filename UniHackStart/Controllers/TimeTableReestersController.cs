@@ -11,15 +11,7 @@ namespace UniHackStart.Controllers
     public class TimeTableReestersController : Controller
     {
         // GET: TimeTableReestersController
-        public ActionResult Index()
-        {
-            using (var db = new UniHackStartDbContext())
-            {
-                var ttr = db.TimeTableReesters;
-                return View();
-            }
-        }
-
+        
 
         // GET: TimeTableReestersController/Create
         public ActionResult Create()

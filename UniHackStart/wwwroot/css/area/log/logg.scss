@@ -828,3 +828,250 @@
         padding-left: 15px;
     }
 }
+.meter-devices-card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: $card-background;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 10px 30px $primary-shadow-color;
+    box-shadow: 0px 10px 30px $primary-shadow-color;
+    border-radius: $secondary-border-radius;
+    word-break: break-all;
+    margin: 30px 0;
+    width: calc(100% - 500px);
+}
+
+.meter-devices-title {
+    margin-bottom: 35px;
+    margin-top: 35px;
+}
+
+.meter-devices-table-header {
+    font-weight: 700;
+    display: none;
+}
+
+.meter-devices-table-string {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 2px solid $fourth-border-color;
+    word-break: break-word;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    div {
+        padding: 5px 10px;
+    }
+}
+
+.meter-devices-add-button {
+    margin-left: 34px;
+}
+
+.meter-devices-check {
+    width: 40px;
+    padding: 0;
+    margin-right: 10px;
+
+    .main-checkbox-text {
+        display: inline;
+    }
+}
+
+
+
+.meter-devices-addres {
+    width: calc(33.3% - 40px);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .meter-devices-addres-name {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .meter-devices-addres-number {
+        font-size: 12px;
+        color: $third-text-color;
+        font-weight: 500;
+    }
+}
+
+.meter-devices-date {
+    position: relative;
+    width: calc(33.3% - 20px);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .meter-devices-date-item {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .meter-devices-date-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: $third-text-color;
+    }
+}
+
+@media (max-width: 1100px) {
+    .meter-devices-add-form .form-group {
+        width: 50%;
+    }
+}
+
+@media (max-width: 779px) {
+    .meter-devices-date, .meter-devices-addres {
+        width: 100%;
+    }
+
+    .meter-devices-title {
+        margin: 25px 0;
+    }
+
+    .meter-devices-table-string {
+        padding: 15px;
+    }
+
+    .meter-devices-addres .meter-devices-addres-name {
+        font-size: 14px;
+    }
+
+    .meter-devices-table-last-indic .last-indication {
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .last-input-of-indications {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 479px) {
+    .meter-devices-add-form .meter-devices-buttons-wrapper .meter-devices-buttons {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.meter-devices-approved {
+    color: $color-green;
+
+    &::before {
+        background-color: $color-green;
+    }
+}
+
+.meter-devices-type-number-check {
+    margin-top: 5px;
+    font-size: 16px;
+    color: $third-text-color;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.meter-devices-modal {
+    top: -20px;
+}
+
+.edit-day {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    left: 155px;
+    top: 10px;
+
+    svg {
+        .a {
+            fill: none;
+        }
+
+        .b {
+            fill: $secondary-text-color;
+        }
+    }
+
+    &:hover, &:focus {
+        svg {
+            .a {
+                fill: none;
+            }
+
+            .b {
+                fill: $third-text-color;
+            }
+        }
+    }
+
+    &:active {
+        svg {
+            .a {
+                fill: none;
+            }
+
+            .b {
+                fill: $active-secondary-button-background;
+            }
+        }
+    }
+}
+
+.timetable-slick {
+    width: 450px;
+    margin-left: 50px;
+    position: sticky;
+    order: 1;
+    top: 15px;
+    background-color: $card-background;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 10px 20px $primary-shadow-color;
+    box-shadow: 0px 10px 20px $primary-shadow-color;
+    border: 4px solid transparent;
+    border-radius: $secondary-border-radius;
+    padding: 20px;
+}
+.timetable-big-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.timetable-slick-btn-wrapper {
+    .secondary-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.timetable-slick-btn-label {
+    color: $secondary-text-color;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: block;
+
+    &:hover, &:focus {
+        color: $third-text-color;
+    }
+}
