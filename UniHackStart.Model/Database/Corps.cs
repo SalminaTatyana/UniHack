@@ -15,6 +15,7 @@ namespace UniHackStart.Model.Database
         {
             CorpsContents = new HashSet<CorpsContent>();
             TimeTableReesterRecords = new HashSet<TimeTableReesterRecord>();
+            TimeTables = new HashSet<TimeTable>();
         }
 
         [Key]
@@ -29,5 +30,7 @@ namespace UniHackStart.Model.Database
         public virtual ICollection<CorpsContent> CorpsContents { get; set; }
         [InverseProperty(nameof(TimeTableReesterRecord.Corps))]
         public virtual ICollection<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        [InverseProperty(nameof(TimeTable.Corps))]
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
     }
 }
