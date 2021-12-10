@@ -22,7 +22,7 @@ namespace UniHackStart.Model.Database
         public long TeacherId { get; set; }
         [Column("created", TypeName = "datetime")]
         public DateTime Created { get; set; }
-        [Column("points", TypeName = "decimal(18, 0)")]
+        [Column("points", TypeName = "decimal(18, 2)")]
         public decimal Points { get; set; }
 
         [ForeignKey(nameof(LessonId))]

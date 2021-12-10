@@ -46,9 +46,9 @@ namespace UniHackStart.Model.Database
         public string LessonName { get; set; }
         [Column("lessonTypeId")]
         public long? LessonTypeId { get; set; }
-        [Column("lessonShortName")]
+        [Column("lessonTypeShortName")]
         [StringLength(100)]
-        public string LessonShortName { get; set; }
+        public string LessonTypeShortName { get; set; }
         [Column("teacherId")]
         public long? TeacherId { get; set; }
         [Column("FIO")]

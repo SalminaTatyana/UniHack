@@ -15,7 +15,7 @@ namespace UniHackStart.Controllers
         {
             using (var db = new UniHackStartDbContext())
             {
-                var ttr = db.TimeTableReesters;
+                var ttr = db.TimeTableReesters.ToList();
                 return View();
             }
         }
