@@ -1,14 +1,45 @@
 ﻿
-Если вы попали на данную страницу, значит у вас есть роль администратора. С её помощью вы можете:
-<br>
--Выставлять оценки и посещаемость
-</br>
-<br>
--Выставлять домашнее задание
-</br>
-<br>
--Выставлять файл с экзаменационными билетами
-</br>
-<br>
--Обозначать будет ли пара в какой-бо день или же она будет перенесена или проведена на дистанте
-</br>
+<div class="slider-guest"><div class="guest-text teacher-text">
+    Добрый день, Иван. Как преподаватель вы можете:
+    <ul class="teacher-text-list">
+        <li >Выставлять оценки и посещаемость;</li>
+        <li>Выдавать домашнее задание;</li>
+        <li>Закреплять файл с экзаменационными билетами для подготовки студентов к экзамену;</li>
+        <li>Назначать занятия и консультации, определять форму их провкедения.</li>
+    </ul>
+</div>
+    </div>
+<section class="index-interesting">
+    <h2 class="block-title">Интересные страницы</h2>
+    <div class="card-list">
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/admin/student-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Студенты</b>
+        </a>
+        <a class="card" asp-controller="Teachers" asp-action="Index">
+            <img class="icon" src="~/img/index/teacher-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Преподаватели</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/admin/setting-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Домашнее задание</b>
+        </a>
+
+        <a class="card" asp-controller="Timetable" asp-action="Index">
+            <img class="icon" src="~/img/sidebar/timetable.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Расписание</b>
+        </a>
+        <a class="card" asp-controller="Statments" asp-action="Index">
+            <img class="icon" src="~/img/index/document-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Помощь</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/admin/setting-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Сессия</b>
+        </a>
+        <a class="card" asp-controller="Log" asp-action="Index">
+            <img class="icon" src="~/img/index/news-svgrepo-com.svg" alt="" width="70" height="70" aria-hidden="true">
+            <b class="card-name">Добавить новости</b>
+        </a>
+    </div>
+</section>

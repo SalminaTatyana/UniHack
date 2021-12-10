@@ -522,7 +522,7 @@ main {
   bottom: 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(170, 170, 170, 0.6);
+  background-color: rgba(190, 190, 190, 0.4);
   z-index: 102;
   cursor: pointer;
   visibility: hidden;
@@ -1339,7 +1339,10 @@ main {
     flex-wrap: wrap; }
   .timetable .timetable-date {
     margin-bottom: 15px;
-    min-width: 55px; }
+    min-width: 55px;
+    font-size: 18px;
+    color: #d92419;
+    font-weight: 700; }
   .timetable .timetable-lesson-item {
     display: flex;
     justify-content: flex-start;
@@ -1348,17 +1351,23 @@ main {
   .timetable .timetable-lesson-time {
     width: 50px;
     min-width: 55px;
-    margin-right: 15px; }
+    margin-right: 15px;
+    font-weight: 500; }
   .timetable .timetable-lesson-text {
-    width: 25%;
-    min-width: 200px; }
+    width: 30%;
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #d92419; }
   .timetable .timetable-lesson-teacher {
-    width: 25%;
+    width: 30%;
     flex-grow: 1;
-    min-width: 200px; }
+    min-width: 150px;
+    font-weight: 500; }
   .timetable .timetable-lesson-place {
-    width: 25%;
-    min-width: 100px; }
+    width: 15%;
+    min-width: 50px;
+    color: #0389FF; }
 
 @media (max-width: 1023px) {
   .timetable-wrapper, .deadline-wrapper {
@@ -1368,6 +1377,39 @@ main {
 @media (max-width: 468px) {
   .timetable .timetable-lesson-item {
     flex-direction: column; } }
+
+.slider-guest {
+  width: 100%;
+  margin: 50px 20px;
+  min-height: 200px;
+  align-items: center;
+  background: #020024;
+  background: linear-gradient(162deg, #020024 0%, #090979 70%, #007dff 100%);
+  padding: 25px;
+  border-radius: 20px; }
+
+.guest-text {
+  display: flex;
+  align-items: center;
+  margin: auto 10px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  width: 70%;
+  margin-top: 25px; }
+
+.guest-link-slider {
+  color: #83b4ff;
+  cursor: pointer; }
+  .guest-link-slider img {
+    display: inline !important;
+    margin-right: 10px; }
+
+.teacher-text {
+  display: block; }
+
+.teacher-text-list {
+  font-size: 20px; }
 
 .card-list {
   display: -webkit-box;
