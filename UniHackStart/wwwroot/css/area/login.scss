@@ -54,11 +54,11 @@
 }
 
 .login-as-org-list .login-as-org {
-    display: -webkit-box;
-    display: -ms-flexbox !important;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 22px;
+    justify-content: flex-start;
+    font-size: 18px;
     font-weight: 500;
     line-height: 18px;
     color: $primary-text-color;
@@ -67,9 +67,11 @@
     background-color: transparent;
     cursor: pointer;
     outline: none;
+    margin-bottom: 15px;
 
     @media (max-width: 767px) {
         font-size: 16px;
+        flex-direction: row !important;
     }
 
     img {

@@ -105,7 +105,7 @@ main {
     bottom: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(190,190,190, 0.4);
 
     @-moz-document url-prefix() {
         background-color: $info-background;
