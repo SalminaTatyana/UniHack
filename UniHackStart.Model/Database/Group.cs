@@ -21,10 +21,8 @@ namespace UniHackStart.Model.Database
         [Column("id")]
         public long Id { get; set; }
         [Column("name")]
-        public long? Name { get; set; }
-        [Column("shortName")]
-        [StringLength(255)]
-        public string ShortName { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; }
         [Column("specialityId")]
         public long? SpecialityId { get; set; }
         [Column("courseId")]

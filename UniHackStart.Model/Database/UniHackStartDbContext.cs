@@ -19,12 +19,17 @@ namespace UniHackStart.Model.Database
 
         public virtual DbSet<ClassRoom> ClassRooms { get; set; }
         public virtual DbSet<Corps> Corps { get; set; }
-        public virtual DbSet<CorpusContent> CorpusContents { get; set; }
+        public virtual DbSet<CorpsContent> CorpsContents { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<DaysOfWeek> DaysOfWeeks { get; set; }
+        public virtual DbSet<FacultiesGroup> FacultiesGroups { get; set; }
+        public virtual DbSet<FacultiesGroupContent> FacultiesGroupContents { get; set; }
+        public virtual DbSet<FacultiesGroupContentsView> FacultiesGroupContentsViews { get; set; }
         public virtual DbSet<Faculty> Faculties { get; set; }
         public virtual DbSet<FacultyLesson> FacultyLessons { get; set; }
         public virtual DbSet<FacultyLessonsView> FacultyLessonsViews { get; set; }
+        public virtual DbSet<FacultyTeacher> FacultyTeachers { get; set; }
+        public virtual DbSet<FacultyTeachersView> FacultyTeachersViews { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<GroupsView> GroupsViews { get; set; }
         public virtual DbSet<Lesson> Lessons { get; set; }
@@ -71,24 +76,43 @@ namespace UniHackStart.Model.Database
                 entity.Property(e => e.Name).IsUnicode(false);
             });
 
-            modelBuilder.Entity<CorpusContent>(entity =>
+            modelBuilder.Entity<CorpsContent>(entity =>
             {
-                entity.HasOne(d => d.Corpus)
-                    .WithMany(p => p.CorpusContents)
-                    .HasForeignKey(d => d.CorpusId)
+                entity.HasOne(d => d.Corps)
+                    .WithMany(p => p.CorpsContents)
+                    .HasForeignKey(d => d.CorpsId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CorpsContent_ClassRooms");
 
-                entity.HasOne(d => d.CorpusNavigation)
-                    .WithMany(p => p.CorpusContents)
-                    .HasForeignKey(d => d.CorpusId)
+                entity.HasOne(d => d.CorpsNavigation)
+                    .WithMany(p => p.CorpsContents)
+                    .HasForeignKey(d => d.CorpsId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CorpsContent_Corps");
+            });
+
+            modelBuilder.Entity<Course>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
             });
 
             modelBuilder.Entity<DaysOfWeek>(entity =>
             {
                 entity.Property(e => e.Name).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<FacultiesGroup>(entity =>
+            {
+                entity.Property(e => e.Name).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<FacultiesGroupContentsView>(entity =>
+            {
+                entity.ToView("FacultiesGroupContentsView", "mifi");
+
+                entity.Property(e => e.FacultyGroupName).IsUnicode(false);
+
+                entity.Property(e => e.FacultyName).IsUnicode(false);
             });
 
             modelBuilder.Entity<Faculty>(entity =>
@@ -120,9 +144,33 @@ namespace UniHackStart.Model.Database
                 entity.Property(e => e.LessonName).IsUnicode(false);
             });
 
+            modelBuilder.Entity<FacultyTeacher>(entity =>
+            {
+                entity.HasOne(d => d.Faculty)
+                    .WithMany(p => p.FacultyTeachers)
+                    .HasForeignKey(d => d.FacultyId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_FacultyTeachers_Faculties");
+
+                entity.HasOne(d => d.FacultyNavigation)
+                    .WithMany(p => p.FacultyTeachers)
+                    .HasForeignKey(d => d.FacultyId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_FacultyTeachers_Teachers");
+            });
+
+            modelBuilder.Entity<FacultyTeachersView>(entity =>
+            {
+                entity.ToView("FacultyTeachersView", "mifi");
+
+                entity.Property(e => e.Fio).IsUnicode(false);
+
+                entity.Property(e => e.Name).IsUnicode(false);
+            });
+
             modelBuilder.Entity<Group>(entity =>
             {
-                entity.Property(e => e.ShortName).IsUnicode(false);
+                entity.Property(e => e.Name).IsUnicode(false);
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Groups)
@@ -139,9 +187,9 @@ namespace UniHackStart.Model.Database
             {
                 entity.ToView("GroupsView", "mifi");
 
-                entity.Property(e => e.GroupName).IsUnicode(false);
+                entity.Property(e => e.CourseName).IsUnicode(false);
 
-                entity.Property(e => e.GroupShortName).IsUnicode(false);
+                entity.Property(e => e.GroupName).IsUnicode(false);
 
                 entity.Property(e => e.SpecialityName).IsUnicode(false);
 
@@ -185,7 +233,7 @@ namespace UniHackStart.Model.Database
             {
                 entity.ToView("SpecialtiesView", "mifi");
 
-                entity.Property(e => e.FacultyName).IsUnicode(false);
+                entity.Property(e => e.FacultyGroupName).IsUnicode(false);
 
                 entity.Property(e => e.Name).IsUnicode(false);
 
@@ -198,10 +246,11 @@ namespace UniHackStart.Model.Database
 
                 entity.Property(e => e.Number).IsUnicode(false);
 
-                entity.HasOne(d => d.Faculty)
+                entity.Property(e => e.ShortName).IsUnicode(false);
+
+                entity.HasOne(d => d.FacultyGroup)
                     .WithMany(p => p.Specialties)
-                    .HasForeignKey(d => d.FacultyId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.FacultyGroupId)
                     .HasConstraintName("FK_Specialties_Faculties");
             });
 
