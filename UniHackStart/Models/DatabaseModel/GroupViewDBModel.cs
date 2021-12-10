@@ -7,5 +7,18 @@ namespace UniHackStart.Models.DatabaseModel
 {
     public class GroupViewDBModel
     {
+        public long Id { get; set; }
+
+        public string GroupName { get; set; }
+
+        public long? SpecialityId { get; set; }
+
+        public string SpecialityName { get; set; }
+
+        public string SpecialityNumber { get; set; }
+
+        public long? CourseId { get; set; }
+
+        public string CourseName { get; set; }
     }
 }

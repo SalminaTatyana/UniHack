@@ -7,5 +7,12 @@ namespace UniHackStart.Models.DatabaseModel
 {
     public class PortfolioDBModel
     {
+        public long Id { get; set; }
+
+        public long StudentId { get; set; }
+
+        public long Achievement { get; set; }
+
+        public long NumberMark { get; set; }
     }
 }
