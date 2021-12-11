@@ -97,10 +97,10 @@ namespace UniHackStart.Controllers
                         ttrm.Add(t);
                     }
 
-                    return View("_partialExcelFiles",ttrm);
+                    return PartialView("_partialExcelFiles",ttrm);
                 }
             }
-            else { return View("_partialExcelFiles"); }
+            else { return PartialView("_partialExcelFiles"); }
 
         }
     }
