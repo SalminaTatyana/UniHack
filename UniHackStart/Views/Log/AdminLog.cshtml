@@ -70,7 +70,9 @@
     </div>
 
 </section>
-
+<script>$('#add').change(function () {
+        if ($(this).val() != '') $(this).prev().text('Выбраны файлы: ' + $(this)[0].files.length);
+        else $(this).prev().text('Выберите файлы');</script>
     
 
 

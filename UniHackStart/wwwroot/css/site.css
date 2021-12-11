@@ -2682,6 +2682,21 @@ main {
   .timetable-date {
     margin-right: 15px; } }
 
+.slider .card {
+  max-width: initial; }
+
+.slider .timetable-lesson-para {
+  width: 30px; }
+
+.slider .timetable-lesson-teacher-wrapper {
+  width: calc(100% - 150px); }
+
+.slider .timetable-lesson-text, .slider .timetable-lesson-teacher {
+  width: 100%; }
+
+.slider .timetable-lesson-time {
+  width: 100px; }
+
 .contacts-content a {
   font-weight: 400;
   color: #83b4ff;

@@ -1,32 +1,28 @@
 ﻿@model IEnumerable<UniHackStart.Models.TimeTableReestersModel>
 <div class="meter-devices-table-string">
-    <div class="meter-devices-check">
-        <label class="main-checkbox">
-            <input name="isCurrent" class="visually-hidden dispatchingFlag" data-device-id="" type="radio" value="true" checked="">
-            <span class="main-checkbox-text left"></span>
-        </label>
-    </div>
+
     @foreach (var reester in @Model)
     {
+        
         <div class="meter-devices-table-string">
             <div class="meter-devices-check">
                 <label class="main-checkbox">
-                    <input name="isCurrent" class="visually-hidden dispatchingFlag" data-device-id="" type="radio" value="true" checked="">
+                    <input name="isCurrent" class="visually-hidden dispatchingFlag" data-device-id="" type="radio" value="true" checked="@(reester.IsCurrent? true : false)">
                     <span class="main-checkbox-text left"></span>
                 </label>
             </div>
             <div class="meter-devices-addres">
-                <span class="meter-devices-addres-name"> Имя файла</span>
+                <span class="meter-devices-addres-name"> @reester.FileName</span>
             </div>
 
             <div class="meter-devices-date">
                 <span class="meter-devices-date-label">Дата создания</span>
-                <span class="meter-devices-date-item"> Дата</span>
+                <span class="meter-devices-date-item"> @reester.Created</span>
 
             </div>
             <div class="meter-devices-date">
-                <span class="meter-devices-date-label">Имя пользователя</span>
-                <span class="meter-devices-date-item"> ФИО</span>
+                <span class="meter-devices-date-label">ID пользователя</span>
+                <span class="meter-devices-date-item"> @reester.UserId</span>
             </div>
 
             <button class="modal-close" type="button">
@@ -34,4 +30,5 @@
             </button>
         </div>
     }
+    </div>
 
