@@ -18,7 +18,6 @@
             <div class="timetable-slick-btn-wrapper">
                 <label class="timetable-slick-btn-label" for="add"> Выберите файл для загрузки </label>
                 <input type="file" id="add" class="visually-hidden" name="uploadedFile" />
-
                 <input class="secondary-btn" type="submit" value="Загрузить" />
             </div>
 
@@ -66,12 +65,11 @@
     </div>
         
 
-    </div>
-
 </section>
 <script>$('#add').change(function () {
         if ($(this).val() != '') $(this).prev().text('Выбраны файлы: ' + $(this)[0].files.length);
-        else $(this).prev().text('Выберите файлы');</script>
+    else $(this).prev().text('Выберите файлы');
+});</script>
 <script>
 
     $(document).ready(function () {
