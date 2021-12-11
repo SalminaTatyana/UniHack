@@ -23,9 +23,9 @@
                     </div>
                 </div>
                 <div class="meter-devices-table-body">
-                    @*@foreach (var device in Model.Data.MeterDevices)
-                    {*@
-                    <div class="meter-devices-table-string">
+                    @foreach (var device in Model.Data.MeterDevices)
+                    {
+                    @*<div class="meter-devices-table-string">
                         <div class="meter-devices-check">
                             <label class="main-checkbox">
                                 <input name="isCurrent" class="visually-hidden dispatchingFlag" data-device-id="" type="radio" value="true" checked="">
@@ -49,7 +49,7 @@
                         <button class="modal-close" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21.213" height="21.213" viewbox="0 0 21.213 21.213"><g transform="translate(10.607) rotate(45)"><rect class="a" width="15" height="15"></rect><path class="b" d="M5.909,1.733a1.626,1.626,0,0,1,3.252,0V5.909h4.176a1.626,1.626,0,1,1,0,3.252H9.161v4.176a1.626,1.626,0,1,1-3.252,0V9.161H1.733a1.626,1.626,0,0,1,0-3.252H5.909Z" transform="translate(-0.035 -0.035)"></path></g></svg>
                         </button>
-
+                        *@}
                     </div>
                     @*}*@
                 </div>
@@ -71,97 +71,7 @@
 
 </section>
 
-    <script>
-        $('#add').change(function () {
-            if ($(this).val() != '') $(this).prev().text('Выбрано файлов: ' + $(this)[0].files.length);
-            else $(this).prev().text('Выберите файлы');
-        });
-            $(document).ready(function () {
-                $(".dispatchingFlag").on('click', function () {
-                    let deviceId = $(this).attr("data-device-id");
-                    $.ajax({
-                        url: "@Url.Action("UpdateDispatchingStatus", "MeterDevices")",
-                        type: "POST",
-                        data: {
-                            deviceId: deviceId,
-                            dispatchFlag: $(this).is(":checked")
-                        },
-                        beforeSend: Loader,
-                        complete: Loader,
-                        success: function (data) {
-                        },
-                        error: function () {
-                        }
-                    });
-                });
-            })
-
-            function CheckReading(deviceId) {
-                var message = $('#msgModal');
-                $.ajax({
-                    cache: false,
-                    type: "GET",
-                    url: "/MeterDevices/GetCheckReading",
-                    data: "deviceId=" + deviceId,
-                    beforeSend: Loader,
-                    complete: Loader,
-                    success: function (data) {
-                        if (data && data.result == 0) {
-                            message.text("Показания успешно считаны с прибора");
-                            var messageIndications = "Текущие показания: ";
-                            $.each(data.data.meterReadings[0].readings, function (index, param) {
-                                messageIndications += "<br/> " + param.billingParameterCode + ": " + param.value;
-                            });
-
-                            $('#msgInd').html(messageIndications);
-                            $("#modalMeter").click();
-                        }
-                        else {
-                            $('#msgInd').html("");
-                            message.text(data.message);
-                            $("#modalMeter").click();
-                        }
-                    },
-                    error: function () {
-                        $('#msgInd').html("");
-                        message.text("Не удалость проверить показания, пожалуйста повторите попытку позднее");
-                        $("#modalMeter").click();
-                    }
-                });
-            }
-
-            $(".edit-day").on('click', function () {
-               // console.log("edit-data", $(this).parent());
-                //console.log("edit-data", $(this).parent().children('.meter-devices-date-item')[0]);
-                //console.log("device", $(this).parent().parent().find("#device")[0].value);
-                $(this).parent().children(".meter-devices-date-item")[0].style.display = "none";
-                $(this)[0].style.display = "none";
-                $(this).parent().children('.edit-data')[0].style.display = "flex";
-
-            })
+    
 
 
-            $(".edit-button").on('click', function () {
-                var deviceId = $(this).parent().parent().parent().find("#device")[0].value;
-                var day = $(this).parent().find('input')[0].value;
-                var meterDevicesDateItem = $(this).parent().parent().children(".meter-devices-date-item")[0];
 
-                $.ajax({
-                    cache: false,
-                    type: "GET",
-                    url: "/MeterDevices/SaveDayOfDispatching",
-                    data: "day=" + day + "&deviceId=" + deviceId
-                });
-
-                $(this).parent()[0].style.display = "none";
-                $(this).parent().parent().children('.edit-day')[0].style.display = "block";
-
-                meterDevicesDateItem.innerText = day + " день месяца";
-                meterDevicesDateItem.style.display = "block";
-                $(this).parent().parent().children(".meter-devices-date-item")[0].style.display = "block";
-            })
-
-    </script>
-
-
-</section>

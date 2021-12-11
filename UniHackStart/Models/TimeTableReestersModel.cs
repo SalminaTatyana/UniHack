@@ -11,6 +11,7 @@ namespace UniHackStart.Models
         public DateTime Created { get; set; }
         public string FileName { get; set; }
         public long UserId { get; set; }
+        public string Login { get; set; }
         public string FilePath { get; set; }
         public bool IsCurrent { get; set; }
     }
