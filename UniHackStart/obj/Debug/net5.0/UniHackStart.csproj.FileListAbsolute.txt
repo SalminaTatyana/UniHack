@@ -1879,3 +1879,7 @@ D:\Hackaton\UniHackStart\obj\Debug\net5.0\UniHackStart.dll
 D:\Hackaton\UniHackStart\obj\Debug\net5.0\ref\UniHackStart.dll
 D:\Hackaton\UniHackStart\obj\Debug\net5.0\UniHackStart.pdb
 D:\Hackaton\UniHackStart\obj\Debug\net5.0\UniHackStart.genruntimeconfig.cache
+D:\Hackaton\UniHackStart\obj\Debug\net5.0\Razor\Views\Statments\student.cshtml.g.cs
+D:\Hackaton\UniHackStart\obj\Debug\net5.0\Razor\Views\Statments\Teacher.cshtml.g.cs
+D:\Hackaton\UniHackStart\obj\Debug\net5.0\Razor\Views\Statments\_partial_UserInfoTable.cshtml.g.cs
+D:\Hackaton\UniHackStart\obj\Debug\net5.0\Razor\Views\Log\_partialExcelFiles.cshtml.g.cs
