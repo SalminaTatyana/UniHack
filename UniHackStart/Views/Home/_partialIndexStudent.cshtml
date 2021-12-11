@@ -39,17 +39,19 @@
 <link href="~/lib/slick/slick.css" rel="stylesheet" asp-append-version="true">
 <link href="~/lib/slick/slick-theme.css" rel="stylesheet" asp-append-version="true">
 <script>
- $('.card-list').html("");
-    $.ajax({
-        url: "@Url.Action("GetTimetableSlider", "Timetable")",
-        type: 'POST',
-        data: { numberWeek : "1"},
+    $(document).ready(function () {
+        $('.timetable-wrapper').html("");
+        $.ajax({
+            url: "@Url.Action("GetTimetableSlider", "Timetable")",
+            type: 'POST',
+            data: { "weekNumber": "1", "groupId": 10  },
             success: function (data) {
-                    $('.timetable-wrapper').append(data);
-                },
+                $('.timetable-wrapper').append(data);
+            },
             error: function (data) {
                 $('.timetable-wrapper').append(data);
-                }
-        });</script>
+            }
+        });
+    });</script>
 <script src="~/lib/slick/slick.min.js" asp-append-version="true"></script>
 <script>$('.slider').slick({ dots: true });</script>

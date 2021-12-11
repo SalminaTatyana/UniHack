@@ -1,21 +1,28 @@
-﻿@model UniHackStart.Models.StudentTimeTableModel
-<div class="card timetable-card">
-    <div class="timetable-date">День @Model.DayOfWeek</div>
-    <div class="timetable-lesson-wrapper">
+﻿@model IEnumerable<UniHackStart.Models.StudentTimeTableModel>
+@foreach (var day in @Model)
+{
+    <div class="card timetable-card">
+        <div class="timetable-date">@day.DayOfWeek</div>
+        <div class="timetable-lesson-wrapper">
 
-        @foreach (var item in Model.ParaList)
-        {
-        <div class="timetable-lesson-item">
-            <div class="timetable-lesson-text">@item.paraNumber</div>
-            <div class="timetable-lesson-time">@item.TimeStart_1 - @item.TimeEnd_1
-            @item.TimeStart_2 - @item.TimeEnd_2</div>
-            <div class="timetable-lesson-teacher-place-wrapper">
-                <div class="timetable-lesson-text">@item.LessonName @item.LessonShortType</div>
-                <div class="timetable-lesson-place">@item.CorpClassRoom</div>
-                <div class="timetable-lesson-teacher">@item.TeacherName</div>
-            </div>
+            @foreach (var item in day.ParaList)
+            {
+                <div class="timetable-lesson-item">
+                    <div class="timetable-lesson-para">@item.paraNumber</div>
+                    <div class="timetable-lesson-time">
+                        @item.TimeStart_1 - @item.TimeEnd_1
+                        <br />
+                        @item.TimeStart_2 - @item.TimeEnd_2
+                    </div>
+                    <div class="timetable-lesson-teacher-place-wrapper">
+                        <div class="timetable-lesson-text">@item.LessonName @item.LessonShortType</div>
+                        <div class="timetable-lesson-place">@item.CorpClassRoom</div>
+                        <div class="timetable-lesson-teacher">@item.TeacherName</div>
+                    </div>
+                </div>
+            }
+
         </div>
-        }
-
     </div>
-</div>
+    <div class="down-line"></div>
+} </div>
