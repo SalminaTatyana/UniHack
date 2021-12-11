@@ -69,7 +69,7 @@ namespace UniHackStart.Controllers
             {
                 using (var db = new UniHackStartDbContext())
                 {
-                    var ttr = db.TimeTableReestersView.ToList();
+                    var ttr = db.TimeTableReesters.ToList();
                     return PartialView("_partialExcelFiles",ttr);
                 }
             }
