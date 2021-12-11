@@ -49,7 +49,6 @@ D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.runtimeconfig
 D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.dll
 D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\ref\UniHackStart.Model.dll
 D:\Hackaton\UniHackStart.Model\bin\Debug\net5.0\UniHackStart.Model.pdb
-D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.csproj.AssemblyReference.cache
 D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.GeneratedMSBuildEditorConfig.editorconfig
 D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfoInputs.cache
 D:\Hackaton\UniHackStart.Model\obj\Debug\net5.0\UniHackStart.Model.AssemblyInfo.cs
