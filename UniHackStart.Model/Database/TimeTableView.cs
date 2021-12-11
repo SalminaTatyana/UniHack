@@ -19,6 +19,11 @@ namespace UniHackStart.Model.Database
         [Column("groupName")]
         [StringLength(50)]
         public string GroupName { get; set; }
+        [Column("courseId")]
+        public long? CourseId { get; set; }
+        [Column("courseName")]
+        [StringLength(20)]
+        public string CourseName { get; set; }
         [Column("dayOfWeekId")]
         public long? DayOfWeekId { get; set; }
         [Column("daysOfWeeks")]
