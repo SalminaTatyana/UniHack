@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Поиск Преподавателей";
+    ViewData["ActiveMenuLink"] = "menu-link-marketplace-users";
+}
+<ul class="breadcrumbs">
+    <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
+    <li>
+        <a class="active"> @ViewData["Title"]</a>
+    </li>
+</ul>
+<section class="administration-users">
+    <h2 class="block-title">Поиск пользователей</h2>
+    <form class="administration-users-form" id="searchForm" asp-controller="AdministrationUsers" asp-action="GetUsersInfo">
+        <div class="administration-users-items">
+            <label class="administration-users-phone" for="userPhone">Телефон</label>
+            <input class="form-input" id="userPhone"  type="number" placeholder="без +7 и 8" />
+        </div>
+        <div class="administration-users-items">
+            <label class="administration-users-login" for="userName">Логин</label>
+            <input class="form-input" id="userName"  type="text" />
+        </div>
+        <div class="administration-users-items">
+            <label class="administration-users-surname" for="lastNmae">Фамилия</label>
+            <input class="form-input" id="lastName"  type="text" />
+        </div>
+        <button class="btn primary-btn">Найти</button>
+    </form>
+
+    <div id="usersTable">
+
+    </div>
+</section>
+@*<script>
+    $('#searchForm').on('submit', function () {
+        event.preventDefault();
+        $.ajax({
+            url: "@Url.Action("GetUsersInfo", "AdministrationUsers")",
+            type: 'GET',
+            data: $('#searchForm').serialize(),
+            beforeSend: Loader,
+            complete: Loader,
+            success: function (data) {
+                $('#usersTable').html(data);
+            },
+            error: function () {
+            }
+        });
+    })
+</script>*@

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Util\\UniHackStart.Util.csproj": {}
+    "C:\\Институт\\Uni\\UniHackStart.Util\\UniHackStart.Util.csproj": {}
   },
   "projects": {
-    "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\UniHackStart.Model.csproj": {
+    "C:\\Институт\\Uni\\UniHackStart.Model\\UniHackStart.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\UniHackStart.Model.csproj",
+        "projectUniqueName": "C:\\Институт\\Uni\\UniHackStart.Model\\UniHackStart.Model.csproj",
         "projectName": "UniHackStart.Model",
-        "projectPath": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\UniHackStart.Model.csproj",
-        "packagesPath": "C:\\Users\\dstur\\.nuget\\packages\\",
-        "outputPath": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\obj\\",
+        "projectPath": "C:\\Институт\\Uni\\UniHackStart.Model\\UniHackStart.Model.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Институт\\Uni\\UniHackStart.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dstur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -80,24 +80,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Util\\UniHackStart.Util.csproj": {
+    "C:\\Институт\\Uni\\UniHackStart.Util\\UniHackStart.Util.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Util\\UniHackStart.Util.csproj",
+        "projectUniqueName": "C:\\Институт\\Uni\\UniHackStart.Util\\UniHackStart.Util.csproj",
         "projectName": "UniHackStart.Util",
-        "projectPath": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Util\\UniHackStart.Util.csproj",
-        "packagesPath": "C:\\Users\\dstur\\.nuget\\packages\\",
-        "outputPath": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Util\\obj\\",
+        "projectPath": "C:\\Институт\\Uni\\UniHackStart.Util\\UniHackStart.Util.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Институт\\Uni\\UniHackStart.Util\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dstur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,8 +112,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\UniHackStart.Model.csproj": {
-                "projectPath": "d:\\Moi dokuments\\ИНСТИТУТ\\XAKATON\\UniHack\\UniHackStart.Model\\UniHackStart.Model.csproj"
+              "C:\\Институт\\Uni\\UniHackStart.Model\\UniHackStart.Model.csproj": {
+                "projectPath": "C:\\Институт\\Uni\\UniHackStart.Model\\UniHackStart.Model.csproj"
               }
             }
           }
@@ -152,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

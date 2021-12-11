@@ -78,22 +78,19 @@ namespace UniHackStart.Controllers
             if (n == "1")
             {
                 List<StudentTimeTableModel> WeekOne = timetableWeekList[0];
-                foreach (var c in WeekOne)
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
+                
+                    return PartialView("_partialWeekTimetable", WeekOne);
+
             }
 
             if (n == "2")
             {
                 List<StudentTimeTableModel> WeekOne = timetableWeekList[1];
-                foreach (var c in WeekOne)
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
+               
+                    return PartialView("_partialWeekTimetable", WeekOne);
             }
 
-            return PartialView("_partialWeekTimetable");
+            return View("_partialWeekTimetable");
 
         }
     }
