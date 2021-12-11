@@ -7,5 +7,9 @@ namespace UniHackStart.Models
 {
     public class Teacher
     {
+        public string FIO { get; set; }
+        public string FacultyName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     }
 }
