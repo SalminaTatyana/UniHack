@@ -50,6 +50,7 @@ namespace UniHackStart.Model.Database
         public virtual DbSet<TimeTable> TimeTables { get; set; }
         public virtual DbSet<TimeTableReester> TimeTableReesters { get; set; }
         public virtual DbSet<TimeTableReesterRecord> TimeTableReesterRecords { get; set; }
+        public virtual DbSet<TimeTableReestersView> TimeTableReestersViews { get; set; }
         public virtual DbSet<TimeTableView> TimeTableViews { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRight> UserRights { get; set; }
@@ -532,6 +533,17 @@ namespace UniHackStart.Model.Database
                     .WithMany(p => p.TimeTableReesterRecords)
                     .HasForeignKey(d => d.TeacherId)
                     .HasConstraintName("FK_TimeTableReesterRecords_Teachers");
+            });
+
+            modelBuilder.Entity<TimeTableReestersView>(entity =>
+            {
+                entity.ToView("TimeTableReestersView", "mifi");
+
+                entity.Property(e => e.FileName).IsUnicode(false);
+
+                entity.Property(e => e.FilePath).IsUnicode(false);
+
+                entity.Property(e => e.Login).IsUnicode(false);
             });
 
             modelBuilder.Entity<TimeTableView>(entity =>
