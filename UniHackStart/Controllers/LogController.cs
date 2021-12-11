@@ -70,7 +70,7 @@ namespace UniHackStart.Controllers
                 using (var db = new UniHackStartDbContext())
                 {
                     var ttr = db.TimeTableReesters.ToList();
-                    return View();
+                    return PartialView();
                 }
             }
             else { return View("_partialErrorAcces"); }
