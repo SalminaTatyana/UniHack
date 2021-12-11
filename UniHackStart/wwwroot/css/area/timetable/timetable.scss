@@ -10,16 +10,25 @@
         font-size: 20px;
         color: $secondary-text-color;
         font-weight: 700;
+        text-align: center;
+        border-bottom: 1px solid;
+        padding-bottom: 5px;
     }
 
     .timetable-lesson-item {
         display: flex;
         justify-content: flex-start;
         margin-bottom: 15px;
+        align-items: center;
+
+        &:last-of-type {
+            border-bottom: 1px solid $secondary-text-color;
+            padding-bottom: 5px;
+        }
     }
 
     .timetable-lesson-time {
-        width: 200px;
+        width: 100px;
         margin-right: 15px;
         font-weight: 500;
     }
@@ -47,6 +56,7 @@
         width: calc(100%-220px)
     }
 }
+
 .tabs {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -57,7 +67,7 @@
     margin: 32px -10px 0 22px;
 
     > li {
-        width: calc(16.6% - 20px);
+        width: 225px;
         margin: 0 10px 20px;
 
         &:last-child {
@@ -104,5 +114,38 @@
             border-color: #0389FF;
             color: white;
         }
+    }
+}
+
+.timetable-lesson-para {
+    width: 50px;
+}
+
+@media (max-width: 800px) {
+    .timetable-lesson-item, .timetable-lesson-teacher-place-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .timetable-section .timetable-lesson-teacher-place-wrapper {
+        width: 100%;
+    }
+    .timetable-section .timetable-lesson-item {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .timetable-section .timetable-lesson-text, .timetable-section .timetable-lesson-teacher, .timetable-lesson-place {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .timetable-lesson-para {
+        display: none;
+    }
+    .timetable-lesson-item {
+        border-bottom: 1px solid $third-text-color;
+        margin-right: 15px;
+    }
+    .timetable-date {
+        margin-right: 15px;
     }
 }
