@@ -70,10 +70,10 @@ namespace UniHackStart.Controllers
                 using (var db = new UniHackStartDbContext())
                 {
                     var ttr = db.TimeTableReesters.ToList();
-                    return PartialView();
+                    return PartialView("_partialExcelFiles",ttr);
                 }
             }
-            else { return View("_partialErrorAcces"); }
+            else { return PartialView("_partialExcelFiles"); }
 
         }
     }
