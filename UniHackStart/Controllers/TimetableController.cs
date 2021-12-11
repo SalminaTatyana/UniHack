@@ -17,38 +17,24 @@ namespace UniHackStart.Controllers
             return View();
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> GetTimetable(string weekNumber /*, long groupId,*/ )
+        public async Task<IActionResult> GetTimetableSlider(string weekNumber, long groupId)
         {
-            var groupId = 10;
-            weekNumber = "1";
-            
-            if (weekNumber.Contains("1"))
+            return PartialView("_partialWeekTimetable", GetTimeTableWeek(groupId, weekNumber));
+        }
+        [HttpPost]
+        public async Task<IActionResult> GetTimetable(string weekNumber , long groupId)
+        {
+            if (weekNumber.Contains("1") || weekNumber.Contains("2"))
             {
-                foreach (var c in GetTimeTableWeek(groupId,weekNumber))
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
+                return PartialView("_partialWeekTimetable", GetTimeTableWeek(groupId, weekNumber));
             }
 
-            if (weekNumber.Contains("2"))
-            {
-                foreach (var c in GetTimeTableWeek(groupId,weekNumber))
-                {
-                    return PartialView("_partialWeekTimetable", c);
-                }
-            }
-
-            foreach (var c in GetTimeTableAll(groupId,weekNumber))
-            {
-
-                return PartialView("_partialWeekTimetable",c);
-            }
-
-            return null;
+            return PartialView("_partialWeekTimetable", GetTimeTableAll(groupId, weekNumber));
         }
 
-        private List<StudentTimeTableModel> GetTimeTableWeek(long groupId,string weekNumber)
+        private List<StudentTimeTableModel> GetTimeTableWeek(long groupId, string weekNumber)
         {
             using (var db = new UniHackStartDbContext())
             {
