@@ -1,7 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Преподаватели";
-    ViewData["ActiveMenuLink"] = "menu-link-teachers";
-}
+﻿@model IEnumerable<UniHackStart.Models.TeacherModel>
+@{ ViewData["Title"] = "Преподаватели"; ViewData["ActiveMenuLink"] = "menu-link-teachers"; }
 <ul class="breadcrumbs">
     <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
     <li>
@@ -11,9 +9,20 @@
 <section class="teachers-section">
     <h1 class="block-title">Преподаватели</h1>
     <div class="card-list">
-        @for (int i = 0; i < 5; i++)
+        @foreach (var lt in @Model)
         {
-            <partial name="_partialTeachers" />
+            @foreach(var t in lt.MyTeacherList)
+            @await Html.PartialAsync("_partialTeachers", new MyTeacher
+       {
+           Email = t.Email,
+           FacultyName = lt.FacultyName,
+           FIO = t.FIO,
+           Phone = t.Phone
+            });
         }
+        @*for(int i = 0; i< 5; i++)
+                {
+                <partial name="_partialTeachers" />
+            }*@
     </div>
-    </section>
+</section>
