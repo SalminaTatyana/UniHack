@@ -44,6 +44,8 @@
         $.ajax({
             url: "@Url.Action("GetTimetableSlider", "Timetable")",
             type: 'POST',
+            beforeSend: function () { Loader(); $('.overlay').addClass('active'); },
+            complete: function () { Loader(); $('.overlay').removeClass('active'); },
             data: { "weekNumber": "1", "groupId": 10  },
             success: function (data) {
                 $('.timetable-wrapper').append(data);

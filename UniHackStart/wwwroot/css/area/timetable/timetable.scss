@@ -149,3 +149,23 @@
         margin-right: 15px;
     }
 }
+.slider {
+    .card {
+        max-width: initial;
+    }
+    .timetable-lesson-para {
+        width: 30px;
+    }
+
+    .timetable-lesson-teacher-wrapper {
+        width: calc(100% - 150px);
+    }
+
+    .timetable-lesson-text, .timetable-lesson-teacher {
+        width: 100%;
+    }
+
+    .timetable-lesson-time {
+        width: 100px;
+    }
+}
