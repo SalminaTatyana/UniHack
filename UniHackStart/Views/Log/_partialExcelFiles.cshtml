@@ -1,4 +1,5 @@
-﻿@model IEnumerable<UniHackStart.Models.TimeTableReestersModel>
+﻿@using System.Globalization
+@model IEnumerable<UniHackStart.Models.TimeTableReestersModel>
 <div class="meter-devices-table-string">
 
     @foreach (var reester in @Model)
@@ -12,17 +13,18 @@
                 </label>
             </div>
             <div class="meter-devices-addres">
+                <span class="meter-devices-date-label">Файл</span>
                 <span class="meter-devices-addres-name"> @reester.FileName</span>
             </div>
 
             <div class="meter-devices-date">
                 <span class="meter-devices-date-label">Дата создания</span>
-                <span class="meter-devices-date-item"> @reester.Created</span>
+                <span class="meter-devices-date-item"> @reester.Created.ToString("dd.MM.yyyy")</span>
 
             </div>
             <div class="meter-devices-date">
-                <span class="meter-devices-date-label">ID пользователя</span>
-                <span class="meter-devices-date-item"> @reester.UserId</span>
+                <span class="meter-devices-date-label">Загрузил</span>
+                <span class="meter-devices-date-item"> @reester.Login</span>
             </div>
 
             <button class="modal-close" type="button">

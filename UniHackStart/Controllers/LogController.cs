@@ -67,13 +67,40 @@ namespace UniHackStart.Controllers
         {
             if (HttpContext.Session.GetString("role") == "Admin")
             {
+                return View();
+            }
+
+            return View("_partialErrorAcces");
+        }
+
+        public IActionResult ExcelLog()
+        {
+            if (HttpContext.Session.GetString("role") == "Admin")
+            {
                 using (var db = new UniHackStartDbContext())
                 {
-                    var ttr = db.TimeTableReestersView.ToList();
-                    return PartialView("_partialExcelFiles",ttr);
+                    List<TimeTableReestersView> ttr = db.TimeTableReestersViews.ToList();
+                    List<TimeTableReestersModel> ttrm = new List<TimeTableReestersModel>();
+                    foreach (var item in ttr)
+                    {
+                        var t = new TimeTableReestersModel()
+                        {
+                            Id = item.Id,
+                            Created = item.Created,
+                            FileName = item.FileName,
+                            FilePath = item.FilePath,
+                            Login = item.Login,
+                            UserId = item.UserId,
+                            IsCurrent = item.IsCurrent
+                        };
+
+                        ttrm.Add(t);
+                    }
+
+                    return View("_partialExcelFiles",ttrm);
                 }
             }
-            else { return PartialView("_partialExcelFiles"); }
+            else { return View("_partialExcelFiles"); }
 
         }
     }
