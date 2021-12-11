@@ -21,7 +21,7 @@ namespace UniHackStart.Controllers
         [HttpPost]
         public async Task<IActionResult> GetTimetableSlider(string weekNumber, long groupId)
         {
-            return PartialView("_partialWeekTimetable", GetTimeTableWeek(groupId, weekNumber));
+            return PartialView("_partialTimetable", GetTimeTableWeek(groupId, weekNumber));
         }
         [HttpPost]
         public async Task<IActionResult> GetTimetable(string weekNumber , long groupId)

@@ -34,6 +34,8 @@
         $.ajax({
             url: "@Url.Action("GetTimetable", "Timetable")",
             type: 'POST',
+            beforeSend: Loader,
+            complete: Loader,
             data: { "weekNumber": String(na), "groupId": 10  },
             success: function (data) {
                     $('.card-list').append(data);
